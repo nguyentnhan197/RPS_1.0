@@ -1,0 +1,105 @@
+.navbar {
+  overflow: hidden;
+  background-color: #6D6363;
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.dropdownHR {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdownHR .dropbtnHR {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdownHR:hover .dropbtnHR {
+  background-color: #191818;
+}
+
+.dropdownHR-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdownHR-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdownHR-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdownHR:hover .dropdownHR-content {
+  display: block;
+}
+
+.dropdownInterviewer {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdownInterviewer .dropbtnInterviewer {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdownInterviewer:hover .dropbtnInterviewer {
+  background-color: #191818;
+}
+
+.dropdownInterviewer-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdownInterviewer-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdownInterviewer-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdownInterviewer:hover .dropdownInterviewer-content {
+  display: block;
+}

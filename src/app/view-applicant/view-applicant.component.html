@@ -1,0 +1,56 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="view-applicant">
+  <h2>View Applicant</h2>
+  <input type="search" name="search" placeholder="Search..">
+  <button class="btnCreateApp">Create Applicant</button>
+  <table class="table">
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Vacancy Number</th>
+      <th>Title</th>
+      <th>Date of applicant</th>
+      <th>Status</th>
+      <th>Experience</th>
+      <th>Name of the Interviewer</th>
+      <th>Date Scheduled</th>
+      <th>Start</th>
+      <th>End</th>
+
+      <th>
+
+      </th>
+    </tr>
+    <ng-container *ngFor="let c of candicates">
+      <tr>
+        <td>{{c.id}}</td>
+        <td>{{c.name}}</td>
+        <td>{{c.email}}</td>
+        <td>{{c.phone}}</td>
+        <td>{{c.vacacyNumber}}</td>
+        <td>{{c.title}}</td>
+        <td>{{c.dateOfApplicant}}</td>
+        <td>{{c.status}}</td>
+        <td>{{c.experience}}</td>
+        <td>{{c.nameOfTheInterviewer}}</td>
+        <td>{{c.dateScheduled}}</td>
+        <td>{{c.start}}</td>
+        <td>{{c.end}}</td>
+        <td>
+          <button class="btnDelete"><i class="fa fa-close "></i></button>
+          <button class="btnEdit"><i class="fa fa-edit"></i></button>
+        </td>
+      </tr>
+    </ng-container>
+  </table>
+  <div class="phan-trang">
+    <a href="#">&laquo;</a>
+    <a href="#">1</a>
+    <a href="#">2</a>
+    <a href="#">3</a>
+    <a href="#">&raquo;</a>
+  </div>
+
+</div>

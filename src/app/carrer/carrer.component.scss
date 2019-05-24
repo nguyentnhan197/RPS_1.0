@@ -1,0 +1,31 @@
+.carrer{
+  margin: 0 30px 0 30px;
+  input[type=search] {
+    width: 130px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url("../../assets/images/Search.png" );
+    background-position: 10px 10px;
+    background-size: 50px;
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+    width: 100%;
+  }
+  .job{
+    border-bottom: 1px solid #cccccc;
+    h4{
+      text-decoration: none;
+    }
+    .title{
+      color: blue;
+    }
+    .des{
+      margin-left: 10px;
+    }
+  }
+}

@@ -1,0 +1,107 @@
+.view-applicant{
+  margin: 0 30px 0 30px;
+  //border: 1px solid black;
+
+    h2{
+      position: relative;
+    }
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+  }
+
+  th, td {
+    text-align: left;
+    padding: 16px;
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+
+  tr:nth-child(even) {
+    background-color: #f2f2f2
+  }
+
+  .btnCreateApp {
+    border: none;
+    color: white;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #7dd318;
+    border-radius: 12px;
+    float: right;
+    margin: 10px 0 10px 0;
+  }
+
+
+  .btnDelete {
+    background-color: #FF0000;
+    border: none;
+    color: white;
+    padding: 8px 8px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10%;
+
+  }
+  .btnEdit {
+    background-color: DodgerBlue;
+    border: none;
+    color: white;
+    padding: 8px 8px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10%;
+
+  }
+  .btnDelete:hover {
+    background-color: #FF0033;
+  }
+  .btnEdit:hover {
+    background-color: #0033FF;
+  }
+
+  input[type=search] {
+    width: 130px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url("../../assets/images/Search.png" );
+    background-position: 10px 10px;
+    background-size: 50px;
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+  }
+
+  .phan-trang {
+    margin: 15px 0 10px 0;
+    text-align: right;
+    }
+
+  .phan-trang a {
+    color: black;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+    border: 1px solid #ddd;
+  }
+
+  .phan-trang a.active {
+    background-color: #4CAF50;
+    color: white;
+    border: 1px solid #4CAF50;
+  }
+
+  .phan-trang a:hover:not(.active) {background-color: #ddd;}
+}
+
+
+
+
+

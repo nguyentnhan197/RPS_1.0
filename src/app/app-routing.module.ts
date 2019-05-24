@@ -1,10 +1,28 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import {CarrerComponent} from "./carrer/carrer.component";
+import {RouterModule, Routes} from "@angular/router";
+import {ViewApplicantComponent} from "./view-applicant/view-applicant.component";
+import {CreateApplicantComponent} from "./create-applicant/create-applicant.component";
+import {CreateVacancyComponent} from "./create-vacancy/create-vacancy.component";
+import {LoginComponent} from "./login/login.component";
 
-const routes: Routes = [];
+const routes: Routes = [
+  { path: '', component: CarrerComponent },
+  { path: 'carrer', component: CarrerComponent },
+  { path: 'view-applicant', component: ViewApplicantComponent },
+  { path: 'hr/create-applicant', component: CreateApplicantComponent },
+  { path: 'hr/create-vacancy', component: CreateVacancyComponent },
+
+];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  declarations: [],
+  imports: [
+    CommonModule,
+    RouterModule.forRoot(routes)
+  ],
+  exports: [ RouterModule ]
+
 })
 export class AppRoutingModule { }
