@@ -14,6 +14,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { ReviewApplicantComponent } from './review-applicant/review-applicant.component';
 import {CarrerService} from "./service/carrer.service";
 import {HttpClientModule} from "@angular/common/http";
+import { DetailCarerComponent } from './carrer/detail-carrer/detail-carer.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import {HttpClientModule} from "@angular/common/http";
     SearchApplicantComponent,
     ViewApplicantComponent,
     CarrerComponent,
-    ReviewApplicantComponent
+    ReviewApplicantComponent,
+    DetailCarerComponent
   ],
   imports: [
     BrowserModule,

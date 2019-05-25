@@ -9,24 +9,32 @@ import {Vacancy} from "../model/vacancy.model";
   styleUrls: ['./carrer.component.scss']
 })
 export class CarrerComponent implements OnInit {
-  jobs: Vacancy[]
+  jobs: Vacancy[] = vacancies;
 
 
     constructor( private carrerservice:CarrerService) { }
   ngOnInit(){
-    const jobsObservable = this.carrerservice.getAllVacancy();
-    jobsObservable.subscribe((data:Vacancy[]) => {
-      this.jobs = data
-    });
+    // const jobsObservable = this.carrerservice.getAllVacancy();
+    // jobsObservable.subscribe((data:Vacancy[]) => {
+    //   this.jobs = data
+    // });
   }
 
 
 
 }
+export const  users = [];
 
-// export const jobs = [
-//   {title : 'IT tieng nhat', expirationDate :'20/3/2019' ,person : 5 },
-//   {title : 'IT tieng han', expirationDate :'20/3/2019' ,person : 5 },
-//   {title : 'IT tieng anh', expirationDate :'20/3/2019' ,person : 5 }
-// ]
+export const  vacancies = [
+  {idVacancy : 01, vacancyNumber : '123' ,dateCreated : '20/3/2018', user : 'chi Thuy' , state : 'opening',
+    position: 'IT ', description :'Dịch các tài liệu về kỹ thuật từ tiếng Nhật sang tiếng Việt và từ tiếng Việt sang tiếng Nhật' ,
+    numberOpening : 3 , department :'IT', dateClose : '20/3/2018' , requirement : 'Tiếng Nhật giao tiếp tốt (nói và viết), bằng N2 trở lên hoặc tương đương',
+    offer :'Mức lương cạnh tranh'
+  },
+  {idVacancy : 01, vacancyNumber : '123' ,dateCreated : '20/3/2018', user : 'chi Thuy' , state : 'opening',
+    position: 'IT ', description :'Dịch các tài liệu về kỹ thuật từ tiếng Nhật sang tiếng Việt và từ tiếng Việt sang tiếng Nhật' ,
+    numberOpening : 3 , department :'IT', dateClose : '20/3/2018' , requirement : 'Tiếng Nhật giao tiếp tốt (nói và viết), bằng N2 trở lên hoặc tương đương',
+    offer :'Mức lương cạnh tranh'
+  }
+]
 
