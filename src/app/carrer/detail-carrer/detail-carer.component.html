@@ -1,4 +1,18 @@
 <div class="detail-carrer">
-  <h2></h2>
+    <ng-container *ngIf="vacacy">
+    <h2>{{vacacy.position}}</h2>
+      <div class="important">
+        <label><i class="fa fa-user"></i> Number Opening: {{vacacy.numberOpening}} persons</label><br>
+        <label><i class="fa fa-clock-o"></i>{{vacacy.dateClose}}</label>
+      </div>
+      <h3>DESCRIPTION </h3>
+      <p class="des">{{vacacy.description}}</p>
+      <h3>REQUIREMENT: </h3>
+      <p class="des">{{vacacy.requirement}}</p>
+      <h3>What we offer</h3>
+      <p class="des">{{vacacy.offer}}</p>
+
+  </ng-container>
+  <button (click)="goBack()" class="btnBack">Go back</button>
 
 </div>
