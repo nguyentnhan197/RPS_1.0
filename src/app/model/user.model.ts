@@ -1,3 +1,5 @@
+import {Department} from "./department.model";
+
 export class User {
   public  idUser: number;
 
@@ -10,10 +12,10 @@ export class User {
   public  password:string;
 
 
-  public  position: Object;
+  public  position: Position;
 
 
-  public  department: Object;
+  public  department: Department;
 
   public  avatar: string;
   public  birthday: string;

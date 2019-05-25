@@ -14,6 +14,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { ReviewApplicantComponent } from './review-applicant/review-applicant.component';
 import {CarrerService} from "./service/carrer.service";
 import {HttpClientModule} from "@angular/common/http";
+import {FormsModule} from "@angular/forms";
+import {PositionService} from "./service/position.service";
 
 @NgModule({
   declarations: [
@@ -32,9 +34,11 @@ import {HttpClientModule} from "@angular/common/http";
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [CarrerService,
+    PositionService,
     ],
   bootstrap: [AppComponent]
 })

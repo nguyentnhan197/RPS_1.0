@@ -1,3 +1,7 @@
+import {User} from "./user.model";
+import {Department} from "./department.model";
+import {Position} from "./position.model";
+
 export class Vacancy  {
 
   public  idVacancy: number;
@@ -6,18 +10,18 @@ export class Vacancy  {
   public  dateCreated:string;
 
 
-  public  user: any;
+  public  user: User;
 
   public  state:string;
 
 
-  public  position: any;
+  public  position: Position;
 
   public  description: string;
   public  numberOpening:number;
 
 
-  public  department:any;
+  public  department:Department;
 
   public  dateClose: string;
 

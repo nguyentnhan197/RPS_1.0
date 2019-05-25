@@ -3,7 +3,7 @@ export class ScheduleInterviewDetails{
   dateOfTheScheduleInterview: Object;
   startTime: any;
   endTime: any;
-  
+
 
 
 }
