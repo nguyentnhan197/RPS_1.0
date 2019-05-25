@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Injectable, OnInit} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {CarrerService} from "../service/carrer.service";
@@ -12,7 +12,7 @@ export class CarrerComponent implements OnInit {
   jobs: Vacancy[] = vacancies;
 
 
-    constructor( private carrerservice:CarrerService) { }
+    constructor() { }
   ngOnInit(){
     // const jobsObservable = this.carrerservice.getAllVacancy();
     // jobsObservable.subscribe((data:Vacancy[]) => {

@@ -4,7 +4,7 @@ import {Observable, of} from "rxjs";
 import {Vacancy} from "../model/vacancy.model";
 import {vacancies} from "../carrer/carrer.component";
 
-@Injectable({providedIn: 'root'})
+@Injectable()
 export class CarrerService {
   constructor(
     private httpClient: HttpClient
