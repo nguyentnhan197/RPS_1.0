@@ -1,19 +1,35 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <div class="carrer">
+  <h2>Find a job that suits you </h2>
   <div class="search">
-    <h2>Find a job that suits you </h2>
-    <input type="search" name="search" placeholder="Search..">
+
+    <table class="tableSearch">
+      <h3>Search carrer</h3>
+      <!--    <input type="search" name="search" placeholder="Search..">-->
+      <tr>
+        <td>
+          <label for="titleSearch">Title</label>
+          <input type="text" id="titleSearch" name="titleSearch" placeholder="Enter title">
+        </td>
+        <td>
+          <label for="dateCloseSearch">Date Close </label>
+          <input type="date" id="dateCloseSearch" name="dateCloseSearch">
+        </td>
+        <td>
+          <label for="numberOpening">Number Opening</label>
+          <input type="text" id="numberOpening" name="numberOpening" placeholder="Enter number person">
+        </td>
+      </tr>
+    </table>
+    <button class="btnSearch">Search</button>
   </div>
+
   <div class="job" *ngFor="let j of jobs">
-    <h3 class="title">{{j.idVacancy}}</h3>
-    <p class="des">{{j.vacancyNumber}}</p>
-    <p class="des">{{j.dateCreated}}</p>
-    <p class="des">{{j.user}} </p>
-    <p class="des">{{j.state}} </p>
-    <p class="des">{{j.position}} </p>
-    <p class="des">{{j.description}} </p>
-    <p class="des">{{j.numberOpening}} persons</p>
-    <p class="des">{{j.department}} </p>
-    <p class="des">{{j.dateClose}} </p>
+    <!--<h3 class="title">{{j.idVacancy}}</h3>-->
+    <h3 class="title" routerLink="/carrer/{{j.idVacancy}}">{{j.position}} </h3>
+    <p class="des"><i class="fa fa-clock-o"></i>{{j.dateClose}} </p>
+    <p class="des"><i class="fa fa-user"></i>{{j.numberOpening}} persons</p>
   </div>
 
 </div>

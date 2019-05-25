@@ -14,8 +14,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { ReviewApplicantComponent } from './review-applicant/review-applicant.component';
 import {CarrerService} from "./service/carrer.service";
 import {HttpClientModule} from "@angular/common/http";
+<<<<<<< HEAD
 import {FormsModule} from "@angular/forms";
 import {PositionService} from "./service/position.service";
+=======
+import { DetailCarerComponent } from './carrer/detail-carrer/detail-carer.component';
+>>>>>>> 3cdf2571752420418f4a400d0fef6b2f9660ed4c
 
 @NgModule({
   declarations: [
@@ -29,7 +33,8 @@ import {PositionService} from "./service/position.service";
     SearchApplicantComponent,
     ViewApplicantComponent,
     CarrerComponent,
-    ReviewApplicantComponent
+    ReviewApplicantComponent,
+    DetailCarerComponent
   ],
   imports: [
     BrowserModule,
