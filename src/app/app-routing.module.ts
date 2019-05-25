@@ -7,11 +7,12 @@ import {CreateApplicantComponent} from "./create-applicant/create-applicant.comp
 import {CreateVacancyComponent} from "./create-vacancy/create-vacancy.component";
 import {LoginComponent} from "./login/login.component";
 import {ReviewApplicantComponent} from "./review-applicant/review-applicant.component";
+import {DetailCarerComponent} from "./carrer/detail-carrer/detail-carer.component";
 
 const routes: Routes = [
   { path: '', component: CarrerComponent },
   { path: 'carrer', component: CarrerComponent },
-  { path: 'detail-carrer', component: DetailCarerComponent },
+  { path: 'carrer/:id', component: DetailCarerComponent },
   { path: 'view-applicant', component: ViewApplicantComponent },
   { path: 'hr/create-applicant', component: CreateApplicantComponent },
   { path: 'hr/create-vacancy', component: CreateVacancyComponent },

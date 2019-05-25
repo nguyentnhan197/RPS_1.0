@@ -1,19 +1,15 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <div class="carrer">
   <div class="search">
     <h2>Find a job that suits you </h2>
     <input type="search" name="search" placeholder="Search..">
   </div>
-  <div class="job" *ngFor="let j of jobs">
-    <h3 class="title">{{j.idVacancy}}</h3>
-    <p class="des">{{j.vacancyNumber}}</p>
-    <p class="des">{{j.dateCreated}}</p>
-    <p class="des">{{j.user}} </p>
-    <p class="des">{{j.state}} </p>
-    <p class="des">{{j.position}} </p>
-    <p class="des">{{j.description}} </p>
-    <p class="des">{{j.numberOpening}} persons</p>
-    <p class="des">{{j.department}} </p>
-    <p class="des">{{j.dateClose}} </p>
+  <div class="job" *ngFor="let j of jobs" >
+    <!--<h3 class="title">{{j.idVacancy}}</h3>-->
+    <h3 class="title" routerLink="/carrer/{{j.idVacancy}}">{{j.position}} </h3>
+    <p class="des" ><i class="fa fa-clock-o"></i>{{j.dateClose}} </p>
+    <p class="des"><i class="fa fa-user"></i>{{j.numberOpening}} persons</p>
   </div>
 
 </div>

@@ -23,15 +23,14 @@ export class CarrerComponent implements OnInit {
 
 
 }
-export const  users = [];
 
 export const  vacancies = [
-  {idVacancy : 01, vacancyNumber : '123' ,dateCreated : '20/3/2018', user : 'chi Thuy' , state : 'opening',
+  {idVacancy : 1, vacancyNumber : '123' ,dateCreated : '20/3/2018', user : 'chi Thuy' , state : 'opening',
     position: 'IT ', description :'Dịch các tài liệu về kỹ thuật từ tiếng Nhật sang tiếng Việt và từ tiếng Việt sang tiếng Nhật' ,
     numberOpening : 3 , department :'IT', dateClose : '20/3/2018' , requirement : 'Tiếng Nhật giao tiếp tốt (nói và viết), bằng N2 trở lên hoặc tương đương',
     offer :'Mức lương cạnh tranh'
   },
-  {idVacancy : 01, vacancyNumber : '123' ,dateCreated : '20/3/2018', user : 'chi Thuy' , state : 'opening',
+  {idVacancy : 2, vacancyNumber : '123' ,dateCreated : '20/3/2018', user : 'chi Thuy' , state : 'opening',
     position: 'IT ', description :'Dịch các tài liệu về kỹ thuật từ tiếng Nhật sang tiếng Việt và từ tiếng Việt sang tiếng Nhật' ,
     numberOpening : 3 , department :'IT', dateClose : '20/3/2018' , requirement : 'Tiếng Nhật giao tiếp tốt (nói và viết), bằng N2 trở lên hoặc tương đương',
     offer :'Mức lương cạnh tranh'
