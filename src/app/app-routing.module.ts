@@ -9,7 +9,7 @@ import {LoginComponent} from "./login/login.component";
 import {ReviewApplicantComponent} from "./review-applicant/review-applicant.component";
 
 const routes: Routes = [
-  { path: '', component: CarrerComponent },
+  { path: '', component: LoginComponent },
   { path: 'carrer', component: CarrerComponent },
   { path: 'view-applicant', component: ViewApplicantComponent },
   { path: 'hr/create-applicant', component: CreateApplicantComponent },
