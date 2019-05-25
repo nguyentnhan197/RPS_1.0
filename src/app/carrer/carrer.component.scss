@@ -1,21 +1,64 @@
 .carrer{
   margin: 0 30px 0 30px;
-  input[type=search] {
-    width: 130px;
-    box-sizing: border-box;
-    border: 2px solid #ccc;
-    border-radius: 10px;
-    font-size: 16px;
-    background-color: white;
-    background-image: url("../../assets/images/Search.png" );
-    background-position: 10px 10px;
-    background-size: 50px;
-    background-repeat: no-repeat;
-    padding: 12px 20px 12px 40px;
-    -webkit-transition: width 0.4s ease-in-out;
-    transition: width 0.4s ease-in-out;
+  //search
+  .search{
+    font-family: Arial, Helvetica, sans-serif;
+    position: relative;
     width: 100%;
   }
+  .tableSearch {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+  }
+  th, td {
+    text-align: left;
+    padding: 16px;
+    border: 0px solid black;
+    border-collapse: collapse;
+  }
+
+  tr:nth-child(even) {
+    background-color: #f2f2f2
+  }
+
+  input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  input[type=date],[type=time], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  .btnSearch {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+  }
+
+  .btnSearch:hover {
+    background-color: #45a049;
+  }
+
+
+  //
   .job{
     border-bottom: 1px solid #cccccc;
     h4{
