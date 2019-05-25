@@ -1,6 +1,8 @@
 import {Injectable} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
-import {Observable} from "rxjs";
+import {Observable, of} from "rxjs";
+import {Vacancy} from "../model/vacancy.model";
+import {vacancies} from "../carrer/carrer.component";
 @Injectable({providedIn:'root'})
 export class CarrerService{
 constructor(
@@ -8,9 +10,14 @@ constructor(
 
 ){}
 
-getAllVacancy(){
-  return this.httpClient.get('http://localhost:8080/RecruitmentProcessSystem/')
-}
+  getAllVacancy(){
+    return this.httpClient.get('http://localhost:8080/RecruitmentProcessSystem/')
+  }
+  getVacancyById(id) : Observable<Vacancy> {
+    return of(vacancies.find(vacancy => vacancy.idVacancy == id));
+
+
+  }
 
 
 
