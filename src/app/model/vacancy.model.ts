@@ -1,3 +1,7 @@
+import {User} from "./user.model";
+import {Department} from "./department.model";
+import {Position} from "./position.model";
+
 export class Vacancy  {
   public  idVacancy: number;
   public  vacancyNumber: string;
@@ -8,7 +12,7 @@ export class Vacancy  {
   public  description: string;
   public  numberOpening: number;
   public  department: any;
-  public  dateClose: string;
+  public  dateClose: any;
   public requirement: string;
   public offer: string;
   //

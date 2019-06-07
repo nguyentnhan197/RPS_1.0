@@ -2,23 +2,24 @@
 
 <div class="container">
   <form action="">
+<input type="hidden"  name="id"/>
 
-
-    <label for="dateVancacy">Date creation of the vacancy</label>
-    <input type="date" id="dateVancacy" name="dateVancacy">
+    <label for="dateCreateVancacy">Date creation of the vacancy</label>
+    <input type="date"  id="dateCreateVancacy" >
 
 
     <label for="ownedBy">Owned by</label>
-    <input type="text" id="ownedBy" name="ownedBy" placeholder="Owned by">
+    <input type="text"  id="ownedBy"   placeholder="Owned by">
 
 
-    <label for="statusVacancy">Status of the Vacancy</label> <select id="statusVacancy" name="statusVacancy">
-    <option value="open">Open</option>
-    <option value="close">Close</option>
-    <option value="suspended">Suspended</option></select>
+    <label for="statusVacancy">Status of the Vacancy</label> <select  id="statusVacancy" >
+    <option  value="open">Open</option>
+    <option  value="close">Close</option>
+    <option  value="suspended">Suspended</option></select>
 
-    <label for="title">Title</label>
-    <input type="text" id="title"name="title" placeholder="Title">
+    <label for="title">Title</label> <select  id="title" >
+    <option  *ngFor="let position of positionList" [value]="position.positionName">{{position.positionName}}</option>
+   </select>
 
     <label for="exp">Experience</label> <select id="experience:" name="experience:">
     <option value="fresher">Fresher</option>
@@ -38,12 +39,19 @@
     <label for="quatity">Quatity</label>
     <input type="text" id="quatity" name="quatity" placeholder="Quatity">
 
-    <label for="Department">Department</label>
-    <input type="text" id="department" name="department" placeholder="Department">
+
+    <label for="numberOpening">Number opening</label>
+
+    <input type="text"  id="numberOpening" name="quatity" placeholder="Quatity">
+
+    <label for="department">Department</label>
+    <select  id="department" >
+      <option  *ngFor="let department of departmentList" [value]="department.departmentName">{{department.departmentName}}</option>
+    </select>
 
 
     <label for="dateGetsClosed">Date gets closed</label>
-    <input type="date" id="dateGetsClosed" name="dateGetsClosed">
+    <input type="date"  id="dateGetsClosed" name="dateGetsClosed">
 
     <label for="detailedDescription">Detailed description</label>
     <input type="text" id="detailedDescription" name="detailedDescription" placeholder="Detailed description">
