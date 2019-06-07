@@ -1,0 +1,70 @@
+<div class="viewReviewApplicant">
+  <div class="viewReviewApplicantTop">
+    <h2>View Review Applicant</h2>
+    <table class="tableViewReviewApplicantTop">
+      <tr>
+        <td>
+          <label class="applicantNumber">Applicant number</label>
+          <input type="text" id="applicantNumber" name="applicantNumber">
+        </td>
+        <td>
+          <label for="titleVacancy">Title Vacancy</label>
+          <input type="text" id="titleVacancy" name="titleVacancy">
+        </td>
+        <td>
+          <label for="result">Result</label> <select id="result" name="result">
+          <option value="pass">Pass</option>
+          <option value="fail">Fail</option>
+          <option value="consider">Consider</option>
+        </select>
+        </td>
+      </tr>
+
+    </table>
+    <div class="btnAll">
+      <button class="btnSearch">Search</button>
+      <button class="btnAdd">Add new</button>
+      <button class="btnEdit">Edit</button>
+      <button class="btnDelete">Delete</button>
+      <button class="btnExport">Date export</button>
+    </div>
+  </div>
+  <div class="viewReviewApplicantBot">
+    <table class="tableViewReviewApplicantBot">
+      <tr>
+        <th></th>
+        <th>applicantNumber</th>
+        <th>titleVacancy</th>
+        <th>suitableLocation</th>
+        <th>danhGiaChuyenNganh</th>
+        <th>danhGiaUngXu</th>
+        <th>experince</th>
+        <th>trinhDoNgonNgu</th>
+        <th>result</th>
+        <th>ghiChu</th>
+      </tr>
+
+      <ng-container *ngFor="let v of viewReviewApplicant">
+        <tr>
+          <td><label class="container">
+            <input type="checkbox">
+          </label></td>
+          <td>{{v.applicantNumber}}</td>
+          <td>{{v.titleVacancy}}</td>
+          <td>{{v.suitableLocation}}</td>
+          <td>{{v.danhGiaChuyenNganh}}</td>
+          <td>{{v.danhGiaUngXu}}</td>
+          <td>{{v.experince}}</td>
+          <td>{{v.trinhDoNgonNgu}}</td>
+          <td>{{v.result}}</td>
+          <td>{{v.ghiChu}}</td>
+        </tr>
+      </ng-container>
+
+    </table>
+
+  </div>
+
+
+
+</div>

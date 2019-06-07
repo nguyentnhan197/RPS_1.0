@@ -1,0 +1,104 @@
+<div class="mrManager">
+
+  <div class="mrManagerTop">
+    <h2>Manpower request list by manager</h2>
+    <table class="tableMrManagerTop">
+      <tr>
+        <td><label for="id_request">ID requiet</label>
+          <input type="text" id="id_request" name="id_request">
+          <br>
+          <label for="vacancyName">Vacancy name</label>
+          <input type="text" id="vacancyName" name="vacancyName">
+          <br>
+
+          <label for="requester">Requester</label>
+          <input type="text" id="requester" name="requester">
+        </td>
+
+        <td><label for="title">Title</label>
+          <input type="text" id="title" name="title">
+          <br>
+
+          <label for="quatity">Quatity</label>
+          <input type="text" id="quatity" name="quatity">
+          <br>
+          <label for="exp">Experience</label> <select id="experience:" name="experience:">
+            <option value="fresher">Fresher</option>
+            <option value="internship">Internship</option>
+            <option value="senior">Senior</option>
+          </select>
+        </td>
+        <td>
+          <label for="fromDate">From date</label>
+          <input type="date" id="fromDate" name="fromDate">
+          <br>
+          <label for="toDate">To date</label>
+          <input type="date" id="toDate" name="toDate">
+          <br>
+          <label for="status">Status</label>
+          <br>
+          <label class="containerRadioButton">Open
+            <input type="radio" checked="checked" name="radio" value="Open">
+            <span class="checkmark"></span>
+          </label>
+          <label class="containerRadioButton">Close
+            <input type="radio" name="radio" value="Close">
+            <span class="checkmark"></span>
+          </label>
+        </td>
+
+      </tr>
+    </table>
+    <div class= "btnAll">
+    <button class="btnSearch">Search</button>
+    <button class="btnAdd">Add new</button>
+    <button class="btnSubmit">Submit</button>
+    <button class="btnDelete">Delete</button>
+    <button class="btnExport">Date export</button></div>
+
+    <!--    <input type="btnSearch" value="Search">-->
+    <!--    <input type="btnAdd" value="Add new">-->
+    <!--    <input type="btnSubmit" value="Submit">-->
+    <!--    <input type="btnDelete" value="Delete">-->
+    <!--    <input type="btnExport" value="Date export">-->
+  </div>
+<div class="mrManagerBot">
+  <table class="tableMrManagerBot">
+    <tr>
+      <th></th>
+      <th>Id Requiet</th>
+      <th>Vacancy Name</th>
+      <th>Requieter</th>
+      <th>Title</th>
+      <th>Quatity</th>
+      <th>Experince</th>
+      <th>From Date</th>
+      <th>To Date</th>
+      <th>Approver</th>
+      <th>Status</th>
+    </tr>
+
+    <ng-container *ngFor="let v of viewMRManages">
+      <tr>
+        <td><label class="container">
+          <input type="checkbox" >
+        </label></td>
+        <td>{{v.idRequiet}}</td>
+        <td>{{v.vacancyName}}</td>
+        <td>{{v.requieter}}</td>
+        <td>{{v.title}}</td>
+        <td>{{v.quatity}}</td>
+        <td>{{v.experince}}</td>
+        <td>{{v.fromDate}}</td>
+        <td>{{v.toDate}}</td>
+        <td>{{v.approver}}</td>
+        <td>{{v.status}}</td>
+      </tr>
+    </ng-container>
+  </table>
+
+
+
+</div>
+
+</div>

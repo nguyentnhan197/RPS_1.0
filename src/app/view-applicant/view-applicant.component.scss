@@ -5,7 +5,7 @@
   h2{
     position: relative;
   }
-  table {
+  .tableView {
     border-collapse: collapse;
     border-spacing: 0;
     width: 100%;
@@ -32,7 +32,7 @@
     background-color: #4CAF50;
     border-radius: 12px;
     float: right;
-    margin: 10px 0 10px 0;
+    margin: 10px 10px 10px 0;
   }
   .btnCreateApp:hover, .btnExport:hover {
     background-color: #45a049;
@@ -112,10 +112,11 @@
   position: relative;
   width: 100%;
 }
-tableSearch {
+.tableSearch {
+  margin: 0 300px 0 300px;
+  font-size: 14px;
   border-collapse: collapse;
   border-spacing: 0;
-  width: 100%;
   border: 1px solid #ddd;
 }
 

@@ -4,5 +4,5 @@ export class DetailCarrer {
   expirationDate: any;
   description: string;
   requirement: string;
-  offer:string;
+  offer: string;
 }

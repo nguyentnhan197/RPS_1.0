@@ -1,17 +1,17 @@
-.carrer{
+.profile{
   margin: 0 300px 0 300px;
   font-size: 14px;
-  //search
-  .search{
-    font-family: Arial, Helvetica, sans-serif;
+
+   h2{
     position: relative;
-    width: 100%;
   }
-  .tableSearch {
+  table {
+    border-collapse: collapse;
     border-spacing: 0;
     width: 100%;
     border: 1px solid #ddd;
   }
+
   th, td {
     text-align: left;
     padding: 16px;
@@ -21,6 +21,12 @@
 
   tr:nth-child(even) {
     background-color: #f2f2f2
+  }
+  tableProfile {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
   }
 
   input[type=text], select {
@@ -42,7 +48,7 @@
     box-sizing: border-box;
   }
 
-  .btnSearch {
+  .btnCancel, .btnSave {
     background-color: #4CAF50;
     color: white;
     padding: 14px 20px;
@@ -53,25 +59,8 @@
     float: right;
   }
 
-  .btnSearch:hover {
+  .btnCancel:hover, .btnSave:hover {
     background-color: #45a049;
   }
 
-
-  //
-  .job{
-    border-bottom: 1px solid #cccccc;
-    h4{
-      text-decoration: none;
-    }
-    .title{
-      color: blue;
-    }
-    .des{
-      margin-left: 10px;
-      i{
-        margin-right: 5px;
-      }
-    }
-  }
 }

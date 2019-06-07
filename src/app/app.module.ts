@@ -15,6 +15,15 @@ import { ReviewApplicantComponent } from './review-applicant/review-applicant.co
 import {CarrerService} from "./service/carrer.service";
 import {HttpClientModule} from "@angular/common/http";
 import { DetailCarerComponent } from './carrer/detail-carrer/detail-carer.component';
+import { SystemComponent } from './system/system.component';
+import { ChangedPasswordComponent } from './system/changed-password/changed-password.component';
+import { ProfileComponent } from './system/profile/profile.component';
+import { RecruitmentComponent } from './recruitment/recruitment.component';
+import { ManpowerRequestComponent } from './recruitment/manpower-request/manpower-request.component';
+import { ManpowerRequestManagerComponent } from './recruitment/manpower-request-manager/manpower-request-manager.component';
+import { ApplicantApprovalComponent } from './recruitment/applicant-approval/applicant-approval.component';
+import { ViewVacancyComponent } from './view-vacancy/view-vacancy.component';
+import { ViewReviewApplicantComponent } from './view-review-applicant/view-review-applicant.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +38,16 @@ import { DetailCarerComponent } from './carrer/detail-carrer/detail-carer.compon
     ViewApplicantComponent,
     CarrerComponent,
     ReviewApplicantComponent,
-    DetailCarerComponent
+    DetailCarerComponent,
+    SystemComponent,
+    ChangedPasswordComponent,
+    ProfileComponent,
+    RecruitmentComponent,
+    ManpowerRequestComponent,
+    ManpowerRequestManagerComponent,
+    ApplicantApprovalComponent,
+    ViewVacancyComponent,
+    ViewReviewApplicantComponent
   ],
   imports: [
     BrowserModule,

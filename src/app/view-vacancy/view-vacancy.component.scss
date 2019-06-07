@@ -1,0 +1,107 @@
+.viewVacancy {
+  margin: 0 30px 0 30px;
+
+  .viewVacancyTop {
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin: 0 300px 0 300px;
+    font-size: 14px;
+
+    h2 {
+      position: relative;
+    }
+
+    th, td {
+      text-align: left;
+      padding: 16px;
+      border: 0px solid black;
+      border-collapse: collapse;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2
+    }
+
+    .tableViewVacancyTop {
+      border-collapse: collapse;
+      border-spacing: 0;
+      width: 100%;
+      border: 1px solid #ddd;
+    }
+
+    input[type=text], select {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    input[type=date], [type=time], select {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    .btnAll {
+      text-align: center;
+
+      .btnAdd, .btnSearch, .btnEdit, .btnDelete, .btnExport {
+        border: none;
+        color: white;
+        padding: 14px 28px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #4CAF50;
+        border-radius: 12px;
+        margin: 10px 10px 10px 10px;
+      }
+    }
+  }
+
+  .tableViewVacancyBot {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+
+    th, td {
+      text-align: left;
+      padding: 16px;
+      border: 0px solid black;
+      border-collapse: collapse;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2
+    }
+
+  }
+  .phan-trang {
+    margin: 15px 0 10px 0;
+    text-align: right;
+  }
+
+  .phan-trang a {
+    color: black;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+    border: 1px solid #ddd;
+  }
+
+  .phan-trang a.active {
+    background-color: #4CAF50;
+    color: white;
+    border: 1px solid #4CAF50;
+  }
+
+
+  .phan-trang a:hover:not(.active) {background-color: #ddd;}
+}

@@ -28,7 +28,8 @@
   <div class="job" *ngFor="let j of jobs">
     <!--<h3 class="title">{{j.idVacancy}}</h3>-->
     <h3 class="title" routerLink="/carrer/{{j.idVacancy}}">{{j.position}} </h3>
-    <p class="des"><i class="fa fa-clock-o"></i>{{j.dateClose}} </p>
+    <p class="des"><i class="fa fa-clock-o"> From </i>{{j.dateCreated}} </p>
+    <p class="des"><i class="fa fa-clock-o"> To </i>{{j.dateClose}} </p>
     <p class="des"><i class="fa fa-user"></i>{{j.numberOpening}} persons</p>
   </div>
 
