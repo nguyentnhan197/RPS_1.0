@@ -22,7 +22,7 @@ export const viewReviewApplicant = [
  suitableLocation: 'Font-End',
   danhGiaChuyenNganh: '7/10',
   danhGiaUngXu: '7/10',
-  experince: 'Fresher',
+    experience: 'Fresher',
   trinhDoNgonNgu: 'Java, Angular',
   result: 'pass',
   ghiChu: 'Lương 1000$'
@@ -33,7 +33,7 @@ export const viewReviewApplicant = [
     suitableLocation: 'Back-End',
     danhGiaChuyenNganh: '4/10',
     danhGiaUngXu: '7/10',
-    experince: 'Fresher',
+    experience: 'Fresher',
     trinhDoNgonNgu: 'Java, DataBase',
     result: 'pass',
     ghiChu: 'Lương 1500$'
