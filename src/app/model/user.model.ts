@@ -7,8 +7,8 @@ export class User {
   public email: string;
   public username: string;
   public password: string;
-  public  position: Position;
-  public  department: Department;
+  public  position: string;
+  public  department: string;
   public  avatar: string;
   public  birthday: string;
   public  gender: boolean ;

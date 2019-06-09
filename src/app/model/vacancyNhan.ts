@@ -1,17 +1,14 @@
-import {User} from "./user.model";
-import {Department} from "./department.model";
-import {Position} from "./position.model";
 
-export class Vacancy  {
+export class VacancyNhan  {
   public  idVacancy: number;
   public  vacancyNumber:string;
   public  dateCreated:string;
-  public  ownedBy: User;
+  public  ownedBy: any;
   public  state:string;
-  public  position: Position;
+  public  position: any;
   public  description: string;
   public  numberOpening:number;
-  public  department:Department;
+  public  department:any;
   public  dateClose: any;
   public requirement: string;
   public offer:string;

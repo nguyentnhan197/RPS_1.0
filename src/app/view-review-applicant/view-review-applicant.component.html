@@ -1,0 +1,69 @@
+<div class="viewReviewApplicant">
+  <div class="viewReviewApplicantTop">
+    <h2>View Review Applicant</h2>
+    <table class="tableViewReviewApplicantTop">
+      <tr>
+        <td>
+          <label class="applicantNumber">Applicant number</label>
+          <input type="text" id="applicantNumber" name="applicantNumber">
+        </td>
+        <td>
+          <label for="titleVacancy">Title Vacancy</label>
+          <input type="text" id="titleVacancy" name="titleVacancy">
+        </td>
+        <td>
+          <label for="result">Result</label> <select id="result" name="result">
+          <option value="pass">Pass</option>
+          <option value="fail">Fail</option>
+          <option value="consider">Consider</option>
+        </select>
+        </td>
+      </tr>
+
+    </table>
+    <div class="btnAll">
+      <button class="btnSearch"><i class="fa fa-search"></i> Search</button>
+      <button class="btnAdd"><i class="fa fa-plus"></i> Add new</button>
+      <button class="btnExport">Date export</button>
+    </div>
+  </div>
+  <div class="viewReviewApplicantBot">
+    <table class="tableViewReviewApplicantBot">
+      <tr>
+        <th>applicantNumber</th>
+        <th>titleVacancy</th>
+        <th>suitableLocation</th>
+        <th>danhGiaChuyenNganh</th>
+        <th>danhGiaUngXu</th>
+        <th>experince</th>
+        <th>trinhDoNgonNgu</th>
+        <th>result</th>
+        <th>ghiChu</th>
+        <th></th>
+      </tr>
+
+      <ng-container *ngFor="let r of viewReviewApplicant">
+        <tr>
+          <td>{{r.applicantNumber}}</td>
+          <td>{{r.titleVacancy}}</td>
+          <td>{{r.suitableLocation}}</td>
+          <td>{{r.danhGiaChuyenNganh}}</td>
+          <td>{{r.danhGiaUngXu}}</td>
+          <td>{{r.experience}}</td>
+          <td>{{r.trinhDoNgonNgu}}</td>
+          <td>{{r.result}}</td>
+          <td>{{r.ghiChu}}</td>
+          <td>
+            <button class="btnEdit"><i class="fa fa-edit"></i> </button>
+            <button class="btnDelete"><i class="fa fa-close"></i> </button>
+          </td>
+        </tr>
+      </ng-container>
+
+    </table>
+
+  </div>
+
+
+
+</div>

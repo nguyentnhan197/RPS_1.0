@@ -1,0 +1,85 @@
+<div class="mrManager">
+
+  <div class="mrManagerTop">
+    <h2>Manpower request list by manager</h2>
+    <table class="tableMrManagerTop">
+      <tr>
+        <td><label for="id_request">ID requiet</label>
+          <input type="text" id="id_request" name="id_request">
+          <br>
+          <label for="vacancyName">Vacancy name</label>
+          <input type="text" id="vacancyName" name="vacancyName">
+          <br>
+
+          <label for="requester">Requester</label>
+          <input type="text" id="requester" name="requester">
+        </td>
+
+        <td>
+
+          <label for="quatity">Quatity</label>
+          <input type="text" id="quatity" name="quatity">
+          <br>
+          <label >Experience</label> <select id="experience:" name="experience:">
+            <option value="fresher">Fresher</option>
+            <option value="internship">Internship</option>
+            <option value="senior">Senior</option>
+          </select>
+        </td>
+        <td>
+          <label for="fromDate">From date</label>
+          <input type="date" id="fromDate" name="fromDate">
+          <br>
+          <label for="toDate">To date</label>
+          <input type="date" id="toDate" name="toDate">
+          <br>
+        </td>
+
+      </tr>
+    </table>
+    <div class= "btnAll">
+      <button class="btnSearch"><i class="fa fa-search"></i> Search</button>
+      <button class="btnAdd"><i class="fa fa-plus"></i> Add new</button>
+      <button class="btnExport">Date export</button></div>
+
+    <!--    <input type="btnSearch" value="Search">-->
+    <!--    <input type="btnAdd" value="Add new">-->
+    <!--    <input type="btnSubmit" value="Submit">-->
+    <!--    <input type="btnDelete" value="Delete">-->
+    <!--    <input type="btnExport" value="Date export">-->
+  </div>
+  <div class="mrManagerBot">
+    <table class="tableMrManagerBot">
+      <tr>
+        <th>Id Requiet</th>
+        <th>Position</th>
+        <th>Requieter</th>
+        <th>Quatity</th>
+        <th>Experince</th>
+        <th>From Date</th>
+        <th>To Date</th>
+        <th></th>
+      </tr>
+
+      <ng-container *ngFor="let v of viewMRManages">
+        <tr>
+          <td>{{v.idRequiet}}</td>
+          <td>{{v.position}}</td>
+          <td>{{v.requieter}}</td>
+          <td>{{v.quatity}}</td>
+          <td>{{v.experince}}</td>
+          <td>{{v.fromDate}}</td>
+          <td>{{v.toDate}}</td>
+          <td>
+            <button class="btnEdit"><i class="fa fa-edit"></i></button>
+            <button class="btnDelete"><i class="fa fa-close"></i></button>
+          </td>
+        </tr>
+      </ng-container>
+    </table>
+
+
+
+  </div>
+
+</div>

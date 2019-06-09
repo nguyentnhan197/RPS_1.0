@@ -1,87 +1,89 @@
-.view-applicant{
+.viewApplicant {
   margin: 0 30px 0 30px;
-  //border: 1px solid black;
 
-  h2{
-    position: relative;
+  .viewApplicantTop {
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin: 0 300px 0 300px;
+    font-size: 14px;
+
+    h2 {
+      position: relative;
+    }
+
+    .tableViewApplicantTop {
+      border-collapse: collapse;
+      border-spacing: 0;
+      width: 100%;
+
+
+      .th, .td {
+        text-align: left;
+        padding: 16px;
+        border: 0px solid black;
+        border-collapse: collapse;
+      }
+
+      .tr:nth-child(even) {
+        background-color: #f2f2f2
+      }
+
+      input[type=text], select {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+
+      input[type=date], [type=time], select {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+
+    }
+
+    .btnAll {
+      text-align: center;
+
+      .btnSearch, .btnCreateApp, .btnExport {
+        border: none;
+        color: white;
+        padding: 14px 28px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #4CAF50;
+        border-radius: 12px;
+        margin: 10px 10px 10px 10px;
+      }
+    }
   }
-  table {
+
+  .tableViewApplicantBot {
     border-collapse: collapse;
     border-spacing: 0;
     width: 100%;
     border: 1px solid #ddd;
-  }
 
-  th, td {
-    text-align: left;
-    padding: 16px;
-    border: 0px solid black;
-    border-collapse: collapse;
-  }
+    th, td {
+      text-align: left;
+      padding: 16px;
+      border: 0px solid black;
+      border-collapse: collapse;
+    }
 
-  tr:nth-child(even) {
-    background-color: #f2f2f2
-  }
-
-  .btnCreateApp, .btnExport {
-    border: none;
-    color: white;
-    padding: 14px 28px;
-    font-size: 16px;
-    cursor: pointer;
-    background-color: #4CAF50;
-    border-radius: 12px;
-    float: right;
-    margin: 10px 0 10px 0;
-  }
-  .btnCreateApp:hover, .btnExport:hover {
-    background-color: #45a049;
-  }
-
-
-
-  .btnDelete {
-    background-color: #FF0000;
-    border: none;
-    color: white;
-    padding: 8px 8px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 10%;
+    tr:nth-child(even) {
+      background-color: #f2f2f2
+    }
 
   }
-  .btnEdit {
-    background-color: DodgerBlue;
-    border: none;
-    color: white;
-    padding: 8px 8px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 10%;
-
-  }
-  .btnDelete:hover {
-    background-color: #FF0033;
-  }
-  .btnEdit:hover {
-    background-color: #0033FF;
-  }
-
-  //input[type=search] {
-  //  width: 130px;
-  //  box-sizing: border-box;
-  //  border: 2px solid #ccc;
-  //  border-radius: 10px;
-  //  font-size: 16px;
-  //  background-color: white;
-  //  background-image: url("../../assets/images/Search.png" );
-  //  background-position: 10px 10px;
-  //  background-size: 50px;
-  //  background-repeat: no-repeat;
-  //  padding: 12px 20px 12px 40px;
-  //  -webkit-transition: width 0.4s ease-in-out;
-  //  transition: width 0.4s ease-in-out;
-  //}
 
   .phan-trang {
     margin: 15px 0 10px 0;
@@ -103,53 +105,40 @@
   }
 
 
-  .phan-trang a:hover:not(.active) {background-color: #ddd;}
-}
+  .phan-trang a:hover:not(.active) {
+    background-color: #ddd;
+  }
 
-//search
-.search{
-  font-family: Arial, Helvetica, sans-serif;
-  position: relative;
-  width: 100%;
-}
-tableSearch {
-  border-collapse: collapse;
-  border-spacing: 0;
-  width: 100%;
-  border: 1px solid #ddd;
-}
 
-input[type=text], select {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
-input[type=date],[type=time], select {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
+  .btnEdit {
+    background-color: DodgerBlue;
+    border: none;
+    color: white;
+    padding: 8px 8px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10%;
 
-.btnSearch {
-  background-color: #4CAF50;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  float: right;
-}
+  }
 
-.btnSearch:hover {
-  background-color: #45a049;
+  .btnEdit:hover {
+    background-color: #0033FF;
+  }
+
+  .btnDelete {
+    background-color: #FF0000;
+    border: none;
+    color: white;
+    padding: 8px 8px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10%;
+    margin: 1px 10px 1px;
+
+  }
+
+  .btnDelete:hover {
+    background-color: #FF0033;
+  }
 }
 

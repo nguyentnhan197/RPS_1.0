@@ -4,10 +4,6 @@
   <form action="">
 <input type="hidden"  name="id"/>
 
-    <label for="dateCreateVancacy">Date creation of the vacancy</label>
-    <input type="date"  id="dateCreateVancacy" >
-
-
     <label for="ownedBy">Owned by</label>
     <input type="text"  id="ownedBy"   placeholder="Owned by">
 
@@ -20,9 +16,6 @@
     <label for="title">Title</label> <select  id="title" >
     <option  *ngFor="let position of positionList" [value]="position.positionName">{{position.positionName}}</option>
    </select>
-
-
-
 
 
     <label for="numberOpening">Number opening</label>

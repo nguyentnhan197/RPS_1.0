@@ -1,20 +1,40 @@
 <div class="navbar">
-  <a href="/view-applicant">View Applicants</a>
-  <a href="/carrer">Carrer</a>
+  <a routerLink="/view-applicant">View Applicants</a>
+  <a routerLink="/view-vacancy">View Vacancy</a>
+  <a routerLink="/carrer">Carrer</a>
 
   <div class="dropdownInterviewer">
     <button class="dropbtnInterviewer">Interviewer Active</button>
     <div class="dropdownInterviewer-content">
-      <a href="/interviewer/review-applicant">Review applicant</a>
+      <a routerLink="/interviewer/review-applicant">Review applicant</a>
+      <a routerLink="/interviewer/view-review-applicant">View review applicant</a>
     </div>
   </div>
 
   <div class="dropdownHR">
     <button class="dropbtnHR">HR Active</button>
     <div class="dropdownHR-content">
-      <a href="/hr/create-vacancy">Create vacancy</a>
-      <a href="/hr/create-applicant">Create applicant</a>
+      <a routerLink="/hr/create-vacancy">Create vacancy</a>
+      <a routerLink="/hr/create-applicant">Create applicant</a>
     </div>
   </div>
+
+  <div class="dropdownSystem">
+    <button class="dropbtnSystem">System</button>
+    <div class="dropdownSystem-content">
+      <a routerLink="system/changed-password">Password change</a>
+      <a routerLink="system/profile">Profile</a>
+    </div>
+  </div>
+
+  <div class="dropdownRecruitment">
+    <button class="dropbtnRecruitment">Recruitment</button>
+    <div class="dropdownRecruitment-content">
+      <a routerLink="recruitment/manpower-request">Manpower request</a>
+      <a routerLink="recruitment/manpower-request-manager">Manpower request list by manager</a>
+      <a routerLink="recruitment/applicant-approval">Applicant approval</a>
+    </div>
+  </div>
+
 </div>
 

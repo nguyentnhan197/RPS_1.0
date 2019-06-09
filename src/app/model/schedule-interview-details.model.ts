@@ -1,6 +1,6 @@
 export class ScheduleInterviewDetails{
   idSchedule:number;
-  dateOfTheScheduleInterview: Object;
+  dateOfTheScheduleInterview: any;
   startTime: any;
   endTime: any;
 

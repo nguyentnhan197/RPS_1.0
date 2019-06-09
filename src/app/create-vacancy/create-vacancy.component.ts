@@ -31,15 +31,15 @@ export class CreateVacancyComponent implements OnInit {
   }
 
   onsubmit(){this.submitted=true;}
-  createVacancy(){
-
-
-    this.carrerService.createVacancy(this.vacancy).subscribe(response=>{this.getAllVacancy()});
-  }
- getAllVacancy(){
-    this.carrerService.getAllVacancy().subscribe((data:Vacancy[])=>{this.varcancys=data});
-
-  }
+ //  createVacancy(){
+ //
+ //
+ //    this.carrerService.createVacancy(this.vacancy).subscribe(response=>{this.getAllVacancy()});
+ //  }
+ // getAllVacancy(){
+ //    this.carrerService.getAllVacancy().subscribe((data:Vacancy[])=>{this.varcancys=data});
+ //
+ //  }
   getPositionLst(){
     this.positionService.getAllPosition().subscribe((dataDB:Position[])=>{this.positionList=dataDB});
   }
