@@ -17,6 +17,7 @@ import {HttpClientModule} from "@angular/common/http";
 import {FormsModule} from "@angular/forms";
 import {PositionService} from "./service/position.service";
 import { DetailCarerComponent } from './carrer/detail-carrer/detail-carer.component';
+
 import {DepartmentService} from "./service/department.service";
 // import { SystemComponent } from './system/system.component';
 import { ChangedPasswordComponent } from './system/changed-password/changed-password.component';
