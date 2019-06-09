@@ -13,13 +13,7 @@ export class Vacancy  {
    public  dateClose: any;
   public requirement: string;
 
-  //
-  // public vacancyName: string;
-  public experience: string;
-  public language: string;
-  public gender: string;
-  public degree: string;
-  public typeOfStaff: string;
+
   //nhan
   public experience: string;
   public language: string;

@@ -6,7 +6,7 @@ import {forEach} from "@angular/router/src/utils/collection";
 import {map} from 'rxjs/operators';
 // import {viewVacancy} from "../carrer/carrer.component";
 import {VacancyNhan} from "../model/vacancyNhan";
-import {viewVacancy} from "../view-vacancy/view-vacancy.component";
+// import {viewVacancy} from "../view-vacancy/view-vacancy.component";
 
 // import {vacancies} from "../carrer/carrer.component";
 
@@ -33,12 +33,12 @@ export class CarrerService {
   // }
 
   // getAllVacancy(){
-  //   return this.httpClient.get('http://localhost:8080/RecruitmentProcessSystem/')
+  //   return this.httpClient.get('http://localhost:8080/RecruitmennpmtProcessSystem/')
   // }
-  getVacancyById(id): Observable<VacancyNhan> {
-    return of(viewVacancy.find(vacancy => vacancy.idVacancy == id));
-
-  }
+  // getVacancyById(id): Observable<VacancyNhan> {
+  //   return of(viewVacancy.find(vacancy => vacancy.idVacancy == id));
+  //
+  // }
   // getVacancyById(idVacancy: string): Observable<Vacancy>{
  //    let httpHeaders= new HttpHeaders().set('Accept','application/json');
  //

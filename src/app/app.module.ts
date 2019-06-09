@@ -27,6 +27,7 @@ import { ApplicantApprovalComponent } from './recruitment/applicant-approval/app
 import { ManpowerRequestManagerComponent } from './recruitment/manpower-request-manager/manpower-request-manager.component';
 import { ViewReviewApplicantComponent } from './view-review-applicant/view-review-applicant.component';
 import {ViewVacancyComponent} from "./view-vacancy/view-vacancy.component";
+import {ManpowerRequestComponent} from "./recruitment/manpower-request/manpower-request.component";
 // import { ViewVacancyComponent } from './view-vacancy/view-vacancy.component';
 
 @NgModule({
@@ -49,6 +50,7 @@ import {ViewVacancyComponent} from "./view-vacancy/view-vacancy.component";
     RecruitmentComponent,
     ApplicantApprovalComponent,
     ManpowerRequestManagerComponent,
+    ManpowerRequestComponent,
     ViewReviewApplicantComponent,
     ViewVacancyComponent,
   ],

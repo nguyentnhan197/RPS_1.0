@@ -19,7 +19,7 @@ export class DetailCarerComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getVacancyById();
+    // this.getVacancyById();
   //   this.route.paramMap.pipe(
   //     switchMap((paramssss:ParamMap)=>this.carrerService.getVacancyById(paramssss.get('id')))
   //   ).subscribe(va=>this.vacancy=va);
@@ -34,12 +34,12 @@ export class DetailCarerComponent implements OnInit {
   goBack(){
     this.location.back();
   }
-  getVacancyById(){
-this.route.paramMap.pipe(
-  switchMap((paramssss:ParamMap)=>this.carrerService.getVacancyById(paramssss.get('id')))
-);
+//   getVacancyById(){
+// this.route.paramMap.pipe(
+//   switchMap((paramssss:ParamMap)=>this.carrerService.getVacancyById(paramssss.get('id')))
+// );
 
 
-  }
+  // }
 
 }
