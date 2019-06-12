@@ -1,16 +1,21 @@
 .carrer{
-  margin: 0 30px 0 30px;
+  margin: 30px;
   //search
   .search{
     font-family: Arial, Helvetica, sans-serif;
     position: relative;
     width: 100%;
+    border: 1px solid #ddd;
+    h3{
+      margin-left: 10px;
+      margin-bottom: 5px;
+      color: #503030;
+    }
   }
   .tableSearch {
     border-collapse: collapse;
     border-spacing: 0;
     width: 100%;
-    border: 1px solid #ddd;
   }
   th, td {
     text-align: left;
