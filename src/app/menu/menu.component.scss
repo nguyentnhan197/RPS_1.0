@@ -1,6 +1,13 @@
 .navbar {
-  overflow: hidden;
+  //overflow: hidden;
   background-color: #6D6363;
+}
+.dropdown-menu{
+  background: #6D6363;
+  .drop{
+    color: white;
+    background: #6D6363;
+  }
 }
 
 .navbar a {

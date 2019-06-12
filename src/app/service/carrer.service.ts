@@ -8,15 +8,15 @@ import {map} from 'rxjs/operators';
 import {VacancyNhan} from "../model/vacancyNhan";
 // import {viewVacancy} from "../view-vacancy/view-vacancy.component";
 
-// import {vacancies} from "../carrer/carrer.component";
+import {vacancies} from "../carrer/carrer.component";
 
 @Injectable()
 export class CarrerService {
   // apiRoot: string='http://localhost:8080/RecruitmentProcessSystem/carrer/'
 
-  // constructor(
+  constructor(
     // private httpClient: HttpClient,
-  // ) {
+  ) {}
   // }
 
   // getAllVacancy() {
@@ -35,10 +35,10 @@ export class CarrerService {
   // getAllVacancy(){
   //   return this.httpClient.get('http://localhost:8080/RecruitmennpmtProcessSystem/')
   // }
-  // getVacancyById(id): Observable<VacancyNhan> {
-  //   return of(viewVacancy.find(vacancy => vacancy.idVacancy == id));
-  //
-  // }
+  getVacancyById(id): Observable<VacancyNhan> {
+    return of(vacancies.find(vacancy => vacancy.idVacancy == id));
+
+  }
   // getVacancyById(idVacancy: string): Observable<Vacancy>{
  //    let httpHeaders= new HttpHeaders().set('Accept','application/json');
  //

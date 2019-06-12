@@ -1,13 +1,51 @@
 <h2>Login</h2>
 
-<form class="form-login" action="">
-  <label for="username">User Name:</label>
-  <input type="username" id="username" placeholder="Enter username" name="username">
-  <label for="pwd">Password:</label>
-  <input type="password" id="pwd" placeholder="Enter password" name="pswd">
-  <label>
-    <input type="checkbox" name="remember"> Remember me
-  </label>
-  <button type="submit">Submit</button>
-  <input type = "hidden" name="${_csrf.parameterName}}" value="${_csrf.token}">
+<!--<form class="form-login" action="">-->
+  <!--<label>User Name:</label>-->
+  <!--<input type="text" placeholder="Enter username" name="username" #username="ngModel" required minlength="4">-->
+  <!--<div *ngIf="username.invalid && (username.dirty || username.touched)" class="alert alert-danger">-->
+    <!--<div *ngIf="username.errors.required"> Name is required.</div>-->
+    <!--<div *ngIf="username.errors.minlength"> Name must be at least 4 characters long.</div>-->
+  <!--</div>-->
+  <!--<label for="pwd">Password:</label>-->
+  <!--<input type="password" id="pwd" placeholder="Enter password" name="pswd" #password="ngModel" required minlength="4">-->
+  <!--<div *ngIf="username.invalid && (username.dirty || username.touched)" class="alert alert-danger">-->
+    <!--<div *ngIf="username.errors.required"> Name is required.</div>-->
+    <!--<div *ngIf="username.errors.minlength"> Name must be at least 4 characters long.</div>-->
+  <!--</div>-->
+  <!--<label>-->
+    <!--<input type="checkbox" name="remember"> Remember me-->
+  <!--</label>-->
+  <!--<button type="submit">Submit</button>-->
+  <!--<input type = "hidden" name="${_csrf.parameterName}}" value="${_csrf.token}">-->
+<!--</form>-->
+
+<form>
+  <div class="form-group">
+    <label for="exampleInputEmail1">User Name:</label>
+    <input type="email" class="form-control" id="exampleInputEmail1"
+           aria-describedby="emailHelp" placeholder="Enter email"
+           #username="ngModel" [(ngModel)]="user.username"  [ngModelOptions]="{standalone: true}"
+           required minlength="4" email="true">
+    <div *ngIf="username.invalid && (username.dirty || username.touched)" class="alert alert-danger">
+      <div *ngIf="username.errors.required"> Name is required.</div>
+      <div *ngIf="username.errors.minlength"> Name must be at least 4 characters long.</div>
+      <div *ngIf="username.errors.email"> Please using email</div>
+    </div>
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"
+           #password="ngModel" required minlength="4" [(ngModel)]="user.pass"  [ngModelOptions]="{standalone: true}">
+    <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert alert-danger">
+      <div *ngIf="password.errors.required"> Name is required.</div>
+      <div *ngIf="password.errors.minlength"> Name must be at least 4 characters long.</div>
+    </div>
+  </div>
+  <div class="form-group form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
 </form>

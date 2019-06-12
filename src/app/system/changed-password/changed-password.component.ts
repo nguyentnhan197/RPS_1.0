@@ -6,10 +6,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./changed-password.component.scss']
 })
 export class ChangedPasswordComponent implements OnInit {
-
+  changePass: changePass = new changePass() ;
   constructor() { }
 
   ngOnInit() {
+    console.log(this.changePass);
+    if(this.changePass.oldPass.length < 3){
+      console.log("aaaaaaaaaa");
+    }
   }
 
 }
+export class changePass {
+  oldPass:string = '';
+  newPass:string = '';
+  confirmPass:string = '';
+}
+

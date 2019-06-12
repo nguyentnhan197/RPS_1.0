@@ -12,11 +12,10 @@ import {VacancyNhan} from "../model/vacancyNhan";
   styleUrls: ['./carrer.component.scss']
 })
 export class CarrerComponent implements OnInit {
-  jobs: VacancyNhan[] = viewVacancy;
+  jobs: VacancyNhan[] = vacancies;
 
 
-  constructor(private carrerService: CarrerService,
-              private positionService: PositionService) {
+  constructor() {
   }
 
   ngOnInit() {
@@ -30,7 +29,7 @@ export class CarrerComponent implements OnInit {
 }
 
 
-export const viewVacancy = [{
+export const vacancies = [{
   idVacancy: 1,
   vacancyNumber: '123',
   dateCreated: '20/3/2018',
