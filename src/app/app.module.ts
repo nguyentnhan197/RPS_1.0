@@ -14,7 +14,21 @@ import { AppRoutingModule } from './app-routing.module';
 import { ReviewApplicantComponent } from './review-applicant/review-applicant.component';
 import {CarrerService} from "./service/carrer.service";
 import {HttpClientModule} from "@angular/common/http";
+import {FormsModule} from "@angular/forms";
+import {PositionService} from "./service/position.service";
 import { DetailCarerComponent } from './carrer/detail-carrer/detail-carer.component';
+
+import {DepartmentService} from "./service/department.service";
+// import { SystemComponent } from './system/system.component';
+import { ChangedPasswordComponent } from './system/changed-password/changed-password.component';
+import { ProfileComponent } from './system/profile/profile.component';
+import { RecruitmentComponent } from './recruitment/recruitment.component';
+import { ApplicantApprovalComponent } from './recruitment/applicant-approval/applicant-approval.component';
+import { ManpowerRequestManagerComponent } from './recruitment/manpower-request-manager/manpower-request-manager.component';
+import { ViewReviewApplicantComponent } from './view-review-applicant/view-review-applicant.component';
+import {ViewVacancyComponent} from "./view-vacancy/view-vacancy.component";
+import {ManpowerRequestComponent} from "./recruitment/manpower-request/manpower-request.component";
+// import { ViewVacancyComponent } from './view-vacancy/view-vacancy.component';
 
 @NgModule({
   declarations: [
@@ -29,14 +43,26 @@ import { DetailCarerComponent } from './carrer/detail-carrer/detail-carer.compon
     ViewApplicantComponent,
     CarrerComponent,
     ReviewApplicantComponent,
-    DetailCarerComponent
+    DetailCarerComponent,
+    // SystemComponent,
+    ChangedPasswordComponent,
+    ProfileComponent,
+    RecruitmentComponent,
+    ApplicantApprovalComponent,
+    ManpowerRequestManagerComponent,
+    ManpowerRequestComponent,
+    ViewReviewApplicantComponent,
+    ViewVacancyComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [CarrerService,
+    PositionService,
+    DepartmentService
     ],
   bootstrap: [AppComponent]
 })

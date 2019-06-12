@@ -1,14 +1,24 @@
+import {User} from "./user.model";
+import {Department} from "./department.model";
+import {Position} from "./position.model";
+
 export class Vacancy  {
   public  idVacancy: number;
-  public  vacancyNumber:string;
-  public  dateCreated:string;
-  public  user: any;
-  public  state:string;
-  public  position: any;
+ 
+
+  public  ownedBy: User;
+
+  public  position: Position;
   public  description: string;
-  public  numberOpening:number;
-  public  department:any;
-  public  dateClose: string;
+   public  dateClose: any;
   public requirement: string;
-  public offer:string;
+
+
+  //nhan
+  public experience: string;
+  public language: string;
+  public gender: string;
+  public degree: string;
+  public typeOfStaff: string;
+
 }

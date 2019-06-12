@@ -18,15 +18,13 @@
           <label for="numberOpening">Number Opening</label>
           <input type="text" id="numberOpening" name="numberOpening" placeholder="Enter number person">
         </td>
-        <td><button class="btnSearch">Search</button></td>
       </tr>
     </table>
-
   </div>
 
   <div class="job" *ngFor="let j of jobs">
-    <h3 class="title" routerLink="/carrer/{{j.idVacancy}}">{{j.position}} </h3>
-    <p class="des"><i class="fa fa-clock-o"></i>{{j.dateClose}} </p>
+    <h3 class="title" routerLink="/carrer/{{j.idVacancy}}" >{{j.position}} </h3>
+  
     <p class="des"><i class="fa fa-user"></i>{{j.numberOpening}} persons</p>
   </div>
 

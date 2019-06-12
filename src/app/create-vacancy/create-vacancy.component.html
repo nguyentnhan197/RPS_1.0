@@ -2,43 +2,66 @@
 
 <div class="container">
   <form action="">
-
-
-    <label for="dateVancacy">Date creation of the vacancy</label>
-    <input type="date" id="dateVancacy" name="dateVancacy">
-
+<input type="hidden"  name="id"/>
 
     <label for="ownedBy">Owned by</label>
-    <input type="text" id="ownedBy" name="ownedBy" placeholder="Owned by">
+    <input type="text"  id="ownedBy"   placeholder="Owned by">
 
 
-    <label for="statusVacancy">Status of the Vacancy</label> <select id="statusVacancy" name="statusVacancy">
-    <option value="open">Open</option>
-    <option value="close">Close</option>
-    <option value="suspended">Suspended</option></select>
+    <label for="statusVacancy">Status of the Vacancy</label> <select  id="statusVacancy" >
+    <option  value="open">Open</option>
+    <option  value="close">Close</option>
+    <option  value="suspended">Suspended</option></select>
 
-    <label for="title">Title</label>
-    <input type="text" id="title"name="title" placeholder="Title">
+    <label for="title">Title</label> <select  id="title" >
+    <option  *ngFor="let position of positionList" [value]="position.positionName">{{position.positionName}}</option>
+   </select>
 
-    <label for="exp">Experience:</label> <select id="experience:" name="experience:">
+    <label >Experience</label> <select id="experience:" name="experience:">
     <option value="fresher">Fresher</option>
     <option value="internship">Internship</option>
     <option value="senior">Senior</option> </select>
 
-
     <label for="quatity">Quatity</label>
     <input type="text" id="quatity" name="quatity" placeholder="Quatity">
 
-    <label for="Department">Department</label>
-    <input type="text" id="department" name="department" placeholder="Department">
+
+    <label for="numberOpening">Number opening</label>
+
+    <input type="text"  id="numberOpening" name="quatity" placeholder="Quatity">
+
+    <label for="department">Department</label>
+    <select  id="department" >
+      <option  *ngFor="let department of departmentList" [value]="department.departmentName">{{department.departmentName}}</option>
+    </select>
 
 
     <label for="dateGetsClosed">Date gets closed</label>
-    <input type="date" id="dateGetsClosed" name="dateGetsClosed">
+    <input type="date"  id="dateGetsClosed" name="dateGetsClosed">
 
     <label for="detailedDescription">Detailed description</label>
     <input type="text" id="detailedDescription" name="detailedDescription" placeholder="Detailed description">
 
+    <label >Gender</label>
+    <br>
+    <label class="containerRadioButton">Male
+      <input type="radio" checked="checked" name="radio" value="Male">
+      <span class="checkmark"></span>
+    </label>
+    <label class="containerRadioButton">Female
+      <input type="radio" name="radio" value="Female">
+      <span class="checkmark"></span>
+    </label>
+    <br>
+
+    <label for="degreeCertificate">Degree/Certificate</label>
+    <input type="text" id="degreeCertificate" name="degreeCertificate" placeholder="Degree/Certificate">
+
+    <label >Type Of Staff:</label> <select id="typeOpStaff:" name="typeOpStaff:">
+    <option value="partTime">Part time</option>
+    <option value="fullTime">Full Time</option>
+    <option value="partTime">Freelance</option>
+    <option value="partTime">Intership</option></select>
 
     <input type="submit" value="Save">
   </form>

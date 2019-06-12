@@ -1,8 +1,8 @@
 export class DetailCarrer {
   title: string;
   numberOpening: number;
-  expirationDate: any;
+  expirationDate: string;
   description: string;
   requirement: string;
-  offer:string;
+  offer: string;
 }

@@ -1,0 +1,93 @@
+<div class="viewVacancy">
+  <div class="viewVacancyTop">
+    <h2>View Vacancy</h2>
+    <table class="tableViewVacancyTop">
+      <tr>
+
+        <td><label for="id_vacancy">ID vacancy</label>
+          <input type="text" id="id_vacancy" name="id_vacancy">
+
+          <label for="ownedBy">Owned By</label>
+          <input type="text" id="ownedBy" name="ownedBy"></td>
+
+        <td><label for="statusVacancy">Status of the Vacancy</label> <select id="statusVacancy" name="statusVacancy">
+          <option value="open">Open</option>
+          <option value="close">Close</option>
+          <option value="suspended">Suspended</option>
+        </select>
+
+          <label for="title">Title</label>
+          <input type="text" id="title" name="title" placeholder="Title"></td>
+
+        <td><label for="dateGetsClosed">Date gets closed</label>
+          <input type="date" id="dateGetsClosed" name="dateGetsClosed">
+
+          <label for="typeOfStaff">Type Of Staff:</label> <select id="typeOfStaff" name="typeOfStaff:">
+            <option value="partTime">Part time</option>
+            <option value="fullTime">Full Time</option>
+            <option value="partTime">Freelance</option>
+            <option value="partTime">Intership</option>
+          </select></td>
+      </tr>
+    </table>
+    <div class="btnAll">
+      <button class="btnSearch"><i class="fa fa-search"></i> Search</button>
+      <button class="btnAdd"><i class="fa fa-plus"></i> Create Vacancy</button>
+      <button class="btnExport">Date export</button>
+    </div>
+  </div>
+  <div class="viewVacancyBot">
+    <table class="tableViewVacancyBot">
+      <tr>
+        <th>ID Vacancy</th>
+        <th>Date Created</th>
+        <th>Owned By</th>
+        <th>State</th>
+        <th>Position</th>
+        <th>Description</th>
+        <th>Number Opening</th>
+        <th>Department</th>
+        <th>Date Close</th>
+        <th>Requirement</th>
+        <th>Offer</th>
+        <th>Experience</th>
+        <th>Language</th>
+        <th>Type Of Staff</th>
+        <th></th>
+      </tr>
+      <ng-container *ngFor="let v of viewVacancys">
+        <tr>
+          <td>{{v.idVacancy}}</td>
+          <td>{{v.dateCreated}}</td>
+          <td>{{v.ownedBy}}</td>
+          <td>{{v.state}}</td>
+          <td>{{v.position}}</td>
+          <td>{{v.description}}</td>
+          <td>{{v.numberOpening}}</td>
+          <td>{{v.department}}</td>
+          <td>{{v.dateClose}}</td>
+          <td>{{v.requirement}}</td>
+          <td>{{v.offer}}</td>
+          <td>{{v.experience}}</td>
+          <td>{{v.language}}</td>
+          <td>{{v.typeOfStaff}}</td>
+          <td>
+            <button class="btnEdit"><i class="fa fa-edit"></i></button>
+            <button class="btnDelete"><i class="fa fa-close"></i></button>
+          </td>
+
+        </tr>
+
+      </ng-container>
+
+    </table>
+  </div>
+  <div class="phan-trang">
+    <a href="#">&laquo;</a>
+    <a href="#">1</a>
+    <a href="#">2</a>
+    <a href="#">3</a>
+    <a href="#">&raquo;</a>
+  </div>
+
+</div>

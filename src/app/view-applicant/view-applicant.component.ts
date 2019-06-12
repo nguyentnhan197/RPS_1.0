@@ -32,7 +32,7 @@ export class Candicate {
 }
 export const listOfCandidates =[
   {
-    id : '15130190' ,
+    id : '15130147' ,
     name: 'Phuong' ,
     email: '...@gmail.com',
     phone: '093205304',
