@@ -2,56 +2,57 @@
 
   .viewReviewApplicantTop {
     border-collapse: collapse;
-    border-spacing: 0;
-    margin: 0 300px 0 300px;
+    border-spacing: 50px;
+    border-radius: 10px;
     font-size: 14px;
+    border: 2px solid gray;
+    //margin-top: 10px;
+    //margin-bottom: 15px;
+    margin: 10px 150px 10px 150px;
 
-    h2 {
-      position: relative;
-    }
-
-    th, td {
-      text-align: left;
-      padding: 16px;
-      border: 0px solid black;
-      border-collapse: collapse;
-    }
-
-    tr:nth-child(even) {
-      background-color: #f2f2f2
-    }
 
     .tableViewReviewApplicantTop {
       border-collapse: collapse;
       border-spacing: 0;
-      width: 100%;
-      border: 1px solid #ddd;
-    }
+      width: 50%;
+      margin-top: 15px;
 
-    input[type=text], select {
-      width: 100%;
-      padding: 12px 20px;
-      margin: 8px 0;
-      display: block;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      box-sizing: border-box;
-    }
+      .th, .td {
+        text-align: left;
+        padding: 16px;
+        border: 0px solid black;
+        border-collapse: collapse;
+      }
 
-    input[type=date], [type=time], select {
-      width: 100%;
-      padding: 12px 20px;
-      margin: 8px 0;
-      display: block;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      box-sizing: border-box;
+      .tr:nth-child(even) {
+        background-color: #f2f2f2
+      }
+
+      input[type=text], select {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+
+      input[type=date], [type=time], select {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
     }
 
     .btnAll {
       text-align: center;
 
-      .btnAdd, .btnSearch, .btnEdit, .btnDelete, .btnExport {
+      .btnAdd, .btnSearch, .btnExport {
         border: none;
         color: white;
         padding: 14px 28px;
@@ -61,8 +62,13 @@
         border-radius: 12px;
         margin: 10px 10px 10px 10px;
       }
+      .btnAdd:hover, .btnSearch:hover, .btnExport:hover {
+        background-color: #45a049;
+      }
+
     }
   }
+
   .tableViewReviewApplicantBot {
     border-collapse: collapse;
     border-spacing: 0;
@@ -79,6 +85,7 @@
     tr:nth-child(even) {
       background-color: #f2f2f2
     }
+
     .btnEdit {
       background-color: DodgerBlue;
       border: none;
@@ -111,3 +118,4 @@
     }
   }
 }
+

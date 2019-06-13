@@ -4,7 +4,7 @@ import {Observable} from "rxjs";
 import {CarrerService} from "../service/carrer.service";
 import {Vacancy} from "../model/vacancy.model";
 import {PositionService} from "../service/position.service";
-import {VacancyNhan} from "../model/vacancyNhan";
+import {VacancyNhan} from '../model/vacancyNhan';
 
 @Component({
   selector: 'app-carrer',

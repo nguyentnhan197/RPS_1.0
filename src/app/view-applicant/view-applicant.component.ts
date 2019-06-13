@@ -10,7 +10,6 @@ export class ViewApplicantComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    
   }
 
 }
