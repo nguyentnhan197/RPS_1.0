@@ -54,16 +54,17 @@
         <th>Type Of Staff</th>
         <th></th>
       </tr>
-      <ng-container *ngFor="let v of viewVacancys">
+      <ng-container *ngFor="let v of vacancys">
         <tr>
           <td>{{v.idVacancy}}</td>
           <td>{{v.dateCreated}}</td>
+
           <td>{{v.ownedBy}}</td>
           <td>{{v.state}}</td>
-          <td>{{v.position}}</td>
+          <td>{{v.position.positionName}}</td>
           <td>{{v.description}}</td>
           <td>{{v.numberOpening}}</td>
-          <td>{{v.department}}</td>
+          <td>{{v.department.departmentName}}</td>
           <td>{{v.dateClose}}</td>
           <td>{{v.requirement}}</td>
           <td>{{v.offer}}</td>

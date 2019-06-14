@@ -12,17 +12,21 @@ import {vacancies} from "../carrer/carrer.component";
 
 @Injectable()
 export class CarrerService {
-  // apiRoot: string='http://localhost:8080/RecruitmentProcessSystem/carrer/'
+  apiRoot: string='http://localhost:8080/RecruitmentProcessSystem/vacancys'
 
   constructor(
-    // private httpClient: HttpClient,
+    private httpClient: HttpClient,
   ) {}
   // }
 
-  // getAllVacancy() {
-  //   return this.httpClient.get('http://localhost:8080/RecruitmentProcessSystem/');
-  // }
-
+  getAllVacancy() {
+    // const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa('user:secret123') });
+    //
+     return this.httpClient.get(this.apiRoot);
+  }
+  createVacancy(vacancy:VacancyNhan) {
+    return this.httpClient.post<VacancyNhan>(this.apiRoot+'/addVacancy', vacancy);
+  }
   // createVacancy(vacancy: Vacancy) {
   //   let body = JSON.parse(JSON.stringify(vacancy))
   //   if (vacancy.idVacancy) {
@@ -35,10 +39,10 @@ export class CarrerService {
   // getAllVacancy(){
   //   return this.httpClient.get('http://localhost:8080/RecruitmennpmtProcessSystem/')
   // }
-  getVacancyById(id): Observable<VacancyNhan> {
-    return of(vacancies.find(vacancy => vacancy.idVacancy == id));
-
-  }
+  // getVacancyById(id): Observable<VacancyNhan> {
+  //   return of(vacancies.find(vacancy => vacancy.idVacancy == id));
+  //
+  // }
   // getVacancyById(idVacancy: string): Observable<Vacancy>{
  //    let httpHeaders= new HttpHeaders().set('Accept','application/json');
  //

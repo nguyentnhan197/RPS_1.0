@@ -13,9 +13,9 @@ import { CarrerComponent } from './carrer/carrer.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ReviewApplicantComponent } from './review-applicant/review-applicant.component';
 import {CarrerService} from "./service/carrer.service";
-import {HttpClientModule} from '@angular/common/http';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {PositionService} from './service/position.service';
+import {HttpClientModule} from "@angular/common/http";
+import {FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
+import {PositionService} from "./service/position.service";
 import { DetailCarerComponent } from './carrer/detail-carrer/detail-carer.component';
 
 import {DepartmentService} from './service/department.service';
@@ -28,6 +28,8 @@ import { ManpowerRequestManagerComponent } from './recruitment/manpower-request-
 import { ViewReviewApplicantComponent } from './view-review-applicant/view-review-applicant.component';
 import {ViewVacancyComponent} from "./view-vacancy/view-vacancy.component";
 import {ManpowerRequestComponent} from "./recruitment/manpower-request/manpower-request.component";
+import {UserService} from "./service/user.service";
+import {AuthenticationService} from "./service/authentication.service";
 // import { ViewVacancyComponent } from './view-vacancy/view-vacancy.component';
 
 @NgModule({
@@ -54,17 +56,23 @@ import {ManpowerRequestComponent} from "./recruitment/manpower-request/manpower-
     ViewReviewApplicantComponent,
     ViewVacancyComponent,
   ],
+
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    BrowserModule,
+    FormsModule,
     ReactiveFormsModule
   ],
   providers: [CarrerService,
     PositionService,
-    DepartmentService
+    DepartmentService,
+    UserService,
+    AuthenticationService
     ],
   bootstrap: [AppComponent]
+
 })
 export class AppModule { }

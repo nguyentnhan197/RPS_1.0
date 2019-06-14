@@ -19,18 +19,18 @@ export class DetailCarerComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getVacancyById();
+    // this.getVacancyById();
   //   this.route.paramMap.pipe(
   //     switchMap((paramssss:ParamMap)=>this.carrerService.getVacancyById(paramssss.get('id')))
   //   ).subscribe(va=>this.vacancy=va);
   //
   }
   //
-  getVacancyById(){
-    const id = this.route.snapshot.paramMap.get('id');
-    console.log(id);
-    this.carrerService.getVacancyById(id).subscribe(vacan => this.vacancy = vacan);
-  }
+  // getVacancyById(){
+  //   const id = this.route.snapshot.paramMap.get('id');
+  //   console.log(id);
+  //   this.carrerService.getVacancyById(id).subscribe(vacan => this.vacancy = vacan);
+  // }
   goBack(){
     this.location.back();
   }

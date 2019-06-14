@@ -20,12 +20,12 @@
   <!--<input type = "hidden" name="${_csrf.parameterName}}" value="${_csrf.token}">-->
 <!--</form>-->
 
-<form>
+<form  >
   <div class="form-group">
-    <label for="exampleInputEmail1">User Name:</label>
-    <input type="email" class="form-control" id="exampleInputEmail1"
-           aria-describedby="emailHelp" placeholder="Enter email"
-           #username="ngModel" [(ngModel)]="user.username"  [ngModelOptions]="{standalone: true}"
+    <label for="inputUsername">User Name:</label>
+    <input type="text" class="form-control" id="inputUsername"
+            placeholder="Enter username"
+           #username="ngModel" [(ngModel)]="credentials.username" [ngModelOptions]="{standalone: true}"
            required minlength="4" email="true">
     <div *ngIf="username.invalid && (username.dirty || username.touched)" class="alert alert-danger">
       <div *ngIf="username.errors.required"> Name is required.</div>
@@ -37,7 +37,7 @@
   <div class="form-group">
     <label for="exampleInputPassword1">Password</label>
     <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"
-           #password="ngModel" required minlength="4" [(ngModel)]="user.pass"  [ngModelOptions]="{standalone: true}">
+           #password="ngModel" required minlength="4" [(ngModel)]="credentials.password" #password="ngModel"  [ngModelOptions]="{standalone: true}">
     <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert alert-danger">
       <div *ngIf="password.errors.required"> Name is required.</div>
       <div *ngIf="password.errors.minlength"> Name must be at least 4 characters long.</div>
@@ -47,5 +47,6 @@
     <input type="checkbox" class="form-check-input" id="exampleCheck1">
     <label class="form-check-label" for="exampleCheck1">Check me out</label>
   </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" class="btn btn-primary" (click)="checkLogin()">Submit</button>
+  <div *ngIf="error" class="alert alert-error">{{error}}</div>
 </form>
