@@ -13,39 +13,56 @@ export class ReviewApplicantComponent implements OnInit {
   apiURL = '';
   exps: string[] = ['Fresher', 'Internship', 'Senior'];
   results: string[] = ['Pass', 'Fail', 'Consider'];
+  applicantNumber: FormControl;
+   titleVacancy: FormControl;
+   positionRecommend: FormControl;
+   technicalReview: FormControl;
+   behaviorReview: FormControl;
+   experience: FormControl;
+   languageReview: FormControl;
+   result: FormControl;
+   note: FormControl;
 
-  constructor() {
+  constructor(protected httpClient: HttpClient) {
   }
 
   ngOnInit() {
+    this.createFormControls();
     this.createForm();
   }
-
-  // onSubmit() {
-  //   if (this.myForm.valid) {
-  //     console.log(this.myForm.value);
-  //     this.httpClient.post(`${this.apiURL}/v00.acacyavhbjnk/`, this.myForm.value);
-  //     this.myForm.reset();
-  //   }
-  // }
-  onSubmit() {
+  onsubmit() {
     if (this.myForm.valid) {
-      console.log('Form Submitted!');
+      console.log(this.myForm.value);
+      this.httpClient.post(`${this.apiURL}/v00.acacyavhbjnk/`, this.myForm.value);
       this.myForm.reset();
     }
   }
 
+  createFormControls() {
+    this.applicantNumber = new FormControl('', Validators.required);
+    this.titleVacancy = new FormControl('', Validators.required);
+    this.positionRecommend = new FormControl('', Validators.required);
+    this.technicalReview = new FormControl('', Validators.required);
+    this.behaviorReview = new FormControl('', Validators.required);
+    this.experience = new FormControl('', Validators.required);
+    this.languageReview = new FormControl('', Validators.required);
+    this.result = new FormControl('', Validators.required);
+    this.note = new FormControl('', Validators.required);
+
+  }
+
+
   createForm() {
     this.myForm = new FormGroup({
-      applicantNumber: new FormControl('', [Validators.required, Validators.minLength(5), ]),
-      titleVacancy: new FormControl('', Validators.required),
-      positionRecommend: new FormControl('', Validators.required),
-      technicalReview: new FormControl('', Validators.required),
-      behaviorReview: new FormControl('', Validators.required),
-      experience: new FormControl('', Validators.required),
-      languageReview: new FormControl('', Validators.required),
-      result: new FormControl('', Validators.required),
-      note: new FormControl('', Validators.required),
+      applicantNumber: this.applicantNumber,
+      titleVacancy: this.titleVacancy,
+      positionRecommend: this.positionRecommend,
+      technicalReview: this.technicalReview,
+      behaviorReview: this.behaviorReview,
+      experience: this.experience,
+      languageReview: this.languageReview,
+      result: this.result,
+      note: this.note
     });
   }
 }

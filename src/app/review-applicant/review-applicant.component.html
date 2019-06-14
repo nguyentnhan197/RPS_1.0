@@ -1,65 +1,99 @@
 <div class="container">
   <h2>Review applicant</h2>
-  <form novalidate
-        [formGroup]="myForm"
-        (ngSubmit)="onSubmit()">
+  <form [formGroup]="myForm">
 
     <div class="form-group">
-<!--         [ngClass]="{-->
-<!--             'has-danger': myForm.controls.applicantNumber.invalid && (myForm.controls.applicantNumber.dirty || myForm.controls.applicantNumber.touched),-->
-<!--        'has-success': myForm.controls.applicantNumber.valid && (myForm.controls.applicantNumber.dirty || myForm.controls.applicantNumber.touched)-->
-<!--              }">-->
       <label>Applicant number</label>
-      <input type="text" class="form-control" formControlName="applicantNumber"></div>
+      <input type="number" class="form-control" formControlName="applicantNumber" required>
+      <div class="form-control-feedback"
+           *ngIf="applicantNumber.errors && (applicantNumber.dirty || applicantNumber.touched)">
+        <p class="error"  *ngIf="applicantNumber.errors.required" class="error">Applicant Number is required</p>
+      </div>
+    </div>
 
-    <div class="form-group has-danger">
+    <div class="form-group">
       <label>Title Vacancy</label>
-      <input type="text" class="form-control" formControlName="titleVacancy"></div>
+      <input type="text" class="form-control" formControlName="titleVacancy" required>
+      <div class="form-control-feedback"
+           *ngIf="titleVacancy.errors && (titleVacancy.dirty || titleVacancy.touched)">
+        <p class="error"  *ngIf="titleVacancy.errors.required" class="error">Title Vacancy is required</p>
+      </div>
+    </div>
 
-    <div class="form-group has-danger">
+    <div class="form-group">
       <label>Suitable Location</label>
-      <input type="text" class="form-control" formControlName="positionRecommend"></div>
+      <input type="text" class="form-control" formControlName="positionRecommend" required>
+      <div class="form-control-feedback"
+           *ngIf="positionRecommend.errors && (positionRecommend.dirty || positionRecommend.touched)">
+        <p class="error"  *ngIf="positionRecommend.errors.required" class="error">Position Recommend is required</p>
+      </div>
+    </div>
 
     <div class="form-group">
       <label>Technical Review </label>
-      <input type="text" class="form-control" formControlName="technicalReview"></div>
+      <input type="text" class="form-control" formControlName="technicalReview" required>
+      <div class="form-control-feedback"
+           *ngIf="technicalReview.errors && (technicalReview.dirty || technicalReview.touched)">
+        <p class="error"  *ngIf="technicalReview.errors.required" class="error">Technical Review is required</p>
+      </div>
+    </div>
 
     <div class="form-group">
       <label>Behavior Review</label>
-      <input type="text" class="form-control" formControlName="behaviorReview"></div>
+      <input type="text" class="form-control" formControlName="behaviorReview" required>
+      <div class="form-control-feedback"
+           *ngIf="behaviorReview.errors && (behaviorReview.dirty || behaviorReview.touched)">
+        <p class="error"  *ngIf="behaviorReview.errors.required" class="error">Behavior Review is required</p>
+      </div>
+    </div>
 
     <div class="form-group">
-      <label>Experience</label> <select class="form-control" formControlName="experience">
+      <label>Experience</label> <select class="form-control" formControlName="experience" required>
       <option *ngFor="let exp of exps" [value]="exp"> {{exp}}</option>
-    </select></div>
+    </select>
+      <div class="invalid-feedback"
+           *ngIf="experience.errors && (experience.dirty || experience.touched)">
+        <p class="error" *ngIf="experience.errors.required">Experience is required</p>
+      </div>
+    </div>
 
     <div class="form-group">
       <label>Language Review </label>
-      <input type="text" class="form-control" formControlName="languageReview"></div>
-
-
-    <div class="form-group">
-      <label>Result</label> <select class="form-control" formControlName="result">
-      <!--    <option value="pass">Pass</option>-->
-      <!--    <option value="fail">Fail</option>-->
-      <!--    <option value="consider">Consider</option>-->
-      <option *ngFor="let result of results" [value]="result">{{result}}</option>
-    </select></div>
-
-    <br>
-
-    <div class="form-group">
-      <label>Note</label>
-      <textarea placeholder="Remember, be nice!" cols="30" rows="5" formControlName="note"></textarea>
-
+      <input type="text" class="form-control" formControlName="languageReview" required>
+      <div class="form-control-feedback"
+           *ngIf="languageReview.errors && (languageReview.dirty || languageReview.touched)">
+        <p class="error"  *ngIf="languageReview.errors.required" class="error">Language Review is required</p>
+      </div>
     </div>
 
 
-    <button type="onSubmit"
-            class="btn btn-primary">Submit
-    </button>
+    <div class="form-group">
+      <label>Result</label> <select class="form-control" formControlName="result" required>
+      <option *ngFor="let result of results" [value]="result">{{result}}</option>
+    </select>
+      <div class="invalid-feedback"
+           *ngIf="result.errors && (result.dirty || result.touched)">
+        <p class="error" *ngIf="result.errors.required">Result is required</p>
+      </div>
+    </div>
+
+    <br>
+
+    <div class="form-group"
+         [ngClass]="note.invalid && (note.dirty || note.touched) ? 'has-danger' : 'has-success' ">
+      <label>Description Details</label>
+      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                formControlName="note" required></textarea>
+      <div class=" form-control-feedback control-label"
+           *ngIf="note.errors && (note.dirty || note.touched)">
+        <p class="error" *ngIf="note.errors.required">Note is required</p>
+      </div>
+    </div>
+
+
+    <button class="btn btn-info" (click)="onsubmit()" >Save</button>
+
   </form>
-  <pre>{{myForm.value | json}}</pre>
 </div>
 
 
