@@ -13,12 +13,12 @@ import { CarrerComponent } from './carrer/carrer.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ReviewApplicantComponent } from './review-applicant/review-applicant.component';
 import {CarrerService} from "./service/carrer.service";
-import {HttpClientModule} from "@angular/common/http";
-import {FormsModule} from "@angular/forms";
-import {PositionService} from "./service/position.service";
+import {HttpClientModule} from '@angular/common/http';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {PositionService} from './service/position.service';
 import { DetailCarerComponent } from './carrer/detail-carrer/detail-carer.component';
 
-import {DepartmentService} from "./service/department.service";
+import {DepartmentService} from './service/department.service';
 // import { SystemComponent } from './system/system.component';
 import { ChangedPasswordComponent } from './system/changed-password/changed-password.component';
 import { ProfileComponent } from './system/profile/profile.component';
@@ -58,7 +58,8 @@ import {ManpowerRequestComponent} from "./recruitment/manpower-request/manpower-
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [CarrerService,
     PositionService,

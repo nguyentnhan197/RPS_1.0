@@ -1,46 +1,65 @@
-<div class="review-applicant">
+<div class="container">
   <h2>Review applicant</h2>
-  <div class="container">
-    <form action="">
-      <label class="applicantNumber">Applicant number</label>
-      <input type="text" id="applicantNumber" name="applicantNumber">
+  <form novalidate
+        [formGroup]="myForm"
+        (ngSubmit)="onSubmit()">
 
-      <label for="titleVcancy">Title Vacancy</label>
-      <input type="text" id="titleVcancy" name="titleVacancy">
+    <div class="form-group">
+<!--         [ngClass]="{-->
+<!--             'has-danger': myForm.controls.applicantNumber.invalid && (myForm.controls.applicantNumber.dirty || myForm.controls.applicantNumber.touched),-->
+<!--        'has-success': myForm.controls.applicantNumber.valid && (myForm.controls.applicantNumber.dirty || myForm.controls.applicantNumber.touched)-->
+<!--              }">-->
+      <label>Applicant number</label>
+      <input type="text" class="form-control" formControlName="applicantNumber"></div>
 
-      <label for="suitableLocation">Suitable Location</label>
-      <input type="text" id="suitableLocation" name="suitableLocation">
+    <div class="form-group has-danger">
+      <label>Title Vacancy</label>
+      <input type="text" class="form-control" formControlName="titleVacancy"></div>
 
-      <label for="danhGiaChuyenNganh">Đánh giá chuyên ngành </label>
-      <input type="text" id="danhGiaChuyenNganh" name="danhGiaChuyenNganh">
+    <div class="form-group has-danger">
+      <label>Suitable Location</label>
+      <input type="text" class="form-control" formControlName="positionRecommend"></div>
 
-      <label for="danhGiaUngXu">Đánh giá ứng xử</label>
-      <input type="text" id="danhGiaUngXu" name="danhGiaUngXu">
+    <div class="form-group">
+      <label>Technical Review </label>
+      <input type="text" class="form-control" formControlName="technicalReview"></div>
 
-      <label for="experience">Experience:</label> <select id="experience" name="experience:">
-      <option value="fresher">Fresher</option>
-      <option value="internship">Internship</option>
-      <option value="senior">Senior</option> </select>
+    <div class="form-group">
+      <label>Behavior Review</label>
+      <input type="text" class="form-control" formControlName="behaviorReview"></div>
 
-      <label for="trinhDoNgonNgu">Trình độ ngôn ngữ </label>
-      <input type="text" id="trinhDoNgonNgu" name="trinhDoNgonNgu">
+    <div class="form-group">
+      <label>Experience</label> <select class="form-control" formControlName="experience">
+      <option *ngFor="let exp of exps" [value]="exp"> {{exp}}</option>
+    </select></div>
 
-      <label for="kiNangXuLy">Kĩ năng xử lý tình huống </label>
-      <input type="text" id="kiNangXuLy" name="kiNangXuLy">
-
-
-      <label for="result">Result</label> <select id="result" name="result">
-      <option value="pass">Pass</option>
-      <option value="fail">Fail</option>
-      <option value="consider">Consider</option></select>
-      <br>
-
-      <label >Ghi chú </label>
-      <textarea placeholder="Remember, be nice!" cols="30" rows="5"></textarea>
-
-      <input type="submit" value="Save">
-    </form>
-  </div>
+    <div class="form-group">
+      <label>Language Review </label>
+      <input type="text" class="form-control" formControlName="languageReview"></div>
 
 
+    <div class="form-group">
+      <label>Result</label> <select class="form-control" formControlName="result">
+      <!--    <option value="pass">Pass</option>-->
+      <!--    <option value="fail">Fail</option>-->
+      <!--    <option value="consider">Consider</option>-->
+      <option *ngFor="let result of results" [value]="result">{{result}}</option>
+    </select></div>
+
+    <br>
+
+    <div class="form-group">
+      <label>Note</label>
+      <textarea placeholder="Remember, be nice!" cols="30" rows="5" formControlName="note"></textarea>
+
+    </div>
+
+
+    <button type="onSubmit"
+            class="btn btn-primary">Submit
+    </button>
+  </form>
+  <pre>{{myForm.value | json}}</pre>
 </div>
+
+
