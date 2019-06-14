@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {APP_INITIALIZER, NgModule} from '@angular/core';
 import { AppComponent } from './app.component';
 import { CreateVacancyComponent } from './create-vacancy/create-vacancy.component';
 import { MenuComponent } from './menu/menu.component';
@@ -30,8 +30,13 @@ import {ViewVacancyComponent} from "./view-vacancy/view-vacancy.component";
 import {ManpowerRequestComponent} from "./recruitment/manpower-request/manpower-request.component";
 import {UserService} from "./service/user.service";
 import {AuthenticationService} from "./service/authentication.service";
+import { TranslatePipe } from './pipe/translate.pipe';
+import {TranslateService} from "./service/translate.service";
 // import { ViewVacancyComponent } from './view-vacancy/view-vacancy.component';
-
+export function setupTranslateFactory(
+  service: TranslateService): Function {
+  return () => service.use('en');
+}
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,6 +60,7 @@ import {AuthenticationService} from "./service/authentication.service";
     ManpowerRequestComponent,
     ViewReviewApplicantComponent,
     ViewVacancyComponent,
+    TranslatePipe,
   ],
 
   imports: [
@@ -70,9 +76,17 @@ import {AuthenticationService} from "./service/authentication.service";
     PositionService,
     DepartmentService,
     UserService,
-    AuthenticationService
+    AuthenticationService,
+    TranslateService,
+    {
+      provide: APP_INITIALIZER,
+      useFactory: setupTranslateFactory,
+      deps: [ TranslateService ],
+      multi: true
+    }
     ],
   bootstrap: [AppComponent]
 
 })
+
 export class AppModule { }

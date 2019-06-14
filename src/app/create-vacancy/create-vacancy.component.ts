@@ -7,6 +7,7 @@ import {DepartmentService} from "../service/department.service";
 import {Department} from "../model/department.model";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {HttpClient} from "@angular/common/http";
+import {VacancyNhan} from "../model/vacancyNhan";
 
 
 @Component({
@@ -45,17 +46,7 @@ export class CreateVacancyComponent implements OnInit {
     this.createForm();
 
   }
-
-  onsubmit(){
-    if(this.myForm.valid){
-    console.log(this.myForm.value);
-      this.httpClient.post(`${this.apiURL}/v00.acacyavhbjnk/`,this.myForm.value);
-      this.myForm.reset();
-    }
-  }
   createVacancy(){
-
-
     // this.carrerService.createVacancy(this.vacancy).subscribe(response=>{this.getAllVacancy()});
   }
  // getAllVacancy(){
@@ -95,19 +86,11 @@ export class CreateVacancyComponent implements OnInit {
       typeOfStaff :this.typeOfStaff
     })
   }
-
-
-  // private  reset(){
-  //   this.vacancy.idVacancy=null;
-  //   this.vacancy.dateClose=null;
-  //   this.vacancy.dateCreated=null;
-  //   this.vacancy.department=null;
-  //   this.vacancy.description=null;
-  //   this.vacancy.numberOpening=null;
-  //   this.vacancy.position=null;
-  //   this.vacancy.state=null;
-  //   this.vacancy.user=null;
-  //   this.vacancy.vacancyNumber=null;
-  //
-  // }
+  onsubmit(){
+    if(this.myForm.valid){
+      console.log(this.myForm.value);
+      this.httpClient.post(`${this.apiURL}/v00.acacyavhbjnk/`,this.myForm.value);
+      this.myForm.reset();
+    }
+  }
 }

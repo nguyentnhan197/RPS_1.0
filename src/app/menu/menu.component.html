@@ -1,50 +1,3 @@
-<!--<div class="navbar">-->
-  <!--<a routerLink="/view-applicant">View Applicants</a>-->
-  <!--<a routerLink="/view-vacancy">View Vacancy</a>-->
-  <!--<a routerLink="/carrer">Carrer</a>-->
-  <!--<div class="btn-group">-->
-    <!--<button type="button" class="dropbtnInterviewer dropdown-toggle" data-toggle="dropdown">Interviewer Active</button>-->
-    <!--<ul class="dropdown-menu" role="menu">-->
-      <!--<li><a routerLink="/interviewer/review-applicant">Review applicant</a></li>-->
-      <!--<li><a routerLink="/interviewer/view-review-applicant">View review applicant</a></li>-->
-    <!--</ul>-->
-  <!--</div>-->
-
-  <!--<div class="btn-group">-->
-    <!--<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">-->
-      <!--Sony <span class="caret"></span></button>-->
-    <!--<ul class="dropdown-menu" role="menu">-->
-      <!--<li><a href="#">Tablet</a></li>-->
-      <!--<li><a href="#">Smartphone</a></li>-->
-    <!--</ul>-->
-  <!--</div>-->
-
-  <!--<div class="dropdownHR">-->
-    <!--<button class="dropbtnHR">HR Active</button>-->
-    <!--<div class="dropdownHR-content">-->
-      <!--<a routerLink="/hr/create-vacancy">Create vacancy</a>-->
-      <!--<a routerLink="/hr/create-applicant">Create applicant</a>-->
-    <!--</div>-->
-  <!--</div>-->
-
-  <!--<div class="dropdownSystem">-->
-    <!--<button class="dropbtnSystem">System</button>-->
-    <!--<div class="dropdownSystem-content">-->
-      <!--<a routerLink="system/changed-password">Password change</a>-->
-      <!--<a routerLink="system/profile">Profile</a>-->
-    <!--</div>-->
-  <!--</div>-->
-
-  <!--<div class="dropdownRecruitment">-->
-    <!--<button class="dropbtnRecruitment">Recruitment</button>-->
-    <!--<div class="dropdownRecruitment-content">-->
-      <!--<a routerLink="recruitment/manpower-request">Manpower request</a>-->
-      <!--<a routerLink="recruitment/manpower-request-manager">Manpower request list by manager</a>-->
-      <!--<a routerLink="recruitment/applicant-approval">Applicant approval</a>-->
-    <!--</div>-->
-  <!--</div>-->
-<!--</div>-->
-
 <nav class="navbar navbar-expand-lg">
   <a class="navbar-brand" href="#">Navbar</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -54,14 +7,14 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" routerLink="/view-applicant">View Applicants <span class="sr-only">(current)</span></a>
+        <a class="nav-link" routerLink="/view-applicant">{{'viewApplicant' | translate}}<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/view-vacancy">View Vacancy</a>
+        <a class="nav-link" routerLink="/view-vacancy">{{'viewVacancy' | translate}}</a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Interviewer Active
+          {{'interviewActive' | translate}}
         </a>
         <div class="dropdown-menu " aria-labelledby="navbarDropdown">
           <a class="dropdown-item drop" routerLink="/interviewer/review-applicant">Review applicant</a>
@@ -70,7 +23,7 @@
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#"  role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          HR Active
+          {{'hrActive' | translate}}
         </a>
         <div class="dropdown-menu " aria-labelledby="navbarDropdown">
           <a class="dropdown-item drop" routerLink="/hr/create-vacancy">Create vacancy</a>
@@ -79,7 +32,7 @@
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#"  role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          System
+          {{'system' | translate}}
         </a>
         <div class="dropdown-menu " aria-labelledby="navbarDropdown">
           <a class="dropdown-item drop" routerLink="system/changed-password">change Password</a>
@@ -88,7 +41,7 @@
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#"  role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Recruitment
+          {{'recruitment' | translate}}
         </a>
         <div class="dropdown-menu " aria-labelledby="navbarDropdown">
           <a class="dropdown-item drop" routerLink="recruitment/manpower-request">Create vacancy</a>
@@ -99,3 +52,50 @@
     </ul>
   </div>
 </nav>
+
+<!--<div class="navbar">-->
+<!--<a routerLink="/view-applicant">View Applicants</a>-->
+<!--<a routerLink="/view-vacancy">View Vacancy</a>-->
+<!--<a routerLink="/carrer">Carrer</a>-->
+<!--<div class="btn-group">-->
+<!--<button type="button" class="dropbtnInterviewer dropdown-toggle" data-toggle="dropdown">Interviewer Active</button>-->
+<!--<ul class="dropdown-menu" role="menu">-->
+<!--<li><a routerLink="/interviewer/review-applicant">Review applicant</a></li>-->
+<!--<li><a routerLink="/interviewer/view-review-applicant">View review applicant</a></li>-->
+<!--</ul>-->
+<!--</div>-->
+
+<!--<div class="btn-group">-->
+<!--<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">-->
+<!--Sony <span class="caret"></span></button>-->
+<!--<ul class="dropdown-menu" role="menu">-->
+<!--<li><a href="#">Tablet</a></li>-->
+<!--<li><a href="#">Smartphone</a></li>-->
+<!--</ul>-->
+<!--</div>-->
+
+<!--<div class="dropdownHR">-->
+<!--<button class="dropbtnHR">HR Active</button>-->
+<!--<div class="dropdownHR-content">-->
+<!--<a routerLink="/hr/create-vacancy">Create vacancy</a>-->
+<!--<a routerLink="/hr/create-applicant">Create applicant</a>-->
+<!--</div>-->
+<!--</div>-->
+
+<!--<div class="dropdownSystem">-->
+<!--<button class="dropbtnSystem">System</button>-->
+<!--<div class="dropdownSystem-content">-->
+<!--<a routerLink="system/changed-password">Password change</a>-->
+<!--<a routerLink="system/profile">Profile</a>-->
+<!--</div>-->
+<!--</div>-->
+
+<!--<div class="dropdownRecruitment">-->
+<!--<button class="dropbtnRecruitment">Recruitment</button>-->
+<!--<div class="dropdownRecruitment-content">-->
+<!--<a routerLink="recruitment/manpower-request">Manpower request</a>-->
+<!--<a routerLink="recruitment/manpower-request-manager">Manpower request list by manager</a>-->
+<!--<a routerLink="recruitment/applicant-approval">Applicant approval</a>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
