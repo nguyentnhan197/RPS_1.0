@@ -1,67 +1,134 @@
-<h2>Create Vancancy</h2>
-
 <div class="container">
-  <form action="">
-<input type="hidden"  name="id"/>
+  <form [formGroup]="myForm">
+    <div class="form-group">
+    <h4>Owned by</h4>
+    </div>
 
+    <div class="form-group">
+    <label>Status of the Vacancy</label>
+      <select class="form-control" formControlName="status" required>
+        <option  value="open">Open</option>
+        <option  value="close">Close</option>
+        <option  value="suspended">Suspended</option>
+      </select>
+      <div class=" form-control-feedback control-label"
+           *ngIf="status.errors && (status.dirty || status.touched)">
+        <p class="error" *ngIf="status.errors.required">Status is required</p>
+      </div>
+    </div>
 
+    <div class="form-group">
+    <label for="title">Title</label>
+      <select  id="title" class="form-control" formControlName="title" required>
+        <option  *ngFor="let position of positionList" [value]="position.positionName">{{position.positionName}}</option>
+      </select>
+      <div class=" form-control-feedback control-label"
+           *ngIf="title.errors && (title.dirty || title.touched)">
+        <p class="error" *ngIf="title.errors.required">Title is required</p>
+      </div>
+    </div>
 
+    <div class="form-group">
+    <label >Experience</label>
+      <select id="experience:" name="experience:" class="form-control" formControlName="experience" required>
+        <option value="fresher">Fresher</option>
+        <option value="internship">Internship</option>
+        <option value="senior">Senior</option>
+      </select>
+      <div class=" form-control-feedback control-label"
+           *ngIf="experience.errors && (experience.dirty || experience.touched)">
+        <p class="error" *ngIf="experience.errors.required">Experience is required</p>
+      </div>
+    </div>
 
-    <label for="statusVacancy">Status of the Vacancy</label> <select  id="statusVacancy" >
-    <option  value="open">Open</option>
-    <option  value="close">Close</option>
-    <option  value="suspended">Suspended</option></select>
+    <div class="form-group "
+         [ngClass]="quantity.invalid && (quantity.dirty || quantity.touched) ? 'has-danger' : 'has-success' ">
+    <label>Quatity</label>
+    <input class="form-control" type="number" placeholder="Quantity" required
+           formControlName="quantity">
+      <div class=" form-control-feedback control-label"
+           *ngIf="quantity.errors && (quantity.dirty || quantity.touched)">
+        <p class="error" *ngIf="quantity.errors.required">Quantity is required</p>
+      </div>
+    </div>
 
-    <label for="title">Title</label> <select  id="title" >
-    <option  *ngFor="let position of positionList" [value]="position.positionName">{{position.positionName}}</option>
-   </select>
+    <div class="form-group"
+         [ngClass]="numberOpening.invalid && (numberOpening.dirty || numberOpening.touched) ? 'has-danger' : 'has-success' ">
+    <label >Number opening</label>
+    <input class="form-control" type="number"   placeholder="Number Opening"
+           formControlName="numberOpening" required>
+      <div class=" form-control-feedback control-label"
+           *ngIf="numberOpening.errors && (numberOpening.dirty || numberOpening.touched)">
+        <p class="error" *ngIf="numberOpening.errors.required">Number opening is required</p>
+      </div>
+    </div>
 
-    <label >Experience</label> <select id="experience:" name="experience:">
-    <option value="fresher">Fresher</option>
-    <option value="internship">Internship</option>
-    <option value="senior">Senior</option> </select>
-
-    <label for="quatity">Quatity</label>
-    <input type="text" id="quatity" name="quatity" placeholder="Quatity">
-
-
-    <label for="numberOpening">Number opening</label>
-
-    <input type="text"  id="numberOpening" name="quatity" placeholder="Quatity">
-
+    <div class="form-group">
     <label for="department">Department</label>
-    <select  id="department" >
+    <select  id="department" class="form-control" formControlName="department" required>
       <option  *ngFor="let department of departmentList" [value]="department.departmentName">{{department.departmentName}}</option>
     </select>
+      <div class=" form-control-feedback control-label"
+           *ngIf="department.errors && (department.dirty || department.touched)">
+        <p class="error" *ngIf="department.errors.required">Department is required</p>
+      </div>
+    </div>
 
+    <div class="form-group"
+         [ngClass]="dateClose.invalid && (dateClose.dirty || dateClose.touched) ? 'has-danger' : 'has-success' ">
+    <label for="dateGetsClosed">Date close</label>
+    <input type="date"  id="dateGetsClosed" name="dateGetsClosed" class="form-control"
+           formControlName="dateClose" required>
+      <div class=" form-control-feedback control-label"
+           *ngIf="dateClose.errors && (dateClose.dirty || dateClose.touched)">
+        <p class="error" *ngIf="dateClose.errors.required">Date close is required</p>
+      </div>
+    </div>
 
-    <label for="dateGetsClosed">Date gets closed</label>
-    <input type="date"  id="dateGetsClosed" name="dateGetsClosed">
+    <div class="form-group">
+    <label>Gender</label> <br>
+      <select  class="form-control" formControlName="gender">
+        <option>Male</option>
+        <option>Female</option>
+        <option>All</option>
+      </select>
+    </div>
 
-    <label for="detailedDescription">Detailed description</label>
-    <input type="text" id="detailedDescription" name="detailedDescription" placeholder="Detailed description">
+    <div class="form-group"
+      [ngClass]="degree.invalid && (degree.dirty || degree.touched) ? 'has-danger' : 'has-success' ">
+      <label>Degree/Certificate</label>
+    <input class="form-control" type="text" placeholder="Degree/Certificate"
+           formControlName="degree" required>
+      <div class="form-control-feedback"
+           *ngIf="degree.errors && (degree.dirty || degree.touched)">
+        <p class="error"  *ngIf="degree.errors.required" class="error">Degree/Certificate is required</p>
+      </div>
+    </div>
 
-    <label >Gender</label>
-    <br>
-    <label class="containerRadioButton">Male
-      <input type="radio" checked="checked" name="radio" value="Male">
-      <span class="checkmark"></span>
-    </label>
-    <label class="containerRadioButton">Female
-      <input type="radio" name="radio" value="Female">
-      <span class="checkmark"></span>
-    </label>
-    <br>
+    <div class="form-group">
+    <label >Type Of Staff:</label>
+      <select class="form-control" formControlName="typeOfStaff" required>
+        <option value="partTime">Part time</option>
+        <option value="fullTime">Full Time</option>
+        <option value="partTime">Freelance</option>
+        <option value="partTime">Intership</option>
+      </select>
+      <div class="invalid-feedback"
+           *ngIf="typeOfStaff.errors && (typeOfStaff.dirty || typeOfStaff.touched)">
+        <p class="error" *ngIf="typeOfStaff.errors.required">Type Of Staff is required</p>
+      </div>
+    </div>
 
-    <label for="degreeCertificate">Degree/Certificate</label>
-    <input type="text" id="degreeCertificate" name="degreeCertificate" placeholder="Degree/Certificate">
-
-    <label >Type Of Staff:</label> <select id="typeOpStaff:" name="typeOpStaff:">
-    <option value="partTime">Part time</option>
-    <option value="fullTime">Full Time</option>
-    <option value="partTime">Freelance</option>
-    <option value="partTime">Intership</option></select>
-
-    <input type="submit" value="Save">
+    <div class="form-group"
+         [ngClass]="descriptiondetails.invalid && (descriptiondetails.dirty || descriptiondetails.touched) ? 'has-danger' : 'has-success' ">
+      <label>Description Details</label>
+      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                formControlName="descriptiondetails" required></textarea>
+      <div class=" form-control-feedback control-label"
+           *ngIf="descriptiondetails.errors && (descriptiondetails.dirty || descriptiondetails.touched)">
+        <p class="error" *ngIf="descriptiondetails.errors.required">Description Details is required</p>
+      </div>
+    </div>
+    <button class="btn btn-info" (click)="onsubmit()" >Save</button>
   </form>
 </div>

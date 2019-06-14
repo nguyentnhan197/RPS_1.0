@@ -14,7 +14,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { ReviewApplicantComponent } from './review-applicant/review-applicant.component';
 import {CarrerService} from "./service/carrer.service";
 import {HttpClientModule} from "@angular/common/http";
-import {FormsModule} from "@angular/forms";
+import {FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
 import {PositionService} from "./service/position.service";
 import { DetailCarerComponent } from './carrer/detail-carrer/detail-carer.component';
 
@@ -56,11 +56,15 @@ import {AuthenticationService} from "./service/authentication.service";
     ViewReviewApplicantComponent,
     ViewVacancyComponent,
   ],
+
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [CarrerService,
     PositionService,
@@ -69,5 +73,6 @@ import {AuthenticationService} from "./service/authentication.service";
     AuthenticationService
     ],
   bootstrap: [AppComponent]
+
 })
 export class AppModule { }
