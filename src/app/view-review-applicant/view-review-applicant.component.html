@@ -1,7 +1,6 @@
 <div class="viewReviewApplicant">
   <div class="viewReviewApplicantTop">
-    <h2>View Review Applicant</h2>
-    <table class="tableViewReviewApplicantTop">
+    <table class="tableViewReviewApplicantTop align-middle" align="center">
       <tr>
         <td>
           <label class="applicantNumber">Applicant number</label>
@@ -46,16 +45,16 @@
         <tr>
           <td>{{r.applicantNumber}}</td>
           <td>{{r.titleVacancy}}</td>
-          <td>{{r.suitableLocation}}</td>
-          <td>{{r.danhGiaChuyenNganh}}</td>
-          <td>{{r.danhGiaUngXu}}</td>
+          <td>{{r.positionRecommend}}</td>
+          <td>{{r.technicalReview}}</td>
+          <td>{{r.behaviorReview}}</td>
           <td>{{r.experience}}</td>
-          <td>{{r.trinhDoNgonNgu}}</td>
+          <td>{{r.languageReview}}</td>
           <td>{{r.result}}</td>
-          <td>{{r.ghiChu}}</td>
+          <td>{{r.note}}</td>
           <td>
-            <button class="btnEdit"><i class="fa fa-edit"></i> </button>
-            <button class="btnDelete"><i class="fa fa-close"></i> </button>
+            <button class="btn btn-info btn-sm"><i class="fa fa-edit small"></i></button>
+            <button class="btn btn-danger btn-sm"><i class="fa fa-close small"></i></button>
           </td>
         </tr>
       </ng-container>

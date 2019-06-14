@@ -1,46 +1,99 @@
-<div class="review-applicant">
+<div class="container">
   <h2>Review applicant</h2>
-  <div class="container">
-    <form action="">
-      <label class="applicantNumber">Applicant number</label>
-      <input type="text" id="applicantNumber" name="applicantNumber">
+  <form [formGroup]="myForm">
 
-      <label for="titleVcancy">Title Vacancy</label>
-      <input type="text" id="titleVcancy" name="titleVacancy">
+    <div class="form-group">
+      <label>Applicant number</label>
+      <input type="number" class="form-control" formControlName="applicantNumber" required>
+      <div class="form-control-feedback"
+           *ngIf="applicantNumber.errors && (applicantNumber.dirty || applicantNumber.touched)">
+        <p class="error"  *ngIf="applicantNumber.errors.required" class="error">Applicant Number is required</p>
+      </div>
+    </div>
 
-      <label for="suitableLocation">Suitable Location</label>
-      <input type="text" id="suitableLocation" name="suitableLocation">
+    <div class="form-group">
+      <label>Title Vacancy</label>
+      <input type="text" class="form-control" formControlName="titleVacancy" required>
+      <div class="form-control-feedback"
+           *ngIf="titleVacancy.errors && (titleVacancy.dirty || titleVacancy.touched)">
+        <p class="error"  *ngIf="titleVacancy.errors.required" class="error">Title Vacancy is required</p>
+      </div>
+    </div>
 
-      <label for="danhGiaChuyenNganh">Đánh giá chuyên ngành </label>
-      <input type="text" id="danhGiaChuyenNganh" name="danhGiaChuyenNganh">
+    <div class="form-group">
+      <label>Suitable Location</label>
+      <input type="text" class="form-control" formControlName="positionRecommend" required>
+      <div class="form-control-feedback"
+           *ngIf="positionRecommend.errors && (positionRecommend.dirty || positionRecommend.touched)">
+        <p class="error"  *ngIf="positionRecommend.errors.required" class="error">Position Recommend is required</p>
+      </div>
+    </div>
 
-      <label for="danhGiaUngXu">Đánh giá ứng xử</label>
-      <input type="text" id="danhGiaUngXu" name="danhGiaUngXu">
+    <div class="form-group">
+      <label>Technical Review </label>
+      <input type="text" class="form-control" formControlName="technicalReview" required>
+      <div class="form-control-feedback"
+           *ngIf="technicalReview.errors && (technicalReview.dirty || technicalReview.touched)">
+        <p class="error"  *ngIf="technicalReview.errors.required" class="error">Technical Review is required</p>
+      </div>
+    </div>
 
-      <label for="experience">Experience:</label> <select id="experience" name="experience:">
-      <option value="fresher">Fresher</option>
-      <option value="internship">Internship</option>
-      <option value="senior">Senior</option> </select>
+    <div class="form-group">
+      <label>Behavior Review</label>
+      <input type="text" class="form-control" formControlName="behaviorReview" required>
+      <div class="form-control-feedback"
+           *ngIf="behaviorReview.errors && (behaviorReview.dirty || behaviorReview.touched)">
+        <p class="error"  *ngIf="behaviorReview.errors.required" class="error">Behavior Review is required</p>
+      </div>
+    </div>
 
-      <label for="trinhDoNgonNgu">Trình độ ngôn ngữ </label>
-      <input type="text" id="trinhDoNgonNgu" name="trinhDoNgonNgu">
+    <div class="form-group">
+      <label>Experience</label> <select class="form-control" formControlName="experience" required>
+      <option *ngFor="let exp of exps" [value]="exp"> {{exp}}</option>
+    </select>
+      <div class="invalid-feedback"
+           *ngIf="experience.errors && (experience.dirty || experience.touched)">
+        <p class="error" *ngIf="experience.errors.required">Experience is required</p>
+      </div>
+    </div>
 
-      <label for="kiNangXuLy">Kĩ năng xử lý tình huống </label>
-      <input type="text" id="kiNangXuLy" name="kiNangXuLy">
+    <div class="form-group">
+      <label>Language Review </label>
+      <input type="text" class="form-control" formControlName="languageReview" required>
+      <div class="form-control-feedback"
+           *ngIf="languageReview.errors && (languageReview.dirty || languageReview.touched)">
+        <p class="error"  *ngIf="languageReview.errors.required" class="error">Language Review is required</p>
+      </div>
+    </div>
 
 
-      <label for="result">Result</label> <select id="result" name="result">
-      <option value="pass">Pass</option>
-      <option value="fail">Fail</option>
-      <option value="consider">Consider</option></select>
-      <br>
+    <div class="form-group">
+      <label>Result</label> <select class="form-control" formControlName="result" required>
+      <option *ngFor="let result of results" [value]="result">{{result}}</option>
+    </select>
+      <div class="invalid-feedback"
+           *ngIf="result.errors && (result.dirty || result.touched)">
+        <p class="error" *ngIf="result.errors.required">Result is required</p>
+      </div>
+    </div>
 
-      <label >Ghi chú </label>
-      <textarea placeholder="Remember, be nice!" cols="30" rows="5"></textarea>
+    <br>
 
-      <input type="submit" value="Save">
-    </form>
-  </div>
+    <div class="form-group"
+         [ngClass]="note.invalid && (note.dirty || note.touched) ? 'has-danger' : 'has-success' ">
+      <label>Description Details</label>
+      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                formControlName="note" required></textarea>
+      <div class=" form-control-feedback control-label"
+           *ngIf="note.errors && (note.dirty || note.touched)">
+        <p class="error" *ngIf="note.errors.required">Note is required</p>
+      </div>
+    </div>
 
 
+    <button class="btn btn-info" (click)="onsubmit()" >Save</button>
+
+  </form>
 </div>
+
+

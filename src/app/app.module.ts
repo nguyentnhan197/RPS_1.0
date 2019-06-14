@@ -18,7 +18,7 @@ import {FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, V
 import {PositionService} from "./service/position.service";
 import { DetailCarerComponent } from './carrer/detail-carrer/detail-carer.component';
 
-import {DepartmentService} from "./service/department.service";
+import {DepartmentService} from './service/department.service';
 // import { SystemComponent } from './system/system.component';
 import { ChangedPasswordComponent } from './system/changed-password/changed-password.component';
 import { ProfileComponent } from './system/profile/profile.component';

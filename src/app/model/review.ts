@@ -1,11 +1,11 @@
 export class Review {
   public applicantNumber: number;
   public titleVacancy: string;
-  public suitableLocation: string;
-  public danhGiaChuyenNganh: string;
-  public danhGiaUngXu: string;
+  public positionRecommend: string;
+  public technicalReview: string;
+  public behaviorReview: string;
   public experience: string;
-  public trinhDoNgonNgu: string;
+  public languageReview: string;
   public result: string;
-  public ghiChu: string;
+  public note: string;
 }

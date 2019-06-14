@@ -2,8 +2,7 @@
 
 <div class="carrer">
   <div class="search">
-    <table class="tableSearch">
-      <h3>Search carrer</h3>
+    <table class="tableSearch align-middle" align="center">
       <!--    <input type="search" name="search" placeholder="Search..">-->
       <tr>
         <td>
@@ -20,11 +19,14 @@
         </td>
       </tr>
     </table>
+    <div class="btnAll">
+    <button class="btnSearch"><i class="fa fa-search"></i> Search</button>
+    </div>
   </div>
 
   <div class="job" *ngFor="let j of jobs">
-    <h3 class="title" routerLink="/carrer/{{j.idVacancy}}" >{{j.position}} </h3>
-  
+    <h3 class="title" routerLink="/carrer/{{j.idVacancy}}">{{j.position}} </h3>
+
     <p class="des"><i class="fa fa-user"></i>{{j.numberOpening}} persons</p>
   </div>
 
