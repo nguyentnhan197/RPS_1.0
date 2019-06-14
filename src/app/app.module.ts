@@ -28,6 +28,8 @@ import { ManpowerRequestManagerComponent } from './recruitment/manpower-request-
 import { ViewReviewApplicantComponent } from './view-review-applicant/view-review-applicant.component';
 import {ViewVacancyComponent} from "./view-vacancy/view-vacancy.component";
 import {ManpowerRequestComponent} from "./recruitment/manpower-request/manpower-request.component";
+import {UserService} from "./service/user.service";
+import {AuthenticationService} from "./service/authentication.service";
 // import { ViewVacancyComponent } from './view-vacancy/view-vacancy.component';
 
 @NgModule({
@@ -62,7 +64,9 @@ import {ManpowerRequestComponent} from "./recruitment/manpower-request/manpower-
   ],
   providers: [CarrerService,
     PositionService,
-    DepartmentService
+    DepartmentService,
+    UserService,
+    AuthenticationService
     ],
   bootstrap: [AppComponent]
 })

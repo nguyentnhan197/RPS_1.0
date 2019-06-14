@@ -1,4 +1,5 @@
 import {Department} from "./department.model";
+import {Position} from "./position.model";
 
 export class User {
   public idUser: number;
@@ -7,8 +8,8 @@ export class User {
   public email: string;
   public username: string;
   public password: string;
-  public  position: string;
-  public  department: string;
+  public  position: Position;
+  public  department: Department;
   public  avatar: string;
   public  birthday: string;
   public  gender: boolean ;

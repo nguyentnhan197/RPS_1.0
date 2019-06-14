@@ -1,12 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {CarrerService} from "../service/carrer.service";
-import {Validators} from "@angular/forms";
-import {Vacancy} from "../model/vacancy.model";
 import {Position} from "../model/position.model";
 import {PositionService} from "../service/position.service";
 import {DepartmentService} from "../service/department.service";
 import {Department} from "../model/department.model";
-
+import {VacancyNhan} from "../model/vacancyNhan";
 
 
 @Component({
@@ -15,8 +13,7 @@ import {Department} from "../model/department.model";
   styleUrls: ['./create-vacancy.component.scss']
 })
 export class CreateVacancyComponent implements OnInit {
-  vacancy= new Vacancy();
-  varcancys: Vacancy[];
+  vacancy: VacancyNhan;
   submitted= false;
   positionList: Position[];
   departmentList: Department[]
@@ -26,23 +23,23 @@ export class CreateVacancyComponent implements OnInit {
               ) { }
 
   ngOnInit() {
-    this.getPositionLst();
+    // this.getPositionLst();
     this.getDepartmentList();
   }
 
   onsubmit(){this.submitted=true;}
- //  createVacancy(){
- //
- //
- //    this.carrerService.createVacancy(this.vacancy).subscribe(response=>{this.getAllVacancy()});
- //  }
+  createVacancy(){
+
+
+    // this.carrerService.createVacancy(this.vacancy).subscribe(response=>{this.getAllVacancy()});
+  }
  // getAllVacancy(){
  //    this.carrerService.getAllVacancy().subscribe((data:Vacancy[])=>{this.varcancys=data});
  //
  //  }
-  getPositionLst(){
-    this.positionService.getAllPosition().subscribe((dataDB:Position[])=>{this.positionList=dataDB});
-  }
+ //  getPositionLst(){
+ //    this.positionService.getAllPosition().subscribe((dataDB:Position[])=>{this.positionList=dataDB});
+ //  }
   getDepartmentList(){this.departmentService.getAllDepartment().subscribe((data:Department[])=>{this.departmentList=data});}
 
 

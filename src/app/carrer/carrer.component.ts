@@ -12,7 +12,7 @@ import {VacancyNhan} from "../model/vacancyNhan";
   styleUrls: ['./carrer.component.scss']
 })
 export class CarrerComponent implements OnInit {
-  jobs: VacancyNhan[] = vacancies;
+  // jobs: VacancyNhan[] = vacancies;
 
 
   constructor() {
