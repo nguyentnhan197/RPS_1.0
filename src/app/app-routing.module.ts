@@ -16,6 +16,7 @@ import {ManpowerRequestManagerComponent} from "./recruitment/manpower-request-ma
 import {ViewReviewApplicantComponent} from "./view-review-applicant/view-review-applicant.component";
 import {ViewVacancyComponent} from "./view-vacancy/view-vacancy.component";
 import {LoginComponent} from "./login/login.component";
+import {AuthGuard} from "./service/auth.guard";
 
 const routes: Routes = [
   {path: '', component: LoginComponent},
@@ -25,7 +26,7 @@ const routes: Routes = [
   {path: 'view-applicant', component: ViewApplicantComponent},
   {path: 'view-vacancy', component: ViewVacancyComponent},
   {path: 'hr/create-applicant', component: CreateApplicantComponent},
-  {path: 'hr/create-vacancy', component: CreateVacancyComponent},
+  {path: 'hr/create-vacancy', component: CreateVacancyComponent,canActivate: [AuthGuard],data: {role: 'ROLE_HR'}},
   {path: 'interviewer/review-applicant', component: ReviewApplicantComponent},
   {path: 'interviewer/review-applicant', component: ReviewApplicantComponent},
   {path: 'interviewer/view-review-applicant', component: ViewReviewApplicantComponent},

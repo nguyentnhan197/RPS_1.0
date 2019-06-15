@@ -15,5 +15,6 @@ export class User {
   public  gender: boolean ;
   public  phone: string;
   public  address: string;
+  public roles:[string];
 
 }

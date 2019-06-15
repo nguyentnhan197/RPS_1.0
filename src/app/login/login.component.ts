@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
   checkLogin() {
     (this.loginservice.authenticate(this.credentials.username, this.credentials.password).subscribe(
         data => {
-          if (data === this.credentials.username) {
+          if (data['name']) {
             this.router.navigate(['/view-vacancy'])
             this.invalidLogin = false
           } else {

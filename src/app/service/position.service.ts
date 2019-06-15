@@ -4,7 +4,7 @@ import {Injectable} from "@angular/core";
 export class PositionService{
   constructor(private httpClient:HttpClient){}
 
-  // getAllPosition(){
-  //   return this.httpClient.get('http://localhost:8080/RecruitmentProcessSystem/titleList')
-  // }
+  getAllPosition(){
+    return this.httpClient.get('http://localhost:8080/RecruitmentProcessSystem/titleList')
+  }
 }

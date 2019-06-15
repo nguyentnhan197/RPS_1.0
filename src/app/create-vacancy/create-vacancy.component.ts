@@ -6,7 +6,11 @@ import {PositionService} from "../service/position.service";
 import {DepartmentService} from "../service/department.service";
 import {Department} from "../model/department.model";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {VacancyNhan} from "../model/vacancyNhan";
+import {Router} from "@angular/router";
+import {map} from "rxjs/operators";
+import {AuthenticationService} from "../service/authentication.service";
 
 
 @Component({
@@ -15,60 +19,84 @@ import {HttpClient} from "@angular/common/http";
   styleUrls: ['./create-vacancy.component.scss']
 })
 export class CreateVacancyComponent implements OnInit {
+  ownedBy: string= this.authenticationService.getUsername();
   vacancy: VacancyNhan;
-  submitted= false;
-  positionList: Position[] = [{idPosition: 1, positionName:"Java dev"},{idPosition: 2, positionName:"Java dev 2"}];
-  departmentList: Department[] = [{idDepartment: 1, departmentName:"A"},{idDepartment: 2, departmentName:"B"}];
+  submitted = false;
+  positionList: Position[];
+  departmentList: Department[];
   myForm: FormGroup;
   numberOpening: FormControl;
-  quantity: FormControl;
   dateClose: FormControl;
   descriptiondetails: FormControl;
   degree: FormControl;
-  status : FormControl;
-  title :FormControl;
-  experience :FormControl;
-  department :FormControl;
-  gender :FormControl;
-  typeOfStaff :FormControl;
-  apiURL: string = '';
+  status: FormControl;
+  title: FormControl;
+  experience: FormControl;
+  department: FormControl;
+  gender: FormControl;
+  typeOfStaff: FormControl;
+  apiURL: string = 'http://localhost:8080/RecruitmentProcessSystem';
+
+
+
+
+  // ownedBy=this.carrerService.ownedBy;
   constructor(private carrerService: CarrerService,
               private positionService: PositionService,
               private departmentService: DepartmentService,
-              protected httpClient : HttpClient
-              ) { }
+              private httpClient: HttpClient,
+              private router: Router,
+              private authenticationService:AuthenticationService
+  ) {
+  }
 
   ngOnInit() {
-    // this.getPositionLst();
-    // this.getDepartmentList();
+    this.getPositionLst();
+    this.getDepartmentList();
     this.createFormControls();
     this.createForm();
 
   }
 
-  onsubmit(){
-    if(this.myForm.valid){
-    console.log(this.myForm.value);
-      this.httpClient.post(`${this.apiURL}/v00.acacyavhbjnk/`,this.myForm.value);
+  onsubmit() {
+    if (this.myForm.valid) {
+      console.log(this.myForm.value);
+      console.log(this.apiURL + '/addVacancy');
+      this.carrerService.createVacancy(this.myForm.value).subscribe(data => {
+          this.router.navigate(['/view-vacancy']);
+        }, (error: any) => {
+          console.log(error);
+        }
+      );
       this.myForm.reset();
     }
+
   }
-  createVacancy(){
+
+  createVacancy() {
 
 
     // this.carrerService.createVacancy(this.vacancy).subscribe(response=>{this.getAllVacancy()});
   }
- // getAllVacancy(){
- //    this.carrerService.getAllVacancy().subscribe((data:Vacancy[])=>{this.varcancys=data});
- //
- //  }
- //  getPositionLst(){
- //    this.positionService.getAllPosition().subscribe((dataDB:Position[])=>{this.positionList=dataDB});
- //  }
-  getDepartmentList(){this.departmentService.getAllDepartment().subscribe((data:Department[])=>{this.departmentList=data});}
+
+  // getAllVacancy(){
+  //    this.carrerService.getAllVacancy().subscribe((data:Vacancy[])=>{this.varcancys=data});
+
+  //  }
+  getPositionLst() {
+    this.positionService.getAllPosition().subscribe((dataDB: Position[]) => {
+      this.positionList = dataDB
+    });
+  }
+
+  getDepartmentList() {
+    this.departmentService.getAllDepartment().subscribe((data: Department[]) => {
+      this.departmentList = data
+    });
+  }
+
   createFormControls() {
     this.numberOpening = new FormControl('', Validators.required);
-    this.quantity = new FormControl('', Validators.required);
     this.dateClose = new FormControl('', Validators.required);
     this.descriptiondetails = new FormControl('', Validators.required);
     this.degree = new FormControl('', Validators.required);
@@ -80,19 +108,19 @@ export class CreateVacancyComponent implements OnInit {
     this.typeOfStaff = new FormControl('', Validators.required);
 
   }
+
   createForm() {
     this.myForm = new FormGroup({
-      numberOpening : this.numberOpening,
-      quantity: this.quantity,
+      numberOpening: this.numberOpening,
       dateClose: this.dateClose,
       descriptiondetails: this.descriptiondetails,
       degree: this.degree,
-      status : this.status,
-      title :this.title,
-      experience :this.experience,
-      department :this.department,
-      gender :this.gender,
-      typeOfStaff :this.typeOfStaff
+      status: this.status,
+      title: this.title,
+      experience: this.experience,
+      department: this.department,
+      gender: this.gender,
+      typeOfStaff: this.typeOfStaff
     })
   }
 

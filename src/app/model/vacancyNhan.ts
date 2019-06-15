@@ -19,7 +19,7 @@ export class VacancyNhan  {
   public requirement: string;
 
   //nhan
-  public experience: string;
+  public experience: number;
   public language: string;
   public gender: string;
   public degree: string;
