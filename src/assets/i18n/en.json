@@ -1,0 +1,18 @@
+{
+  "TITLE": "My i18n Application (en)",
+  "viewApplicant": "View Applicant",
+  "viewVacancy": "View Vacancy",
+  "interviewActive": "Interview Active",
+  "hrActive": "Hr Active",
+  "system": "System",
+  "recruitment": "Recruitment",
+  "username":" Username: ",
+  "usernameRequire":"Username is require",
+  "usernameLong":"Name must be at least 4 characters long.",
+  "usernameMail":"Please using email",
+  "password":"Password",
+  "passRequire":"Password is require",
+  "passLong":"Password must be at least 4 characters long.",
+  "":""
+
+}

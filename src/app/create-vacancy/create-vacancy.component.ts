@@ -1,16 +1,15 @@
 import {Component, OnInit} from '@angular/core';
 import {CarrerService} from "../service/carrer.service";
-import {Vacancy} from "../model/vacancy.model";
 import {Position} from "../model/position.model";
 import {PositionService} from "../service/position.service";
 import {DepartmentService} from "../service/department.service";
 import {Department} from "../model/department.model";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
-import {VacancyNhan} from "../model/vacancyNhan";
 import {Router} from "@angular/router";
 import {map} from "rxjs/operators";
 import {AuthenticationService} from "../service/authentication.service";
+import {VacancyNhan} from "../model/vacancyNhan";
 
 
 @Component({
@@ -29,6 +28,7 @@ export class CreateVacancyComponent implements OnInit {
   dateClose: FormControl;
   descriptiondetails: FormControl;
   degree: FormControl;
+  offer: FormControl;
   status: FormControl;
   title: FormControl;
   experience: FormControl;
@@ -60,9 +60,10 @@ export class CreateVacancyComponent implements OnInit {
 
   onsubmit() {
     if (this.myForm.valid) {
+      console.log(this.myForm.value['offer']);
       console.log(this.myForm.value);
       console.log(this.apiURL + '/addVacancy');
-      this.carrerService.createVacancy(this.myForm.value).subscribe(data => {
+      return this.httpClient.post(this.apiURL + '/addVacancy', new VacancyNhan( this.myForm.value)).subscribe(data => {
           this.router.navigate(['/view-vacancy']);
         }, (error: any) => {
           console.log(error);
@@ -96,16 +97,18 @@ export class CreateVacancyComponent implements OnInit {
   }
 
   createFormControls() {
+    const now= Date.now();
     this.numberOpening = new FormControl('', Validators.required);
     this.dateClose = new FormControl('', Validators.required);
     this.descriptiondetails = new FormControl('', Validators.required);
-    this.degree = new FormControl('', Validators.required);
+    this.degree = new FormControl('rtrtrt', Validators.required);
     this.status = new FormControl('', Validators.required);
     this.title = new FormControl('', Validators.required);
     this.experience = new FormControl('', Validators.required);
     this.department = new FormControl('', Validators.required);
     this.gender = new FormControl('', Validators.required);
     this.typeOfStaff = new FormControl('', Validators.required);
+    this.offer = new FormControl('', Validators.required);
 
   }
 
@@ -120,22 +123,10 @@ export class CreateVacancyComponent implements OnInit {
       experience: this.experience,
       department: this.department,
       gender: this.gender,
-      typeOfStaff: this.typeOfStaff
+      typeOfStaff: this.typeOfStaff,
+      offer:this.offer,
+
     })
   }
 
-
-  // private  reset(){
-  //   this.vacancy.idVacancy=null;
-  //   this.vacancy.dateClose=null;
-  //   this.vacancy.dateCreated=null;
-  //   this.vacancy.department=null;
-  //   this.vacancy.description=null;
-  //   this.vacancy.numberOpening=null;
-  //   this.vacancy.position=null;
-  //   this.vacancy.state=null;
-  //   this.vacancy.user=null;
-  //   this.vacancy.vacancyNumber=null;
-  //
-  // }
 }

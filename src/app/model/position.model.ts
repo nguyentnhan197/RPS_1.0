@@ -3,7 +3,9 @@ export class Position{
   positionName: string;
 
 
-
+  public constructor(init?: Partial<Position >) {
+    Object.assign(this, init);
+  }
 
 
 

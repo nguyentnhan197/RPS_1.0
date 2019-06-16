@@ -16,5 +16,7 @@ export class User {
   public  phone: string;
   public  address: string;
   public roles:[string];
-
+  public constructor(init?: Partial<User >) {
+    Object.assign(this, init);
+  }
 }

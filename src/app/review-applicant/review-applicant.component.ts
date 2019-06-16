@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {HttpClient} from '@angular/common/http';
 
 @Component({
   selector: 'app-review-applicant',
@@ -7,9 +9,60 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReviewApplicantComponent implements OnInit {
 
-  constructor() { }
+  myForm: FormGroup;
+  apiURL = '';
+  exps: string[] = ['Fresher', 'Internship', 'Senior'];
+  results: string[] = ['Pass', 'Fail', 'Consider'];
+  applicantNumber: FormControl;
+   titleVacancy: FormControl;
+   positionRecommend: FormControl;
+   technicalReview: FormControl;
+   behaviorReview: FormControl;
+   experience: FormControl;
+   languageReview: FormControl;
+   result: FormControl;
+   note: FormControl;
 
-  ngOnInit() {
+  constructor(protected httpClient: HttpClient) {
   }
 
+  ngOnInit() {
+    this.createFormControls();
+    this.createForm();
+  }
+  onsubmit() {
+    if (this.myForm.valid) {
+      console.log(this.myForm.value);
+      this.httpClient.post(`${this.apiURL}/v00.acacyavhbjnk/`, this.myForm.value);
+      this.myForm.reset();
+    }
+  }
+
+  createFormControls() {
+    this.applicantNumber = new FormControl('', Validators.required);
+    this.titleVacancy = new FormControl('', Validators.required);
+    this.positionRecommend = new FormControl('', Validators.required);
+    this.technicalReview = new FormControl('', Validators.required);
+    this.behaviorReview = new FormControl('', Validators.required);
+    this.experience = new FormControl('', Validators.required);
+    this.languageReview = new FormControl('', Validators.required);
+    this.result = new FormControl('', Validators.required);
+    this.note = new FormControl('', Validators.required);
+
+  }
+
+
+  createForm() {
+    this.myForm = new FormGroup({
+      applicantNumber: this.applicantNumber,
+      titleVacancy: this.titleVacancy,
+      positionRecommend: this.positionRecommend,
+      technicalReview: this.technicalReview,
+      behaviorReview: this.behaviorReview,
+      experience: this.experience,
+      languageReview: this.languageReview,
+      result: this.result,
+      note: this.note
+    });
+  }
 }

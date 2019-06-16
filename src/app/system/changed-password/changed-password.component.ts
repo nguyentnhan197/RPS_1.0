@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {FormControl, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-changed-password',
@@ -6,20 +7,36 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./changed-password.component.scss']
 })
 export class ChangedPasswordComponent implements OnInit {
-  changePass: changePass = new changePass() ;
+  changePassForm:FormGroup;
+  oldPass : FormControl;
+  newPass : FormControl;
+  confirmPass : FormControl;
   constructor() { }
 
   ngOnInit() {
-    console.log(this.changePass);
-    if(this.changePass.oldPass.length < 3){
-      console.log("aaaaaaaaaa");
-    }
+    this.createFormControl();
+    this.createFormGroup();
+  }
+  createFormControl(){
+    this.oldPass = new FormControl('',[Validators.required, Validators.minLength(8)]);
+    this.newPass = new FormControl('',[Validators.required, Validators.minLength(8)]);
+    this.confirmPass = new FormControl('',[Validators.required, Validators.minLength(8)]);
   }
 
-}
-export class changePass {
-  oldPass:string = '';
-  newPass:string = '';
-  confirmPass:string = '';
+  createFormGroup(){
+    this.changePassForm = new FormGroup({
+      oldPass : this.oldPass,
+      newPass : this.newPass,
+      confirmPass : this.confirmPass
+    })
+  }
+  onSubmit(){
+    console.log(this.changePassForm.value);
+    this.changePassForm.reset();
+  }
+  oncancel(){
+    this.changePassForm.reset();
+  }
+
 }
 

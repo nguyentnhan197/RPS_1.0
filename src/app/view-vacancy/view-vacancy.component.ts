@@ -1,8 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import {Review} from "../model/review";
-import {CarrerService} from "../service/carrer.service";
-import {VacancyNhan} from "../model/vacancyNhan";
-import {AuthenticationService} from "../service/authentication.service";
+import {Component, OnInit} from '@angular/core';
+import {CarrerService} from '../service/carrer.service';
+import {VacancyNhan} from '../model/vacancyNhan';
+import {AuthenticationService} from '../service/authentication.service';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 
 @Component({
@@ -25,3 +24,5 @@ vacancys:VacancyNhan[]
   }
 
 }
+
+

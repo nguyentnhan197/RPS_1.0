@@ -20,7 +20,7 @@
     <div class="form-group">
     <label for="title">Title</label>
       <select  id="title" class="form-control" formControlName="title" required>
-        <option  *ngFor="let position of positionList" [value]="position.positionName">{{position.positionName}}</option>
+        <option  *ngFor="let position of positionList" [value]="position">{{position.positionName}}</option>
       </select>
       <div class=" form-control-feedback control-label"
            *ngIf="title.errors && (title.dirty || title.touched)">
@@ -53,12 +53,12 @@
     <div class="form-group">
     <label for="department">Department</label>
     <select  id="department" class="form-control" formControlName="department" required>
-      <option  *ngFor="let department of departmentList" [value]="department.idDepartment">{{department.departmentName}}</option>
+      <option  *ngFor="let department of departmentList" [value]="department">{{department.departmentName}}</option>
     </select>
-      <div class=" form-control-feedback control-label"
-           *ngIf="department.errors && (department.dirty || department.touched)">
-        <p class="error" *ngIf="department.errors.required">Department is required</p>
-      </div>
+<!--      <div class=" form-control-feedback control-label"-->
+<!--           *ngIf="department.errors && (department.dirty || department.touched)">-->
+<!--        <p class="error" *ngIf="department.errors.required">Department is required</p>-->
+<!--      </div>-->
     </div>
 
     <div class="form-group"
@@ -92,6 +92,13 @@
       </div>
     </div>
 
+
+
+      <label>Offer</label>
+      <input class="form-control" type="text" placeholder="Offer"
+             formControlName="offer" required>
+
+
     <div class="form-group">
     <label >Type Of Staff:</label>
       <select class="form-control" formControlName="typeOfStaff" required>
@@ -120,3 +127,4 @@
     <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
   </form>
 </div>
+

@@ -1,4 +1,4 @@
-export class ApplicantDetails{
+export class ApplicantDetails {
   idApplicantDetails: number;
   applicantVacancy: Object;
   dateCreate: any;

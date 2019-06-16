@@ -19,23 +19,23 @@ export const viewReviewApplicant = [
   {
     applicantNumber: 15130125,
     titleVacancy: 'Tuyển Dev font-end',
-    suitableLocation: 'Font-End',
-    danhGiaChuyenNganh: '7/10',
-    danhGiaUngXu: '7/10',
+    positionRecommend: 'Font-End',
+    technicalReview: '7/10',
+    behaviorReview: '7/10',
     experience: 'Fresher',
-    trinhDoNgonNgu: 'Java, Angular',
+    languageReview: 'Java, Angular',
     result: 'pass',
-    ghiChu: 'Lương 1000$'
+    note: 'Lương 1000$'
   },
   {
     applicantNumber: 15130147,
     titleVacancy: 'Tuyển Dev back-end',
-    suitableLocation: 'Back-End',
-    danhGiaChuyenNganh: '4/10',
-    danhGiaUngXu: '7/10',
+    positionRecommend: 'Back-End',
+    technicalReview: '4/10',
+    behaviorReview: '7/10',
     experience: 'Fresher',
-    trinhDoNgonNgu: 'Java, DataBase',
+    languageReview: 'Java, DataBase',
     result: 'pass',
-    ghiChu: 'Lương 1500$'
+    note: 'Lương 1500$'
   }
 ]

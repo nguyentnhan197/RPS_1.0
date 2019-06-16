@@ -1,5 +1,5 @@
 import {BrowserModule} from '@angular/platform-browser';
-import {NgModule} from '@angular/core';
+import {APP_INITIALIZER, NgModule} from '@angular/core';
 import {AppComponent} from './app.component';
 import {CreateVacancyComponent} from './create-vacancy/create-vacancy.component';
 import {MenuComponent} from './menu/menu.component';
@@ -13,12 +13,12 @@ import {CarrerComponent} from './carrer/carrer.component';
 import {AppRoutingModule} from './app-routing.module';
 import {ReviewApplicantComponent} from './review-applicant/review-applicant.component';
 import {CarrerService} from "./service/carrer.service";
-import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {PositionService} from "./service/position.service";
-import {DetailCarerComponent} from './carrer/detail-carrer/detail-carer.component';
+import {HttpClientModule} from "@angular/common/http";
 
-import {DepartmentService} from "./service/department.service";
+import {PositionService} from "./service/position.service";
+
+
+import {DepartmentService} from './service/department.service';
 // import { SystemComponent } from './system/system.component';
 import {ChangedPasswordComponent} from './system/changed-password/changed-password.component';
 import {ProfileComponent} from './system/profile/profile.component';
@@ -30,12 +30,15 @@ import {ViewVacancyComponent} from "./view-vacancy/view-vacancy.component";
 import {ManpowerRequestComponent} from "./recruitment/manpower-request/manpower-request.component";
 import {UserService} from "./service/user.service";
 import {AuthenticationService} from "./service/authentication.service";
-import {ErrorInterceptor} from "./helpers/error.interceptor";
-import {XhrInterceptor} from "./helpers/xhr.interceptor";
-import {AuthGuard} from "./service/auth.guard";
+import {TranslatePipe} from './pipe/translate.pipe';
+import {TranslateService} from "./service/translate.service";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 // import { ViewVacancyComponent } from './view-vacancy/view-vacancy.component';
-
+export function setupTranslateFactory(
+  service: TranslateService): Function {
+  return () => service.use('en');
+}
 
 @NgModule({
   declarations: [
@@ -50,7 +53,7 @@ import {AuthGuard} from "./service/auth.guard";
     ViewApplicantComponent,
     CarrerComponent,
     ReviewApplicantComponent,
-    DetailCarerComponent,
+    // DetailCarerComponent,
     // SystemComponent,
     ChangedPasswordComponent,
     ProfileComponent,
@@ -60,6 +63,7 @@ import {AuthGuard} from "./service/auth.guard";
     ManpowerRequestComponent,
     ViewReviewApplicantComponent,
     ViewVacancyComponent,
+    TranslatePipe,
   ],
 
   imports: [
@@ -68,7 +72,6 @@ import {AuthGuard} from "./service/auth.guard";
     HttpClientModule,
     FormsModule,
     BrowserModule,
-    FormsModule,
 
     ReactiveFormsModule,
     // HttpClientXsrfModule.withOptions({cookieName: 'XSRF-TOKEN'})
@@ -78,24 +81,16 @@ import {AuthGuard} from "./service/auth.guard";
     DepartmentService,
     UserService,
     AuthenticationService,
-    {provide: HTTP_INTERCEPTORS, useClass: XhrInterceptor, multi: true},
-    {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true},
-    AuthGuard
-
-  ],
+    TranslateService,
+    {
+      provide: APP_INITIALIZER,
+      useFactory: setupTranslateFactory,
+      deps: [ TranslateService ],
+      multi: true
+    }
+    ],
   bootstrap: [AppComponent]
 
 })
-export class AppModule {
-}
 
-//----------------------------        EDIT MENU ROUTER ---------------------------
-
-// import { RouterModule } from '@angular/router';
-// import { APP_ROUTES } from './app.routes';
-// import {BrowserModule} from "@angular/platform-browser";
-//
-// imports: [
-//   BrowserModule,
-//   RouterModule.forRoot(APP_ROUTES)
-// ]
+export class AppModule { }

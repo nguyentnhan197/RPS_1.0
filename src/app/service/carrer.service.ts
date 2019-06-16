@@ -1,7 +1,6 @@
 import {Injectable} from "@angular/core";
 import {HttpClient, HttpHandler, HttpHeaders} from "@angular/common/http";
 import {Observable, of} from "rxjs";
-import {Vacancy} from "../model/vacancy.model";
 import {forEach} from "@angular/router/src/utils/collection";
 import {map} from 'rxjs/operators';
 // import {viewVacancy} from "../carrer/carrer.component";
@@ -37,10 +36,10 @@ export class CarrerService {
     return this.httpClient.get(this.apiRoot + '/vacancys', {headers: this.headers});
   }
 
-    createVacancy(vacancy:VacancyNhan){
-      return this.httpClient.post<VacancyNhan>(this.apiRoot + '/addVacancy', vacancy, {headers: this.headers});
-      // return this.httpClient.post(this.apiRoot + '/addVacancy', vacancy, {headers: new HttpHeaders().set('X-Auth-Token',this.authenticationService.getToken())});
-    }
+    // createVacancy(any){
+    //   return this.httpClient.post<VacancyNhan>(this.apiRoot + '/addVacancy', vacancy, {headers: this.headers});
+    //   // return this.httpClient.post(this.apiRoot + '/addVacancy', vacancy, {headers: new HttpHeaders().set('X-Auth-Token',this.authenticationService.getToken())});
+    // }
 
     // createVacancy(vacancy: Vacancy) {
     //   let body = JSON.parse(JSON.stringify(vacancy))
