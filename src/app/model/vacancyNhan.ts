@@ -2,6 +2,7 @@ import {User} from "./user.model";
 import {Department} from "./department.model";
 import {Position} from "./position.model";
 import {Timestamp} from "rxjs";
+import {Input} from "@angular/core";
 
 export class VacancyNhan  {
   public  slOpening:number;
@@ -9,13 +10,13 @@ export class VacancyNhan  {
   public offer:string;
   public  vacancyNumber:string;
   public  dateCreated:Date = new Date(Date.now());
-  public  ownedBy: any;
+  @Input()ownedBy: User;
 
-  public  position: Position;
+  @Input()  position: Position;
   public  state:string;
   public  description: string;
 
-  public  department:Department;
+  @Input() department:Department;
   public  dateClose: Date= new Date(Date.now());
   public requirement: string;
 
@@ -27,6 +28,7 @@ export class VacancyNhan  {
   public typeOfStaff: string;
   public constructor(init?: Partial<VacancyNhan >) {
     Object.assign(this, init);
+
   }
 }
 // type RecursivePartial<T> = {

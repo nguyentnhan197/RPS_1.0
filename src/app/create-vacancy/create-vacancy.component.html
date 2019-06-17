@@ -12,8 +12,8 @@
         <option  value="suspended">Suspended</option>
       </select>
       <div class=" form-control-feedback control-label"
-           *ngIf="status.errors && (status.dirty || status.touched)">
-        <p class="error" *ngIf="status.errors.required">Status is required</p>
+           *ngIf="state.errors && (state.dirty || state.touched)">
+        <p class="error" *ngIf="state.errors.required">Status is required</p>
       </div>
     </div>
 
@@ -23,8 +23,8 @@
         <option  *ngFor="let position of positionList" [value]="position">{{position.positionName}}</option>
       </select>
       <div class=" form-control-feedback control-label"
-           *ngIf="title.errors && (title.dirty || title.touched)">
-        <p class="error" *ngIf="title.errors.required">Title is required</p>
+           *ngIf="position.errors && (position.dirty || position.touched)">
+        <p class="error" *ngIf="position.errors.required">Title is required</p>
       </div>
     </div>
 
@@ -52,8 +52,8 @@
 
     <div class="form-group">
     <label for="department">Department</label>
-    <select  id="department" class="form-control" formControlName="department" required>
-      <option  *ngFor="let department of departmentList" [value]="department">{{department.departmentName}}</option>
+    <select  id="department" class="form-control" formControlName="departmentList" required>
+      <option  *ngFor="let department of departmentList,let i=index" [value]="departmentList[i].idDepartment">{{departmentList[i].departmentName}}</option>
     </select>
 <!--      <div class=" form-control-feedback control-label"-->
 <!--           *ngIf="department.errors && (department.dirty || department.touched)">-->
@@ -114,13 +114,13 @@
     </div>
 
     <div class="form-group"
-         [ngClass]="descriptiondetails.invalid && (descriptiondetails.dirty || descriptiondetails.touched) ? 'has-danger' : 'has-success' ">
+         [ngClass]="description.invalid && (description.dirty || description.touched) ? 'has-danger' : 'has-success' ">
       <label>Description Details</label>
       <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
                 formControlName="descriptiondetails" required></textarea>
       <div class=" form-control-feedback control-label"
-           *ngIf="descriptiondetails.errors && (descriptiondetails.dirty || descriptiondetails.touched)">
-        <p class="error" *ngIf="descriptiondetails.errors.required">Description Details is required</p>
+           *ngIf="description.errors && (description.dirty || description.touched)">
+        <p class="error" *ngIf="description.errors.required">Description Details is required</p>
       </div>
     </div>
     <button class="btn btn-info" (click)="onsubmit()" >Save</button>

@@ -33,6 +33,7 @@ import {AuthenticationService} from "./service/authentication.service";
 import {TranslatePipe} from './pipe/translate.pipe';
 import {TranslateService} from "./service/translate.service";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {AuthGuard} from "./service/auth.guard";
 
 // import { ViewVacancyComponent } from './view-vacancy/view-vacancy.component';
 export function setupTranslateFactory(
@@ -82,6 +83,8 @@ export function setupTranslateFactory(
     UserService,
     AuthenticationService,
     TranslateService,
+    AuthGuard ,
+
     {
       provide: APP_INITIALIZER,
       useFactory: setupTranslateFactory,

@@ -1,6 +1,5 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import { CanActivate } from '@angular/router';
 import {CarrerComponent} from './carrer/carrer.component';
 import {RouterModule, Routes} from '@angular/router';
 import {ViewApplicantComponent} from './view-applicant/view-applicant.component';
@@ -27,7 +26,7 @@ const routes: Routes = [
   {path: 'view-vacancy', component: ViewVacancyComponent},
   {path: 'hr/create-applicant', component: CreateApplicantComponent},
   {path: 'hr/create-vacancy', component: CreateVacancyComponent},
-  // {path: 'hr/create-vacancy', component: CreateVacancyComponent,canActivate[AuthGuard]},
+  {path: 'hr/create-vacancy', component: CreateVacancyComponent,},
   {path: 'interviewer/review-applicant', component: ReviewApplicantComponent},
   {path: 'interviewer/review-applicant', component: ReviewApplicantComponent},
   {path: 'interviewer/view-review-applicant', component: ViewReviewApplicantComponent},
@@ -42,6 +41,7 @@ const routes: Routes = [
 @NgModule({
   declarations: [],
   imports: [
+
     CommonModule,
     RouterModule.forRoot(routes)
   ],

@@ -4,12 +4,13 @@ import {Position} from "../model/position.model";
 import {PositionService} from "../service/position.service";
 import {DepartmentService} from "../service/department.service";
 import {Department} from "../model/department.model";
-import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Router} from "@angular/router";
 import {map} from "rxjs/operators";
 import {AuthenticationService} from "../service/authentication.service";
 import {VacancyNhan} from "../model/vacancyNhan";
+import {of} from "rxjs";
 
 
 @Component({
@@ -26,13 +27,13 @@ export class CreateVacancyComponent implements OnInit {
   myForm: FormGroup;
   numberOpening: FormControl;
   dateClose: FormControl;
-  descriptiondetails: FormControl;
+  description: FormControl;
   degree: FormControl;
   offer: FormControl;
-  status: FormControl;
-  title: FormControl;
+  state: FormControl;
+  position: FormGroup;
   experience: FormControl;
-  department: FormControl;
+  department: FormGroup;
   gender: FormControl;
   typeOfStaff: FormControl;
   apiURL: string = 'http://localhost:8080/RecruitmentProcessSystem';
@@ -46,7 +47,8 @@ export class CreateVacancyComponent implements OnInit {
               private departmentService: DepartmentService,
               private httpClient: HttpClient,
               private router: Router,
-              private authenticationService:AuthenticationService
+              private authenticationService:AuthenticationService,
+              private fBuider: FormBuilder
   ) {
   }
 
@@ -55,6 +57,10 @@ export class CreateVacancyComponent implements OnInit {
     this.getDepartmentList();
     this.createFormControls();
     this.createForm();
+    of(
+
+
+      this.myForm.controls.department.patchValue(this.departmentList[0].idDepartment));
 
   }
 
@@ -100,12 +106,14 @@ export class CreateVacancyComponent implements OnInit {
     const now= Date.now();
     this.numberOpening = new FormControl('', Validators.required);
     this.dateClose = new FormControl('', Validators.required);
-    this.descriptiondetails = new FormControl('', Validators.required);
+    this.description= new FormControl('', Validators.required);
     this.degree = new FormControl('rtrtrt', Validators.required);
-    this.status = new FormControl('', Validators.required);
-    this.title = new FormControl('', Validators.required);
+    this.state = new FormControl('', Validators.required);
+    this.position = new FormGroup({idPosition: new FormControl(''),
+                                              positionName:new FormControl('',Validators.required)});
     this.experience = new FormControl('', Validators.required);
-    this.department = new FormControl('', Validators.required);
+    this.department = new FormGroup({idDepartment: new FormControl(''),
+      departmentName:new FormControl('',Validators.required)});
     this.gender = new FormControl('', Validators.required);
     this.typeOfStaff = new FormControl('', Validators.required);
     this.offer = new FormControl('', Validators.required);
@@ -116,10 +124,10 @@ export class CreateVacancyComponent implements OnInit {
     this.myForm = new FormGroup({
       numberOpening: this.numberOpening,
       dateClose: this.dateClose,
-      descriptiondetails: this.descriptiondetails,
+      description: this.description,
       degree: this.degree,
-      status: this.status,
-      title: this.title,
+      status: this.state,
+      position: this.position,
       experience: this.experience,
       department: this.department,
       gender: this.gender,
