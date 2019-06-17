@@ -11,7 +11,7 @@ export class ReviewApplicantComponent implements OnInit {
 
   myForm: FormGroup;
   apiURL = '';
-  exps: string[] = ['Fresher', 'Internship', 'Senior'];
+  // exps: string[] = ['Fresher', 'Internship', 'Senior'];
   results: string[] = ['Pass', 'Fail', 'Consider'];
   applicantNumber: FormControl;
    titleVacancy: FormControl;

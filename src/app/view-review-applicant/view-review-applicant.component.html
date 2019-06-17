@@ -1,43 +1,44 @@
 <div class="viewReviewApplicant">
-  <div class="viewReviewApplicantTop">
-    <table class="tableViewReviewApplicantTop align-middle" align="center">
-      <tr>
-        <td>
-          <label class="applicantNumber">Applicant number</label>
-          <input type="text" id="applicantNumber" name="applicantNumber">
-        </td>
-        <td>
-          <label for="titleVacancy">Title Vacancy</label>
-          <input type="text" id="titleVacancy" name="titleVacancy">
-        </td>
-        <td>
-          <label for="result">Result</label> <select id="result" name="result">
-          <option value="pass">Pass</option>
-          <option value="fail">Fail</option>
-          <option value="consider">Consider</option>
-        </select>
-        </td>
-      </tr>
+  <div class="container">
+    <form [formGroup]="myForm">
+      <table class="tableViewReviewApplicantTop align-middle" align="center">
+        <tr>
+          <td>
+            <label>Applicant number</label>
+            <input type="text" class="form-control" formControlName="applicantNumber">
+          </td>
+          <td>
+            <label>Title Vacancy</label>
+            <input type="text" class="form-control" formControlName="titleVacancy">
+          </td>
+          <td>
+            <label>Result</label> <select class="form-control" formControlName="result">
+            <option *ngFor="let result of results" [value]="result">{{result}}</option>
+          </select>
+          </td>
+        </tr>
 
-    </table>
+      </table>
+    </form>
     <div class="btnAll">
-      <button class="btnSearch"><i class="fa fa-search"></i> Search</button>
-      <button class="btnAdd"><i class="fa fa-plus"></i> Add new</button>
+      <button class="btnSearch" (click)="onsubmit()"><i class="fa fa-search"></i> Search</button>
+      <button class="btnAdd" routerLink="/interviewer/review-applicant" routerLinkActive="active"><i class="fa fa-plus"></i> Add new </button>
       <button class="btnExport">Date export</button>
     </div>
+
   </div>
   <div class="viewReviewApplicantBot">
     <table class="table table-striped">
       <tr>
-        <th>applicantNumber</th>
-        <th>titleVacancy</th>
-        <th>suitableLocation</th>
-        <th>danhGiaChuyenNganh</th>
-        <th>danhGiaUngXu</th>
-        <th>experince</th>
-        <th>trinhDoNgonNgu</th>
-        <th>result</th>
-        <th>ghiChu</th>
+        <th>Applicant Number</th>
+        <th>Title Vacancy</th>
+        <th>Position Recommend</th>
+        <th>Technical Review</th>
+        <th>Behavior Review</th>
+        <th>Experience</th>
+        <th>Language Review</th>
+        <th>Result</th>
+        <th>Note</th>
         <th></th>
       </tr>
 
@@ -62,7 +63,6 @@
     </table>
 
   </div>
-
 
 
 </div>

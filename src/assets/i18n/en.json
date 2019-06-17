@@ -6,13 +6,51 @@
   "hrActive": "Hr Active",
   "system": "System",
   "recruitment": "Recruitment",
-  "username":" Username: ",
-  "usernameRequire":"Username is require",
-  "usernameLong":"Name must be at least 4 characters long.",
-  "usernameMail":"Please using email",
-  "password":"Password",
-  "passRequire":"Password is require",
-  "passLong":"Password must be at least 4 characters long.",
-  "":""
+  "username": " Username: ",
+  "usernameRequire": "Username is require",
+  "usernameLong": "Name must be at least 4 characters long.",
+  "usernameMail": "Please using email",
+  "password": "Password",
+  "passRequire": "Password is require",
+  "passLong": "Password must be at least 4 characters long.",
+  "": "",
+
+  "submit": "Submit",
+  "oldPass": "Old password",
+  "newPass": "New password",
+  "confirmPass": "Confirm new password",
+  "save": "Save",
+  "cancel": "Cancel",
+
+  "id": "ID Applicant",
+  "name": "Applicant name",
+  "position": "Position",
+  "vacacyNumber": "Vacancy Number",
+  "dateOfApplicant": "Date of applicant",
+  "nameOfTheInterviewer": "Name of the Interviewer",
+  "dateScheduled": "The date of the scheduled interview",
+  "email": "Email",
+  "phone": "Phone",
+  "status": "Status",
+  "experience": "Experience",
+  "start": "Start",
+  "end": "End",
+
+  "idVacancy": "ID vacancy",
+  "ownedBy": "Owned By",
+  "dateClose": "Date Close",
+  "typeOfStaff": "Type Of Staff",
+
+
+
+
+
+
+
+
+  "btnSearch": "Search",
+  "btnCreateApp": "Create Applicant",
+  "btnCreateVacancy": "Create Vacancy",
+  "btnExport": "Export file"
 
 }

@@ -1,43 +1,48 @@
 <div class="mrManager">
 
-  <div class="mrManagerTop">
+  <!--  <nav>-->
+  <!--    <button routerLink="/recruitment/applicant-approval" routerLinkActive="active">View Vacancy</button>-->
+  <!--  </nav>-->
+
+  <div class="container">
     <h2>Manpower request list by manager</h2>
-    <table class="tableMrManagerTop">
-      <tr>
-        <td><label for="id_request">ID requiet</label>
-          <input type="text" id="id_request" name="id_request">
+    <form [formGroup]="myForm">
+      <table class="tableMrManagerTop">
+        <tr>
+          <td>
+            <label>ID requiet</label>
+            <input type="number" class="form-control" formControlName="idRequiet">
+            <br>
+            <label>Position</label>
+            <input type="text" class="form-control" formControlName="position">
 
-          <label for="vacancyName">Vacancy name</label>
-          <input type="text" id="vacancyName" name="vacancyName">
+          </td>
 
-        </td>
+          <td>
+            <label>Quatity</label>
+            <input type="number" class="form-control" formControlName="quatity">
+            <br>
+            <label>Experince</label>
+            <input type="number" class="form-control" formControlName="experince">
+            <br>
+            <label>Requester</label>
+            <input type="text" class="form-control" formControlName="requieter">
+          </td>
+          <td>
+            <label>From date</label>
+            <input type="date" class="form-control" formControlName="fromDate">
+            <br>
+            <label>To date</label>
+            <input type="date" class="form-control" formControlName="toDate">
 
-        <td>
-          <label for="requester">Requester</label>
-          <input type="text" id="requester" name="requester">
 
-          <label for="quatity">Quatity</label>
-          <input type="text" id="quatity" name="quatity">
+          </td>
 
-          <label>Experience</label> <select id="experience:" name="experience:">
-          <option value="fresher">Fresher</option>
-          <option value="internship">Internship</option>
-          <option value="senior">Senior</option>
-        </select>
-        </td>
-        <td>
-          <label for="fromDate">From date</label>
-          <input type="date" id="fromDate" name="fromDate">
-
-          <label for="toDate">To date</label>
-          <input type="date" id="toDate" name="toDate">
-
-        </td>
-
-      </tr>
-    </table>
+        </tr>
+      </table>
+    </form>
     <div class="btnAll">
-      <button class="btnSearch"><i class="fa fa-search"></i> Search</button>
+      <button class="btnSearch" (click)="onsubmit()"><i class="fa fa-search"></i> Search</button>
       <button class="btnAdd"><i class="fa fa-plus"></i> Add new</button>
       <button class="btnExport">Date export</button>
     </div>

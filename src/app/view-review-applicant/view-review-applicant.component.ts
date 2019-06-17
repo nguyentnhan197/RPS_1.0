@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import {Review} from "../model/review";
+import {Component, OnInit} from '@angular/core';
+import {Review} from '../model/review';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {HttpClient} from '@angular/common/http';
 
 @Component({
   selector: 'app-view-review-applicant',
@@ -8,13 +10,42 @@ import {Review} from "../model/review";
 })
 export class ViewReviewApplicantComponent implements OnInit {
   viewReviewApplicant: Review[] = viewReviewApplicant;
+  myForm: FormGroup;
+  apiURL = '';
+  results: string[] = ['Pass', 'Fail', 'Consider'];
+  applicantNumber: FormControl;
+  titleVacancy: FormControl;
+  result: FormControl;
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor(protected httpClient: HttpClient) {
   }
 
+  ngOnInit() {
+    this.createFormControls();
+    this.createForm();
+  }
+  onsubmit() {
+    if (this.myForm.valid) {
+      console.log(this.myForm.value);
+      this.httpClient.post(`${this.apiURL}/v00.acacyavhbjnk/`, this.myForm.value);
+      this.myForm.reset();
+    }
+  }
+  createFormControls() {
+    this.applicantNumber = new FormControl('', Validators.required);
+    this.titleVacancy = new FormControl('', Validators.required);
+    this.result = new FormControl('', Validators.required);
+  }
+
+  createForm() {
+    this.myForm = new FormGroup({
+      applicantNumber: this.applicantNumber,
+      titleVacancy: this.titleVacancy,
+      result: this.result,
+    });
+  }
 }
+
 export const viewReviewApplicant = [
   {
     applicantNumber: 15130125,
@@ -38,4 +69,4 @@ export const viewReviewApplicant = [
     result: 'pass',
     note: 'Lương 1500$'
   }
-]
+];

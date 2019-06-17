@@ -1,96 +1,55 @@
-<div class="create-applicant">
-  <div class="containerIS">
-  <button class="btnSchedule" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Schedule Interview
-  </button>
+<div class="container">
+  <form [formGroup]="myForm">
 
-  <div id="id01" class="modal">
+    <label>ID applicant</label>
+    <input type="number" class="form-control" formControlName="id" placeholder="Enter id applicant">
 
-    <form class="modal-content animate" action="/action_page.php">
-      <div class="imgcontainer">
-          <span onclick="document.getElementById('id01').style.display='none'" class="close"
-                title="Close Modal">&times;</span>
-      </div>
+    <label>Name</label>
+    <input type="text" class="form-control" formControlName="name" placeholder="Enter name applicant">
 
-<!--      <div class="containerIS">-->
-        <label for="nInterviewer"><b> Number of the Interviewer</b></label>
-        <input type="text" id="nInterviewer"    placeholder="Enter number of the Interviewer " name="nInterviewer" required>
+    <label>Email</label>
+    <input type="text" class="form-control" formControlName="email" placeholder="Enter email for you">
 
-        <label for="nameInterviewer"><b> Name of the Interviewer</b></label>
-        <input type="text" id="nameInterviewer" placeholder="Enter name of the Interviewer " name="nameInterviewer" required>
+    <label>Phone</label>
+    <input type="number" class="form-control" formControlName="phone" placeholder="Enter phone for you">
 
-        <label for="scheduled"><b>The date of the scheduled interview</b></label>
-        <input type="date" id="scheduled" name="scheduled" required>
+    <label>Vacacy Number</label>
+    <input type="number" class="form-control" formControlName="vacacyNumber" placeholder="Enter vacacy number">
 
-        <label for="Start"><b>The start time of the scheduled interview</b></label>
-        <input type="time" id="Start" name="usr_time" required>
+    <label>Position</label>
+    <input type="text" class="form-control" formControlName="position" placeholder="Enter position">
 
-        <label for="End"><b>The end time of the scheduled interview</b></label>
-        <input type="time" id="End"   name="usr_time" required>
-
-        <button type="submit">Save</button>
-
-<!--      </div>-->
+    <label>Date of applicant</label>
+    <input type="date" class="form-control" formControlName="dateOfApplicant" placeholder="Enter date of applicant">
 
 
-    </form>
-  </div>
-
-  <script>
-    // Get the modal
-    var modal = document.getElementById('id01');
-
-    // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function (event) {
-      if (event.target == modal) {
-        modal.style.display = "none";
-      }
-    }
-  </script>
-</div>
-  <div class="container">
-
-    <label for="name">Name</label>
-    <input type="text" id="name" name="name" placeholder="Name">
-
-    <label for="email">Email</label>
-    <input type="text" id="email" name="email" placeholder="Email">
-
-    <label for="title">Title</label>
-    <input type="text" id="title" name="title" placeholder="Title">
-
-    <label for="dateApplicant">Date of applicant</label>
-    <input type="date" id="dateApplicant" name="dayApp">
-
-
-    <label for="status">Status</label> <select id="status" name="status">
+    <label>Status</label> <select class="form-control" formControlName="status">
     <option value="notinProcess">Notin process</option>
     <option value="inprocess">Inprocess</option>
     <option value="hired">Hired</option>
     <option value="banned">Banned</option>
   </select>
 
-    <label for="numberVacancy">Vacancy number</label>
-    <input type="text" id="numberVacancy" name="numberVacancy" placeholder="Vacancy Number">
-
-    <label for="status">Experience:</label> <select id="experience:" name="experience:">
+    <label>Experience</label> <select class="form-control" formControlName="experience">
     <option value="fresher">Fresher</option>
     <option value="internship">Internship</option>
     <option value="senior">Senior</option>
   </select>
 
-    <label for="status">Interview 1:</label> <select id="interview1:">
-    <option value="interview1">Nguyen Van A</option>
-    <option value="interview11">Nguyen Van A</option>
-    <option value="interview12">Nguyen Van A</option>
-  </select>
+    <label>Interviewer </label>
+    <input type="text" class="form-control" formControlName="nameOfTheInterviewer" placeholder="Enter name interviewer">
 
-    <label for="status">Interview 2:</label> <select id="interview2:">
-    <option value="interview2">Nguyen Van A</option>
-    <option value="interview21">Nguyen Van A</option>
-    <option value="interview22">Nguyen Van A</option>
-  </select>
 
-    <input type="submit" value="Create applicant">
+    <label>Date scheduled</label>
+    <input type="date" class="form-control" formControlName="dateScheduled" placeholder="Enter date scheduled">
 
-  </div>
+    <label>Time start</label>
+    <input type="time" class="form-control" formControlName="start" placeholder="Enter time start">
+
+    <label>Time end</label>
+    <input type="time" class="form-control" formControlName="end" placeholder="Enter time end">
+
+    <button class="btnSave" (click)="onsubmit()"><i class="fa fa-save"></i> Save</button>
+  </form>
 </div>
+

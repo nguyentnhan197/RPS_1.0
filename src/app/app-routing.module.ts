@@ -12,10 +12,10 @@ import {ChangedPasswordComponent} from './system/changed-password/changed-passwo
 import {ProfileComponent} from './system/profile/profile.component';
 import {ManpowerRequestComponent} from './recruitment/manpower-request/manpower-request.component';
 import {ApplicantApprovalComponent} from './recruitment/applicant-approval/applicant-approval.component';
-import {ManpowerRequestManagerComponent} from "./recruitment/manpower-request-manager/manpower-request-manager.component";
-import {ViewReviewApplicantComponent} from "./view-review-applicant/view-review-applicant.component";
-import {ViewVacancyComponent} from "./view-vacancy/view-vacancy.component";
-import {LoginComponent} from "./login/login.component";
+import {ManpowerRequestManagerComponent} from './recruitment/manpower-request-manager/manpower-request-manager.component';
+import {ViewReviewApplicantComponent} from './view-review-applicant/view-review-applicant.component';
+import {ViewVacancyComponent} from './view-vacancy/view-vacancy.component';
+import {LoginComponent} from './login/login.component';
 
 const routes: Routes = [
   {path: '', component: LoginComponent},
@@ -26,7 +26,6 @@ const routes: Routes = [
   {path: 'view-vacancy', component: ViewVacancyComponent},
   {path: 'hr/create-applicant', component: CreateApplicantComponent},
   {path: 'hr/create-vacancy', component: CreateVacancyComponent},
-  {path: 'interviewer/review-applicant', component: ReviewApplicantComponent},
   {path: 'interviewer/review-applicant', component: ReviewApplicantComponent},
   {path: 'interviewer/view-review-applicant', component: ViewReviewApplicantComponent},
   {path: 'system/profile', component: ProfileComponent},

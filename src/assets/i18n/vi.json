@@ -12,6 +12,38 @@
   "usernameMail":"Vui lòng sử dụng tên tài khoản có định dạng @",
   "password":"Mật khẩu",
   "passRequire":"Vui lòng nhập mật khẩu",
-  "passLong":"Số lượng kí tự phải trên 4"
+  "passLong":"Số lượng kí tự phải trên 4",
+
+  "submit": "Đăng nhập",
+  "oldPass": "Mật khẩu cũ",
+  "newPass": "Mật khẩu mới",
+  "confirmPass": "Nhập lại mật khẩu mới",
+  "save": "Lưu",
+  "cancel": "Thoát",
+
+  "id": "Mã ứng viên",
+  "name": "Tên ứng viên",
+  "position": "Chức vụ",
+  "vacacyNumber": "Mã vị trí ứng tuyển",
+  "dateOfApplicant": "Ngày nộp đơn",
+  "nameOfTheInterviewer": "Tên người phỏng vấn",
+  "dateScheduled": "Ngày phỏng vấn",
+  "email": "Email",
+  "phone": "Số điện thoại",
+  "status": "Trạng thái",
+  "experience": "Kinh nghiệm",
+  "start": "Thời gian bắt đầu",
+  "end": "Thời gian kết thúc",
+
+  "idVacancy": "Mã vị trí ứng tuyển",
+  "ownedBy": "Người phỏng vấn",
+  "dateClose": "Ngày đóng ứng tuyển",
+  "typeOfStaff": "Loại nhân viên",
+
+
+  "btnSearch": "Tìm kiếm",
+  "btnCreateApp": "Tạo ứng viên",
+  "btnCreateVacancy": "Tạo vị trí ứng tuyển",
+  "btnExport": "Xuất file"
 
 }

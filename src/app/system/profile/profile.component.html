@@ -1,106 +1,60 @@
-<div class="profile">
-  <h2>Personal information</h2>
-  <table class="tableProfile">
-    <tr>
-      <td>
-        <label for="id">ID</label>
-        <input type="text" id="id" name="id">
+<div class="container">
+  <form [formGroup]="myForm">
+    <h2>Personal information</h2>
+    <table class="tableProfile">
+      <tr>
+        <td>
 
-        <label for="fullName">Full name</label>
-        <input type="text" id="fullName" name="fullName">
+          <label>User Number</label>
+          <input type="number" class="form-control" formControlName="userNumber">
 
-        <label for="gender">Gender</label> <select id="gender" name="gender">
-        <option value="Male">Male</option>
-        <option value="Female">Female</option>
-      </select>
+          <label>Full name</label>
+          <input type="text" class="form-control" formControlName="fullName">
 
+          <label>User Name</label>
+          <input type="text" class="form-control" formControlName="userName">
 
-        <label for="nationality">Nationality</label> <select id="nationality" name="nationality">
-        <option value="vietnamese">Vietnamese</option>
-        <option value="usa">USA</option>
-        <option value="japan">Japan</option>
-        <option value="china">China</option>
-        <option value="korea">Korea</option>
-      </select>
-      </td>
-      <td>
+        </td>
+        <td>
 
-        <label for="birthday">Birthday</label>
-        <input type="date" id="birthday" name="birthday">
+          <label>Birthday</label>
+          <input type="date" class="form-control" formControlName="birthday">
 
-        <label for="placeBirth">Place of birth</label>
-        <input type="text" id="placeBirth" name="placeBirth">
+          <label>Gender</label> <select class="form-control" formControlName="gender">
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+        </select>
 
-        <label for="maritalStatus">Marital status</label>
-        <input type="text" id="maritalStatus" name="maritalStatus">
+          <label>Address</label>
+          <input type="text" class="form-control" formControlName="address">
 
-        <label for="ethnic">Ethnic</label>
-        <input type="text" id="ethnic" name="ethnic">
-      </td>
-    </tr>
-    <!-- -->
-    <tr>
-      <td>
+        </td>
+      </tr>
+      <!--   -->
+      <tr>
+        <td>
+          <label>Email</label>
+          <input type="text" class="form-control" formControlName="email">
+        </td>
+        <td>
+          <label>Phone</label>
+          <input type="number" class="form-control" formControlName="phone">
+        </td>
+      </tr>
+      <!--  -->
+      <tr>
+        <td>
+          <label>Name position</label>
+          <input type="text" class="form-control" formControlName="namePosition">
+        </td>
+        <td>
+          <label>Name department</label>
+          <input type="text" class="form-control" formControlName="nameDepartment">
+        </td>
+      </tr>
 
-        <label for="idCardNo">ID card no</label>
-        <input type="text" id="idCardNo" name="idCardNo">
-
-        <label for="issuedPlace">Issued Place</label>
-        <input type="text" id="issuedPlace" name="issuedPlace">
-      </td>
-      <td>
-        <label for="issuedDate">Issued Date</label>
-        <input type="date" id="issuedDate" name="issuedDate">
-      </td>
-    </tr>
-    <!-- -->
-    <tr>
-      <td>
-        <label for="educationQualification">Education qualification</label>
-        <input type="text" id="educationQualification" name="educationQualification">
-      </td>
-      <td>
-        <label for="degree-Certificate">Degree/Certificate</label>
-        <input type="text" id="degree-Certificate" name="degree-Certificate">
-      </td>
-    </tr>
-    <!--  -->
-    <tr>
-      <td>
-        <label for="email">Email</label>
-        <input type="text" id="email" name="email">
-      </td>
-      <td>
-        <label for="phone">Phone</label>
-        <input type="text" id="phone" name="phone">
-      </td>
-    </tr>
-    <!--  -->
-    <tr>
-      <td>
-        <label for="bank">Bank</label>
-        <input type="text" id="bank" name="bank">
-      </td>
-      <td>
-        <label for="accNo">Account No</label>
-        <input type="text" id="accNo" name="accNo">
-      </td>
-    </tr>
-    <!--  -->
-    <tr>
-      <td>
-        <label for="joiningDate">Joining date</label>
-        <input type="date" id="joiningDate" name="joiningDate">
-      </td>
-      <td>
-        <label for="contract">First offical contract from</label>
-        <input type="date" id="contract" name="contract">
-      </td>
-    </tr>
-
-
-
-  </table>
+    </table>
+  </form>
   <button class="btnCancel"><i class="fa fa-cancel"></i> Cancel</button>
-  <button class="btnSave"><i class="fa fa-save"></i> Save</button>
+  <button class="btnSave" (click)="onsubmit()"><i class="fa fa-save"></i> Save</button>
 </div>

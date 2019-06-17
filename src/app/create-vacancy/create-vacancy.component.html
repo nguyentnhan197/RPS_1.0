@@ -19,12 +19,12 @@
 
     <div class="form-group">
     <label for="title">Title</label>
-      <select  id="title" class="form-control" formControlName="title" required>
+      <select  id="title" class="form-control" formControlName="position" required>
         <option  *ngFor="let position of positionList" [value]="position.positionName">{{position.positionName}}</option>
       </select>
       <div class=" form-control-feedback control-label"
-           *ngIf="title.errors && (title.dirty || title.touched)">
-        <p class="error" *ngIf="title.errors.required">Title is required</p>
+           *ngIf="position.errors && (position.dirty || position.touched)">
+        <p class="error" *ngIf="position.errors.required">Position is required</p>
       </div>
     </div>
 
@@ -45,7 +45,7 @@
          [ngClass]="quantity.invalid && (quantity.dirty || quantity.touched) ? 'has-danger' : 'has-success' ">
     <label>Quatity</label>
     <input class="form-control" type="number" placeholder="Quantity" required
-           formControlName="quantity">
+           formControlName="slOpening">
       <div class=" form-control-feedback control-label"
            *ngIf="quantity.errors && (quantity.dirty || quantity.touched)">
         <p class="error" *ngIf="quantity.errors.required">Quantity is required</p>
@@ -53,13 +53,13 @@
     </div>
 
     <div class="form-group"
-         [ngClass]="numberOpening.invalid && (numberOpening.dirty || numberOpening.touched) ? 'has-danger' : 'has-success' ">
+         [ngClass]="slOpening.invalid && (slOpening.dirty || slOpening.touched) ? 'has-danger' : 'has-success' ">
     <label >Number opening</label>
     <input class="form-control" type="number"   placeholder="Number Opening"
            formControlName="numberOpening" required>
       <div class=" form-control-feedback control-label"
-           *ngIf="numberOpening.errors && (numberOpening.dirty || numberOpening.touched)">
-        <p class="error" *ngIf="numberOpening.errors.required">Number opening is required</p>
+           *ngIf="slOpening.errors && (slOpening.dirty || slOpening.touched)">
+        <p class="error" *ngIf="slOpening.errors.required">Number opening is required</p>
       </div>
     </div>
 

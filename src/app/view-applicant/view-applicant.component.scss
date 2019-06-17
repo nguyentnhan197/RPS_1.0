@@ -1,7 +1,7 @@
 .viewApplicant {
   //margin: 0 30px 0 30px;
 
-  .viewApplicantTop {
+  .container {
     border-collapse: collapse;
     border-spacing: 50px;
     border-radius: 10px;
@@ -17,7 +17,7 @@
     .tableViewApplicantTop {
       border-collapse: collapse;
       border-spacing: 0;
-      width: 50%;
+      //width: 50%;
       margin-top: 15px;
 
       .th, .td {
@@ -31,25 +31,9 @@
         background-color: #f2f2f2
       }
 
-      input[type=text], select {
-        width: 100%;
-        padding: 12px 20px;
-        margin: 8px 0;
-        display: block;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        box-sizing: border-box;
-      }
 
-      input[type=date], [type=time], select {
-        width: 100%;
-        padding: 12px 20px;
-        margin: 8px 0;
-        display: block;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        box-sizing: border-box;
-      }
+
+
 
     }
 

@@ -1,27 +1,28 @@
 <div class="viewVacancy">
-  <div class="viewVacancyTop">
+  <div class="container">
+    <form [formGroup]="myForm">
     <table class="tableViewVacancyTop align-middle" align="center">
+
       <tr>
+        <td><label>{{'idVacancy' | translate}}</label>
+          <input type="number" class="form-control" formControlName="idVacancy">
 
-        <td><label for="id_vacancy">ID vacancy</label>
-          <input type="text" id="id_vacancy" name="id_vacancy">
+          <label>{{'ownedBy' | translate}}</label>
+          <input type="text" class="form-control" formControlName="ownedBy"></td>
 
-          <label for="ownedBy">Owned By</label>
-          <input type="text" id="ownedBy" name="ownedBy"></td>
-
-        <td><label for="statusVacancy">Status of the Vacancy</label> <select id="statusVacancy" name="statusVacancy">
+        <td><label>{{'status' | translate}}</label> <select class="form-control" formControlName="status">
           <option value="open">Open</option>
           <option value="close">Close</option>
           <option value="suspended">Suspended</option>
         </select>
 
-          <label for="title">Title</label>
-          <input type="text" id="title" name="title" placeholder="Title"></td>
+          <label>{{'position' | translate}}</label>
+          <input type="text" class="form-control" formControlName="position" placeholder="Position"></td>
 
-        <td><label for="dateGetsClosed">Date gets closed</label>
-          <input type="date" id="dateGetsClosed" name="dateGetsClosed">
+        <td><label>{{'dateClose' | translate}}</label>
+          <input type="date" class="form-control" formControlName="dateClose">
 
-          <label for="typeOfStaff">Type Of Staff:</label> <select id="typeOfStaff" name="typeOfStaff:">
+          <label>{{'typeOfStaff' | translate}}</label> <select class="form-control" formControlName="typeOfStaff">
             <option value="partTime">Part time</option>
             <option value="fullTime">Full Time</option>
             <option value="partTime">Freelance</option>
@@ -29,10 +30,11 @@
           </select></td>
       </tr>
     </table>
+    </form>
     <div class="btnAll">
-      <button class="btnSearch"><i class="fa fa-search"></i> Search</button>
-      <button class="btnAdd"><i class="fa fa-plus"></i> Create Vacancy</button>
-      <button class="btnExport">Date export</button>
+      <button class="btnSearch" (click)="onsubmit()"><i class="fa fa-search"></i> {{'btnSearch' | translate}}</button>
+      <button class="btnCreateVacancy"><i class="fa fa-plus"></i> {{'btnCreateVacancy' | translate}}</button>
+      <button class="btnExport">{{'btnExport' | translate}}</button>
     </div>
   </div>
   <div class="viewVacancyBot">
@@ -41,7 +43,7 @@
         <th>ID Vacancy</th>
         <th>Date Created</th>
         <th>Owned By</th>
-        <th>State</th>
+        <th>Status</th>
         <th>Position</th>
         <th>Description</th>
         <th>Number Opening</th>
@@ -54,31 +56,31 @@
         <th>Type Of Staff</th>
         <th></th>
       </tr>
-      <ng-container *ngFor="let v of vacancys">
-        <tr>
-          <td>{{v.idVacancy}}</td>
-          <td>{{v.dateCreated}}</td>
+<!--      <ng-container *ngFor="let v of vacancys">-->
+<!--        <tr>-->
+<!--          <td>{{v.idVacancy}}</td>-->
+<!--          <td>{{v.dateCreated}}</td>-->
 
-          <td>{{v.ownedBy}}</td>
-          <td>{{v.state}}</td>
-          <td>{{v.position.positionName}}</td>
-          <td>{{v.description}}</td>
-          <td>{{v.numberOpening}}</td>
-          <td>{{v.department.departmentName}}</td>
-          <td>{{v.dateClose}}</td>
-          <td>{{v.requirement}}</td>
-          <td>{{v.offer}}</td>
-          <td>{{v.experience}}</td>
-          <td>{{v.language}}</td>
-          <td>{{v.typeOfStaff}}</td>
-          <td>
-            <button class="btn btn-info btn-sm"><i class="fa fa-edit small"></i></button>
-            <button class="btn btn-danger btn-sm"><i class="fa fa-close small"></i></button>
-          </td>
+<!--          <td>{{v.ownedBy}}</td>-->
+<!--          <td>{{v.state}}</td>-->
+<!--          <td>{{v.position.positionName}}</td>-->
+<!--          <td>{{v.description}}</td>-->
+<!--          <td>{{v.slOpening}}</td>-->
+<!--          <td>{{v.department.departmentName}}</td>-->
+<!--          <td>{{v.dateClose}}</td>-->
+<!--          <td>{{v.requirement}}</td>-->
+<!--          <td>{{v.offer}}</td>-->
+<!--          <td>{{v.experience}}</td>-->
+<!--          <td>{{v.language}}</td>-->
+<!--          <td>{{v.typeOfStaff}}</td>-->
+<!--          <td>-->
+<!--            <button class="btn btn-info btn-sm"><i class="fa fa-edit small"></i></button>-->
+<!--            <button class="btn btn-danger btn-sm"><i class="fa fa-close small"></i></button>-->
+<!--          </td>-->
 
-        </tr>
+<!--        </tr>-->
 
-      </ng-container>
+<!--      </ng-container>-->
 
     </table>
   </div>
