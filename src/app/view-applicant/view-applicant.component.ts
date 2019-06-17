@@ -8,7 +8,7 @@ import {HttpClient} from '@angular/common/http';
   styleUrls: ['./view-applicant.component.scss']
 })
 export class ViewApplicantComponent implements OnInit {
-  candicates: Candicate[] = listOfCandidates;
+  candicates: Candicate[];
   myForm: FormGroup;
   apiURL = '';
   id: FormControl;
