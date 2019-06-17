@@ -16,7 +16,7 @@ authenticated=false;
 
   authenticate(username, password) {
     const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(username + ':' + password) });
-    const body={username}
+    // const body={username}
     return this.httpClient.get(this.apiRoot+'user',{headers}).pipe(
       map(
         userData => {
