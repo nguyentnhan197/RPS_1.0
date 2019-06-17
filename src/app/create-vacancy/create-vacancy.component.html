@@ -1,58 +1,47 @@
 <div class="container">
   <form [formGroup]="myForm">
     <div class="form-group">
-    <h4>Owned by</h4>
+    <h4 >Owned by   {{ownedBy}}  </h4>
     </div>
 
     <div class="form-group">
     <label>Status of the Vacancy</label>
-      <select class="form-control" formControlName="status" required>
+      <select class="form-control" formControlName="state" required>
         <option  value="open">Open</option>
         <option  value="close">Close</option>
         <option  value="suspended">Suspended</option>
       </select>
       <div class=" form-control-feedback control-label"
-           *ngIf="status.errors && (status.dirty || status.touched)">
-        <p class="error" *ngIf="status.errors.required">Status is required</p>
+           *ngIf="state.errors && (state.dirty || state.touched)">
+        <p class="error" *ngIf="state.errors.required">Status is required</p>
       </div>
     </div>
 
+    <fieldset formGroupName="position">
     <div class="form-group">
-    <label for="title">Title</label>
-      <select  id="title" class="form-control" formControlName="title" required>
-        <option  *ngFor="let position of positionList" [value]="position.positionName">{{position.positionName}}</option>
+    <label>Title</label>
+      <select class="form-control" formControlName="idPosition" required (change)="selectPosition($event.target.value)">
+        <option  *ngFor="let position of positionList" [value]="position.idPosition">{{position.positionName}}</option>
       </select>
       <div class=" form-control-feedback control-label"
-           *ngIf="title.errors && (title.dirty || title.touched)">
+           *ngIf="idPosition.errors && (idPosition.dirty || idPosition.touched)">
         <p class="error" *ngIf="title.errors.required">Title is required</p>
       </div>
     </div>
+    </fieldset>
 
     <div class="form-group">
     <label >Experience</label>
-      <select id="experience:" name="experience:" class="form-control" formControlName="experience" required>
-        <option value="fresher">Fresher</option>
-        <option value="internship">Internship</option>
-        <option value="senior">Senior</option>
-      </select>
+
+      <input class="form-control" type="number"   placeholder="experience"
+             formControlName="experience" required>
       <div class=" form-control-feedback control-label"
            *ngIf="experience.errors && (experience.dirty || experience.touched)">
         <p class="error" *ngIf="experience.errors.required">Experience is required</p>
       </div>
     </div>
 
-    <div class="form-group "
-         [ngClass]="quantity.invalid && (quantity.dirty || quantity.touched) ? 'has-danger' : 'has-success' ">
-    <label>Quatity</label>
-    <input class="form-control" type="number" placeholder="Quantity" required
-           formControlName="quantity">
-      <div class=" form-control-feedback control-label"
-           *ngIf="quantity.errors && (quantity.dirty || quantity.touched)">
-        <p class="error" *ngIf="quantity.errors.required">Quantity is required</p>
-      </div>
-    </div>
-
-    <div class="form-group"
+<div class="form-group"
          [ngClass]="numberOpening.invalid && (numberOpening.dirty || numberOpening.touched) ? 'has-danger' : 'has-success' ">
     <label >Number opening</label>
     <input class="form-control" type="number"   placeholder="Number Opening"
@@ -63,16 +52,20 @@
       </div>
     </div>
 
+    <fieldset formGroupName="department">
     <div class="form-group">
-    <label for="department">Department</label>
-    <select  id="department" class="form-control" formControlName="department" required>
-      <option  *ngFor="let department of departmentList" [value]="department.departmentName">{{department.departmentName}}</option>
+    <label>Department</label>
+    <select  class="form-control" formControlName="idDepartment" required (change)="select($event.target.value)">
+      <option  *ngFor="let depart of departmentList" [value]="depart.idDepartment"    >
+        {{depart.departmentName}}</option>
     </select>
-      <div class=" form-control-feedback control-label"
-           *ngIf="department.errors && (department.dirty || department.touched)">
-        <p class="error" *ngIf="department.errors.required">Department is required</p>
-      </div>
+<!--      (click)="select(depart.idDepartment)"-->
+<!--      <div class=" form-control-feedback control-label"-->
+<!--           *ngIf="department.errors && (department.dirty || department.touched)">-->
+<!--        <p class="error" *ngIf="department.errors.required">Department is required</p>-->
+<!--      </div>-->
     </div>
+    </fieldset>
 
     <div class="form-group"
          [ngClass]="dateClose.invalid && (dateClose.dirty || dateClose.touched) ? 'has-danger' : 'has-success' ">
@@ -105,6 +98,13 @@
       </div>
     </div>
 
+
+
+      <label>Offer</label>
+      <input class="form-control" type="text" placeholder="Offer"
+             formControlName="offer" required>
+
+
     <div class="form-group">
     <label >Type Of Staff:</label>
       <select class="form-control" formControlName="typeOfStaff" required>
@@ -120,7 +120,7 @@
     </div>
 
     <div class="form-group"
-         [ngClass]="descriptiondetails.invalid && (descriptiondetails.dirty || descriptiondetails.touched) ? 'has-danger' : 'has-success' ">
+         [ngClass]="description.invalid && (description.dirty || description.touched) ? 'has-danger' : 'has-success' ">
       <label>Description Details</label>
       <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
                 formControlName="descriptiondetails" required></textarea>
@@ -130,6 +130,7 @@
       </div>
     </div>
     <button class="btn btn-info" (click)="onsubmit()" >Save</button>
+    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
   </form>
 </div>
 

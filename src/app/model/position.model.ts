@@ -1,10 +1,4 @@
-export class Position{
-  idPosition:number;
+export class Position {
+  idPosition: number;
   positionName: string;
-
-
-
-
-
-
 }

@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {Router} from "@angular/router";
-import {AuthenticationService} from "../service/authentication.service";
-import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {TranslateService} from "../service/translate.service";
+import {Router} from '@angular/router';
+import {AuthenticationService} from '../service/authentication.service';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {TranslateService} from '../service/translate.service';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
   credentials = {username: '', password: ''};
   error = ''
   invalidLogin = false;
-  loginForm : FormGroup;
+  loginForm: FormGroup;
   username: FormControl;
   password: FormControl;
 
@@ -32,31 +32,31 @@ export class LoginComponent implements OnInit {
     // });
   }
 
-  createFormControl(){
-    this.username = new FormControl('',[Validators.required, Validators.minLength(8)]);
-    this.password = new FormControl('',[Validators.required, Validators.minLength(8)]);
+  createFormControl() {
+    this.username = new FormControl('', [Validators.required, Validators.minLength(4)]);
+    this.password = new FormControl('', [Validators.required, Validators.minLength(4)]);
   }
 
-  createFormGroup(){
+  createFormGroup() {
     this.loginForm = new FormGroup({
-      username : this.username,
-      password : this.password
-    })
+      username: this.username,
+      password: this.password
+    });
   }
 
   checkLogin() {
     (this.loginservice.authenticate(this.username.value, this.password.value).subscribe(
         data => {
-          if (data === this.credentials.username) {
-            this.router.navigate(['/view-vacancy'])
-            this.invalidLogin = false
+          if (data['name']) {
+            this.router.navigate(['/view-vacancy']);
+            this.invalidLogin = false;
           } else {
-            this.error = 'Username or password invalid'
+            this.error = 'Username or password invalid';
           }
         },
         error => {
           this.invalidLogin = true,
-            this.error = error
+            this.error = error;
 
         }
       )
