@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {TranslateService} from "./service/translate.service";
+import {TranslateService} from './service/translate.service';
 
 @Component({
   selector: 'app-root',
@@ -7,11 +7,13 @@ import {TranslateService} from "./service/translate.service";
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+
   constructor(private translate: TranslateService) {
   }
+  title = 'RecruitmentProcessSystemUI';
   setLang(lang: string) {
     this.translate.use(lang);
   }
-  title = 'RecruitmentProcessSystemUI';
 }
-export const apiRoot = 'http://localhost:8080/RecruitmentProcessSystem_war_exploded';
+export const apiRoot = 'http://localhost:8080/RecruitmentProcessSystem';
+

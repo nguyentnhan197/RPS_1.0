@@ -3,10 +3,9 @@
 <!--<div class="menu"><app-menu></app-menu></div>-->
 <!--<div class="router"><router-outlet></router-outlet></div>-->
 <!--<div class="footer"><app-footer></app-footer></div>-->
-<div>
-  <button (click)="setLang('vi')">Language: vi</button>
-  <button (click)="setLang('en')">Language: EN</button>
-</div>
+<button class="btnVN" (click)="setLang('vi')">VN</button>
+<button class="btnEN" (click)="setLang('en')">EN</button>
+
 <app-header></app-header>
 <app-menu></app-menu>
 <router-outlet></router-outlet>

@@ -1,55 +1,62 @@
 <div class="container">
   <form [formGroup]="myForm">
+    <table class="tableCreateApplicant">
+      <tr>
+<td>
+        <label>{{'id' | translate}}</label>
+        <input type="number" class="form-control" formControlName="id" placeholder="Enter id applicant">
 
-    <label>ID applicant</label>
-    <input type="number" class="form-control" formControlName="id" placeholder="Enter id applicant">
+        <label>{{'name' | translate}}</label>
+        <input type="text" class="form-control" formControlName="name" placeholder="Enter name applicant">
 
-    <label>Name</label>
-    <input type="text" class="form-control" formControlName="name" placeholder="Enter name applicant">
+        <label>{{'email' | translate}}</label>
+        <input type="text" class="form-control" formControlName="email" placeholder="Enter email for you">
 
-    <label>Email</label>
-    <input type="text" class="form-control" formControlName="email" placeholder="Enter email for you">
+        <label>{{'phone' | translate}}</label>
+        <input type="number" class="form-control" formControlName="phone" placeholder="Enter phone for you">
 
-    <label>Phone</label>
-    <input type="number" class="form-control" formControlName="phone" placeholder="Enter phone for you">
+        <label>{{'vacacyNumber' | translate}}</label>
+        <input type="number" class="form-control" formControlName="vacacyNumber" placeholder="Enter vacacy number">
 
-    <label>Vacacy Number</label>
-    <input type="number" class="form-control" formControlName="vacacyNumber" placeholder="Enter vacacy number">
-
-    <label>Position</label>
-    <input type="text" class="form-control" formControlName="position" placeholder="Enter position">
-
-    <label>Date of applicant</label>
-    <input type="date" class="form-control" formControlName="dateOfApplicant" placeholder="Enter date of applicant">
-
-
-    <label>Status</label> <select class="form-control" formControlName="status">
-    <option value="notinProcess">Notin process</option>
-    <option value="inprocess">Inprocess</option>
-    <option value="hired">Hired</option>
-    <option value="banned">Banned</option>
-  </select>
-
-    <label>Experience</label> <select class="form-control" formControlName="experience">
-    <option value="fresher">Fresher</option>
-    <option value="internship">Internship</option>
-    <option value="senior">Senior</option>
-  </select>
-
-    <label>Interviewer </label>
-    <input type="text" class="form-control" formControlName="nameOfTheInterviewer" placeholder="Enter name interviewer">
+        <label>{{'position' | translate}}</label>
+        <input type="text" class="form-control" formControlName="position" placeholder="Enter position">
+</td>
+        <td>
+        <label>{{'dateOfApplicant' | translate}}</label>
+        <input type="date" class="form-control" formControlName="dateOfApplicant" placeholder="Enter date of applicant">
 
 
-    <label>Date scheduled</label>
-    <input type="date" class="form-control" formControlName="dateScheduled" placeholder="Enter date scheduled">
+        <label>{{'status' | translate}}</label> <select class="form-control" formControlName="status">
+        <option value="notinProcess">Notin process</option>
+        <option value="inprocess">Inprocess</option>
+        <option value="hired">Hired</option>
+        <option value="banned">Banned</option>
+      </select>
 
-    <label>Time start</label>
-    <input type="time" class="form-control" formControlName="start" placeholder="Enter time start">
+        <label>{{'experience' | translate}}</label> <select class="form-control" formControlName="experience">
+        <option value="fresher">Fresher</option>
+        <option value="internship">Internship</option>
+        <option value="senior">Senior</option>
+      </select>
 
-    <label>Time end</label>
-    <input type="time" class="form-control" formControlName="end" placeholder="Enter time end">
+        <label>{{'nameOfTheInterviewer' | translate}} </label>
+        <input type="text" class="form-control" formControlName="nameOfTheInterviewer"
+               placeholder="Enter name interviewer">
 
-    <button class="btnSave" (click)="onsubmit()"><i class="fa fa-save"></i> Save</button>
+
+        <label>{{'dateScheduled' | translate}}</label>
+        <input type="date" class="form-control" formControlName="dateScheduled" placeholder="Enter date scheduled">
+
+        <label>{{'start' | translate}}</label>
+        <input type="time" class="form-control" formControlName="start" placeholder="Enter time start">
+
+        <label>{{'end' | translate}}</label>
+        <input type="time" class="form-control" formControlName="end" placeholder="Enter time end">
+
+        </td>
+      </tr>
+    </table>
+    <button class="btnSave" (click)="onsubmit()"><i class="fa fa-save"></i> {{'save' | translate}}</button>
   </form>
 </div>
 

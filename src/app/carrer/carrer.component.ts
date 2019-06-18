@@ -1,12 +1,10 @@
 import {Component, Injectable, OnInit} from '@angular/core';
-import {HttpClient} from "@angular/common/http";
-import {Observable} from "rxjs";
-import {CarrerService} from "../service/carrer.service";
-import {PositionService} from "../service/position.service";
-import {VacancyNhan} from '../model/vacancyNhan';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {HttpClient} from '@angular/common/http';
+import {Observable} from 'rxjs';
 import {CarrerService} from '../service/carrer.service';
 import {PositionService} from '../service/position.service';
+import {VacancyNhan} from '../model/vacancyNhan';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {DepartmentService} from '../service/department.service';
 // import {Position} from '../model/position.model';
 // import {Department} from '../model/department.model';
@@ -22,6 +20,7 @@ export class CarrerComponent implements OnInit {
   position: FormControl;
   dateClose: FormControl;
   slOpening: FormControl;
+
   // vacancies: VacancyNhan[] = vacancies;
 
   constructor(private carrerService: CarrerService,

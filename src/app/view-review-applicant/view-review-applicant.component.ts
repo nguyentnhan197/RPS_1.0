@@ -14,7 +14,7 @@ export class ViewReviewApplicantComponent implements OnInit {
   apiURL = '';
   results: string[] = ['Pass', 'Fail', 'Consider'];
   applicantNumber: FormControl;
-  titleVacancy: FormControl;
+  position: FormControl;
   result: FormControl;
 
   constructor(protected httpClient: HttpClient) {
@@ -33,14 +33,14 @@ export class ViewReviewApplicantComponent implements OnInit {
   }
   createFormControls() {
     this.applicantNumber = new FormControl('', Validators.required);
-    this.titleVacancy = new FormControl('', Validators.required);
+    this.position = new FormControl('', Validators.required);
     this.result = new FormControl('', Validators.required);
   }
 
   createForm() {
     this.myForm = new FormGroup({
       applicantNumber: this.applicantNumber,
-      titleVacancy: this.titleVacancy,
+      position: this.position,
       result: this.result,
     });
   }
@@ -49,22 +49,20 @@ export class ViewReviewApplicantComponent implements OnInit {
 export const viewReviewApplicant = [
   {
     applicantNumber: 15130125,
-    titleVacancy: 'Tuyển Dev font-end',
+    position: 'Tuyển Dev font-end',
     positionRecommend: 'Font-End',
     technicalReview: '7/10',
     behaviorReview: '7/10',
-    experience: 'Fresher',
     languageReview: 'Java, Angular',
     result: 'pass',
     note: 'Lương 1000$'
   },
   {
     applicantNumber: 15130147,
-    titleVacancy: 'Tuyển Dev back-end',
+    position: 'Tuyển Dev back-end',
     positionRecommend: 'Back-End',
     technicalReview: '4/10',
     behaviorReview: '7/10',
-    experience: 'Fresher',
     languageReview: 'Java, DataBase',
     result: 'pass',
     note: 'Lương 1500$'

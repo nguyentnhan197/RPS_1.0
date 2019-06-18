@@ -1,37 +1,37 @@
 <div class="applicantApproval">
 
   <div class="container">
-    <h2>Applicant approval</h2>
+    <h2>{{'applicantApproval' | translate}}</h2>
     <form [formGroup]="myForm">
       <table class="tableApplicantApprovalTop">
         <tr>
           <td>
-            <label>ID requiet</label>
+            <label>{{'idRequiet' | translate}}</label>
             <input type="number" class="form-control" formControlName="idRequiet">
             <br>
-            <label>Position</label>
+            <label>{{'position' | translate}}</label>
             <input type="text" class="form-control" formControlName="position">
             <br>
 
-            <label>Requester</label>
+            <label>{{'requester' | translate}}</label>
             <input type="text" class="form-control" formControlName="requieter">
           </td>
 
           <td>
-            <label>Quatity</label>
+            <label>{{'numberOpening' | translate}}</label>
             <input type="number" class="form-control" formControlName="quatity">
             <br>
-            <label>Experince</label>
+            <label>{{'experience' | translate}}</label>
             <input type="number" class="form-control" formControlName="experince">
           </td>
           <td>
-            <label>From date</label>
+            <label>{{'fromDate' | translate}}</label>
             <input type="date" class="form-control" formControlName="fromDate">
             <br>
-            <label>To date</label>
+            <label>{{'toDate' | translate}}</label>
             <input type="date" class="form-control" formControlName="toDate">
             <br>
-            <label>Status</label> <select class="form-control" formControlName="status">
+            <label>{{'status' | translate}}</label> <select class="form-control" formControlName="status">
             <option value="approve">Approve</option>
             <option value="reject">Reject</option>
           </select>
@@ -41,10 +41,10 @@
       </table>
     </form>
     <div class="btnAll">
-      <button class="btnSearch" (click)="onsubmit()"><i class="fa fa-search"></i> Search</button>
-      <button class="btnApprove">Approve</button>
-      <button class="btnReject">Reject</button>
-      <button class="btnExport">Date export</button>
+      <button class="btnSearch" (click)="onsubmit()"><i class="fa fa-search"></i> {{'btnSearch' | translate}}</button>
+      <button class="btnApprove">{{'btnApprove' | translate}}</button>
+      <button class="btnReject">{{'btnReject' | translate}}</button>
+      <button class="btnExport">{{'btnExport' | translate}}</button>
     </div>
 
   </div>
@@ -53,14 +53,14 @@
   <div class="applicantApprovalBot">
     <table class="tableApplicantApprovalBot">
       <tr>
-        <th>ID Requiet</th>
-        <th>Position</th>
-        <th>Requieter</th>
-        <th>Quatity</th>
-        <th>Experince</th>
-        <th>From Date</th>
-        <th>To Date</th>
-        <th>Status</th>
+        <th>{{'idRequiet' | translate}}</th>
+        <th>{{'position' | translate}}</th>
+        <th>{{'requester' | translate}}</th>
+        <th>{{'numberOpening' | translate}}</th>
+        <th>{{'experience' | translate}}</th>
+        <th>{{'fromDate' | translate}}</th>
+        <th>{{'toDate' | translate}}</th>
+        <th>{{'status' | translate}}</th>
       </tr>
 
       <ng-container *ngFor="let v of viewApplicantApprovals">

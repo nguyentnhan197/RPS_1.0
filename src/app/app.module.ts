@@ -12,10 +12,10 @@ import {ViewApplicantComponent} from './view-applicant/view-applicant.component'
 import {CarrerComponent} from './carrer/carrer.component';
 import {AppRoutingModule} from './app-routing.module';
 import {ReviewApplicantComponent} from './review-applicant/review-applicant.component';
-import {CarrerService} from "./service/carrer.service";
-import {HttpClientModule} from "@angular/common/http";
+import {CarrerService} from './service/carrer.service';
+import {HttpClientModule} from '@angular/common/http';
 
-import {PositionService} from "./service/position.service";
+import {PositionService} from './service/position.service';
 
 
 import {DepartmentService} from './service/department.service';
@@ -26,17 +26,18 @@ import {RecruitmentComponent} from './recruitment/recruitment.component';
 import {ApplicantApprovalComponent} from './recruitment/applicant-approval/applicant-approval.component';
 import {ManpowerRequestManagerComponent} from './recruitment/manpower-request-manager/manpower-request-manager.component';
 import {ViewReviewApplicantComponent} from './view-review-applicant/view-review-applicant.component';
-import {ViewVacancyComponent} from "./view-vacancy/view-vacancy.component";
-import {ManpowerRequestComponent} from "./recruitment/manpower-request/manpower-request.component";
-import {UserService} from "./service/user.service";
-import {AuthenticationService} from "./service/authentication.service";
+import {ViewVacancyComponent} from './view-vacancy/view-vacancy.component';
+import {ManpowerRequestComponent} from './recruitment/manpower-request/manpower-request.component';
+import {UserService} from './service/user.service';
+import {AuthenticationService} from './service/authentication.service';
 import {TranslatePipe} from './pipe/translate.pipe';
-import {TranslateService} from "./service/translate.service";
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {AuthGuard} from "./service/auth.guard";
+import {TranslateService} from './service/translate.service';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {AuthGuard} from './service/auth.guard';
 
 // import { ViewVacancyComponent } from './view-vacancy/view-vacancy.component';
 export function setupTranslateFactory(
+  // tslint:disable-next-line:ban-types
   service: TranslateService): Function {
   return () => service.use('en');
 }

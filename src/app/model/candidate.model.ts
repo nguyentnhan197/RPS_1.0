@@ -1,12 +1,12 @@
-
-
+import {VacancyNhan} from './vacancyNhan';
+import {ScheduleInterviewDetails} from './schedule-interview-details.model';
 
 export class Candidate {
   idApplicantVacancy: number;
- 
+
   applicantNumber: string;
   applicantVacancyName: string;
-  
+
   vacancy: VacancyNhan;
   dateOnApplicantVacancy: string;
   state: string;

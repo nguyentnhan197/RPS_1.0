@@ -5,34 +5,34 @@
   <!--  </nav>-->
 
   <div class="container">
-    <h2>Manpower request list by manager</h2>
+    <h2>{{'manpowerRequestListByManager' | translate}}</h2>
     <form [formGroup]="myForm">
       <table class="tableMrManagerTop">
         <tr>
           <td>
-            <label>ID requiet</label>
+            <label>{{'idRequiet' | translate}}</label>
             <input type="number" class="form-control" formControlName="idRequiet">
             <br>
-            <label>Position</label>
+            <label>{{'position' | translate}}</label>
             <input type="text" class="form-control" formControlName="position">
 
           </td>
 
           <td>
-            <label>Quatity</label>
+            <label>{{'numberOpening' | translate}}</label>
             <input type="number" class="form-control" formControlName="quatity">
             <br>
-            <label>Experince</label>
+            <label>{{'experience' | translate}}</label>
             <input type="number" class="form-control" formControlName="experince">
             <br>
-            <label>Requester</label>
+            <label>{{'requester' | translate}}</label>
             <input type="text" class="form-control" formControlName="requieter">
           </td>
           <td>
-            <label>From date</label>
+            <label>{{'fromDate' | translate}}</label>
             <input type="date" class="form-control" formControlName="fromDate">
             <br>
-            <label>To date</label>
+            <label>{{'toDate' | translate}}</label>
             <input type="date" class="form-control" formControlName="toDate">
 
 
@@ -42,9 +42,9 @@
       </table>
     </form>
     <div class="btnAll">
-      <button class="btnSearch" (click)="onsubmit()"><i class="fa fa-search"></i> Search</button>
-      <button class="btnAdd"><i class="fa fa-plus"></i> Add new</button>
-      <button class="btnExport">Date export</button>
+      <button class="btnSearch" (click)="onsubmit()"><i class="fa fa-search"></i> {{'btnSearch' | translate}}</button>
+      <button class="btnAdd"><i class="fa fa-plus"></i> {{'btnAdd' | translate}}</button>
+      <button class="btnExport">{{'btnExport' | translate}}</button>
     </div>
 
     <!--    <input type="btnSearch" value="Search">-->
@@ -56,13 +56,13 @@
   <div class="mrManagerBot">
     <table class="tableMrManagerBot">
       <tr>
-        <th>Id Requiet</th>
-        <th>Position</th>
-        <th>Requieter</th>
-        <th>Quatity</th>
-        <th>Experince</th>
-        <th>From Date</th>
-        <th>To Date</th>
+        <th>{{'idRequiet' | translate}}</th>
+        <th>{{'position' | translate}}</th>
+        <th>{{'requester' | translate}}</th>
+        <th>{{'numberOpening' | translate}}</th>
+        <th>{{'experience' | translate}}</th>
+        <th>{{'fromDate' | translate}}</th>
+        <th>{{'toDate' | translate}}</th>
         <th></th>
       </tr>
 

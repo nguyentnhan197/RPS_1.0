@@ -40,7 +40,7 @@
     .btnAll {
       text-align: center;
 
-      .btnSearch, .btnCreateApp, .btnExport {
+      .btnSearch, .btnCreateApp, .btnExport, .btnReviewApplicant {
         border: none;
         color: white;
         padding: 14px 28px;
@@ -50,7 +50,7 @@
         border-radius: 12px;
         margin: 10px 10px 10px 10px;
       }
-      .btnSearch:hover, .btnCreateApp:hover, .btnExport:hover {
+      .btnSearch:hover, .btnCreateApp:hover, .btnExport:hover, .btnReviewApplicant:hover{
         background-color: #44a83a;
       }
     }

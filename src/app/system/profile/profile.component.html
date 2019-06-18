@@ -1,31 +1,31 @@
 <div class="container">
   <form [formGroup]="myForm">
-    <h2>Personal information</h2>
+    <h2>{{'personalInformation' | translate}}</h2>
     <table class="tableProfile">
       <tr>
         <td>
 
-          <label>User Number</label>
+          <label>{{'userNumber' | translate}}</label>
           <input type="number" class="form-control" formControlName="userNumber">
 
-          <label>Full name</label>
+          <label>{{'fullName' | translate}}</label>
           <input type="text" class="form-control" formControlName="fullName">
 
-          <label>User Name</label>
+          <label>{{'userName' | translate}}</label>
           <input type="text" class="form-control" formControlName="userName">
 
         </td>
         <td>
 
-          <label>Birthday</label>
+          <label>{{'birthday' | translate}}</label>
           <input type="date" class="form-control" formControlName="birthday">
 
-          <label>Gender</label> <select class="form-control" formControlName="gender">
+          <label>{{'gender' | translate}}</label> <select class="form-control" formControlName="gender">
           <option value="Male">Male</option>
           <option value="Female">Female</option>
         </select>
 
-          <label>Address</label>
+          <label>{{'address' | translate}}</label>
           <input type="text" class="form-control" formControlName="address">
 
         </td>
@@ -33,28 +33,28 @@
       <!--   -->
       <tr>
         <td>
-          <label>Email</label>
+          <label>{{'email' | translate}}</label>
           <input type="text" class="form-control" formControlName="email">
         </td>
         <td>
-          <label>Phone</label>
+          <label>{{'phone' | translate}}</label>
           <input type="number" class="form-control" formControlName="phone">
         </td>
       </tr>
       <!--  -->
       <tr>
         <td>
-          <label>Name position</label>
+          <label>{{'position' | translate}}</label>
           <input type="text" class="form-control" formControlName="namePosition">
         </td>
         <td>
-          <label>Name department</label>
+          <label>{{'department' | translate}}</label>
           <input type="text" class="form-control" formControlName="nameDepartment">
         </td>
       </tr>
 
     </table>
   </form>
-  <button class="btnCancel"><i class="fa fa-cancel"></i> Cancel</button>
-  <button class="btnSave" (click)="onsubmit()"><i class="fa fa-save"></i> Save</button>
+  <button class="btnCancel"><i class="fa fa-cancel"></i> {{'cancel' | translate}}</button>
+  <button class="btnSave" (click)="onsubmit()"><i class="fa fa-save"></i> {{'save' | translate}}</button>
 </div>

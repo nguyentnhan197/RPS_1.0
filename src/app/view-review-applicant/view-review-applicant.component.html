@@ -4,15 +4,15 @@
       <table class="tableViewReviewApplicantTop align-middle" align="center">
         <tr>
           <td>
-            <label>Applicant number</label>
+            <label>{{'applicantNumber' | translate}}</label>
             <input type="text" class="form-control" formControlName="applicantNumber">
           </td>
           <td>
-            <label>Title Vacancy</label>
-            <input type="text" class="form-control" formControlName="titleVacancy">
+            <label>{{'position' | translate}}</label>
+            <input type="text" class="form-control" formControlName="position">
           </td>
           <td>
-            <label>Result</label> <select class="form-control" formControlName="result">
+            <label>{{'result' | translate}}</label> <select class="form-control" formControlName="result" required>
             <option *ngFor="let result of results" [value]="result">{{result}}</option>
           </select>
           </td>
@@ -21,35 +21,33 @@
       </table>
     </form>
     <div class="btnAll">
-      <button class="btnSearch" (click)="onsubmit()"><i class="fa fa-search"></i> Search</button>
-      <button class="btnAdd" routerLink="/interviewer/review-applicant" routerLinkActive="active"><i class="fa fa-plus"></i> Add new </button>
-      <button class="btnExport">Date export</button>
+      <button class="btnSearch" (click)="onsubmit()"><i class="fa fa-search"></i> {{'btnSearch' | translate}}</button>
+      <button class="btnAdd" routerLink="/interviewer/review-applicant" routerLinkActive="active"><i class="fa fa-plus"></i>{{'btnAdd' | translate}}</button>
+      <button class="btnExport">{{'btnExport' | translate}}</button>
     </div>
 
   </div>
   <div class="viewReviewApplicantBot">
     <table class="table table-striped">
       <tr>
-        <th>Applicant Number</th>
-        <th>Title Vacancy</th>
-        <th>Position Recommend</th>
-        <th>Technical Review</th>
-        <th>Behavior Review</th>
-        <th>Experience</th>
-        <th>Language Review</th>
-        <th>Result</th>
-        <th>Note</th>
+        <th>{{'applicantNumber' | translate}}</th>
+        <th>{{'position' | translate}}</th>
+        <th>{{'positionRecommend' | translate}}</th>
+        <th>{{'technicalReview' | translate}}</th>
+        <th>{{'behaviorReview' | translate}}</th>
+        <th>{{'languageReview' | translate}}</th>
+        <th>{{'result' | translate}}</th>
+        <th>{{'note' | translate}}</th>
         <th></th>
       </tr>
 
       <ng-container *ngFor="let r of viewReviewApplicant">
         <tr>
           <td>{{r.applicantNumber}}</td>
-          <td>{{r.titleVacancy}}</td>
+          <td>{{r.position}}</td>
           <td>{{r.positionRecommend}}</td>
           <td>{{r.technicalReview}}</td>
           <td>{{r.behaviorReview}}</td>
-          <td>{{r.experience}}</td>
           <td>{{r.languageReview}}</td>
           <td>{{r.result}}</td>
           <td>{{r.note}}</td>

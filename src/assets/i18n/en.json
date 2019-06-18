@@ -40,6 +40,48 @@
   "ownedBy": "Owned By",
   "dateClose": "Date Close",
   "typeOfStaff": "Type Of Staff",
+  "dateCreated": "Date Created",
+  "description": "Description",
+  "numberOpening": "Number Opening",
+  "department": "Department",
+  "requirement": "Requirement",
+  "offer": "Offer",
+  "language": "Language",
+  "gender": "Gender",
+  "degree": "Degree/Certificate",
+
+
+
+
+  "applicantNumber": "Applicant Number",
+  "positionRecommend": "Position Recommend",
+  "technicalReview": "Technical Review",
+  "behaviorReview": "Behavior Review",
+  "languageReview": "Language Review",
+  "result": "Result",
+  "note": "Note",
+  "reviewApplicant": "Review applicant",
+
+  "personalInformation": "Personal Information",
+  "userNumber": "User Number",
+  "fullName": "Full Name",
+  "userName": "User Name",
+  "birthday": "Birthday",
+  "address": "Address",
+
+
+  "idRequiet": "Id requiet",
+  "requester": "Requester",
+  "fromDate": "From date",
+  "toDate": "To date",
+
+  "manpowerRequestListByManager": "Manpower Request List By Manager",
+
+
+
+
+
+
 
 
 
@@ -51,6 +93,11 @@
   "btnSearch": "Search",
   "btnCreateApp": "Create Applicant",
   "btnCreateVacancy": "Create Vacancy",
-  "btnExport": "Export file"
+  "btnAdd": "Add new",
+  "btnExport": "Export file",
+  "btnApprove": "Approve",
+  "btnReject": "Reject",
+  "btnReviewApplicant": "Review Applicant"
+
 
 }
