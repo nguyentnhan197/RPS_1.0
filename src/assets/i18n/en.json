@@ -13,6 +13,7 @@
   "password":"Password",
   "passRequire":"Password is require",
   "passLong":"Password must be at least 4 characters long.",
+  "ownedBy":"Owned By",
   "":""
 
 }

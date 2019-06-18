@@ -26,7 +26,6 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
     this.createFormControl();
     this.createFormGroup();
-    console.log(this.translate.data.valueOf());
     // this.translate.use('en').then(() => {
     //   console.log(this.translate.data);
     // });

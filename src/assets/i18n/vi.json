@@ -12,6 +12,7 @@
   "usernameMail":"Vui lòng sử dụng tên tài khoản có định dạng @",
   "password":"Mật khẩu",
   "passRequire":"Vui lòng nhập mật khẩu",
-  "passLong":"Số lượng kí tự phải trên 4"
+  "passLong":"Số lượng kí tự phải trên 4",
+  "ownedBy":"Người tạo"
 
 }
