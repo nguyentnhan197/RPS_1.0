@@ -3,7 +3,7 @@ import {CarrerService} from '../service/carrer.service';
 import {VacancyNhan} from '../model/vacancyNhan';
 import {AuthenticationService} from '../service/authentication.service';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {HttpClient} from "@angular/common/http";
+import {HttpClient,  HttpHeaders} from "@angular/common/http";
 
 @Component({
   selector: 'app-view-vacancy',
@@ -25,7 +25,8 @@ vacancys: VacancyNhan[]
   constructor( private carrerService: CarrerService, private authenService: AuthenticationService, protected httpClient : HttpClient) { }
 
   ngOnInit() {
-    this.carrerService.getAllVacancy().subscribe((data: VacancyNhan[] ) => this.vacancys = data );
+
+    this.carrerService.getAllVacancy().subscribe((data:VacancyNhan[])=>{this.vacancys=data});
     this.createFormControls();
     this.createForm();
   }

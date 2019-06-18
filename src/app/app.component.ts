@@ -14,3 +14,4 @@ export class AppComponent {
   }
   title = 'RecruitmentProcessSystemUI';
 }
+export const apiRoot = 'http://localhost:8080/RecruitmentProcessSystem_war_exploded';

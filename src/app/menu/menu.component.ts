@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {User} from "../model/user.model";
+import {AuthenticationService} from "../service/authentication.service";
 
 @Component({
   selector: 'app-menu',
@@ -6,8 +8,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent implements OnInit {
-
-  constructor() { }
+// user:User=this.authenticationService.currentUserValue;
+  constructor( private authenticationService:AuthenticationService) { }
 
   ngOnInit() {
   }
