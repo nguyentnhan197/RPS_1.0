@@ -1,39 +1,61 @@
 <div class="viewVacancy">
-  <div class="viewVacancyTop">
-    <table class="tableViewVacancyTop align-middle" align="center">
-      <tr>
+  <div class="container">
+    <form [formGroup]="myForm">
 
-        <td><label for="id_vacancy">ID vacancy</label>
-          <input type="text" id="id_vacancy" name="id_vacancy">
+      <table class="tableViewVacancyTop align-middle" align="center">
+        <tr>
+          <td>
+            <div class="form-group">
+              <label>ID vacancy</label>
+              <input class="form-control" type="text" placeholder=""
+                     formControlName="id_vacancy" required></div>
 
-          <label for="ownedBy">Owned By</label>
-          <input type="text" id="ownedBy" name="ownedBy"></td>
+            <div class="form-group">
+              <label>Owned By</label>
+              <input class="form-control" type="text" placeholder=""
+                     formControlName="ownedBy" required></div>
+          </td>
 
-        <td><label for="statusVacancy">Status of the Vacancy</label> <select id="statusVacancy" name="statusVacancy">
-          <option value="open">Open</option>
-          <option value="close">Close</option>
-          <option value="suspended">Suspended</option>
-        </select>
+          <td>
+            <div class="form-group">
+              <label>Status of the Vacancy</label><select class="form-control" formControlName="statusVacancy">
+              <option value="open">Open</option>
+              <option value="close">Close</option>
+              <option value="suspended">Suspended</option>
+            </select></div>
 
-          <label for="title">Title</label>
-          <input type="text" id="title" name="title" placeholder="Title"></td>
+            <div class="form-group">
+              <label>Position</label>
+              <input class="form-control" type="text" placeholder=""
+                     formControlName="position" required>
+            </div>
+          </td>
 
-        <td><label for="dateGetsClosed">Date gets closed</label>
-          <input type="date" id="dateGetsClosed" name="dateGetsClosed">
+          <td>
+            <div class="form-group">
+              <label>Date gets closed</label>
+              <input type="date" id="dateGetsClosed" name="dateGetsClosed">
+              <input class="form-control" type="date" placeholder=""
+                     formControlName="dateGetsClosed" required></div>
 
-          <label for="typeOfStaff">Type Of Staff:</label> <select id="typeOfStaff" name="typeOfStaff:">
-            <option value="partTime">Part time</option>
-            <option value="fullTime">Full Time</option>
-            <option value="partTime">Freelance</option>
-            <option value="partTime">Intership</option>
-          </select></td>
-      </tr>
-    </table>
-    <div class="btnAll">
-      <button class="btnSearch"><i class="fa fa-search"></i> Search</button>
-      <button class="btnAdd"><i class="fa fa-plus"></i> Create Vacancy</button>
-      <button class="btnExport">Date export</button>
-    </div>
+            <div class="form-group">
+              <label>Type Of Staff</label> <select class="form-control" formControlName="typeOfStaff">
+              <option value="partTime">Part time</option>
+              <option value="fullTime">Full Time</option>
+              <option value="partTime">Freelance</option>
+              <option value="partTime">Intership</option>
+            </select></div>
+
+          </td>
+        </tr>
+      </table>
+      <div class="btnAll">
+        <button class="btnSearch" (click)="onsubmit()"><i class="fa fa-search"></i> Search</button>
+        <button class="btnAdd"><i class="fa fa-plus"></i> Create Vacancy</button>
+        <button class="btnExport">Date export</button>
+      </div>
+    </form>
+
   </div>
   <div class="viewVacancyBot">
     <table class="table table-striped">
