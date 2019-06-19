@@ -6,13 +6,15 @@
   "system": "Hệ thống",
   "recruitment": "Tuyển dụng",
   "viewApplicant": "Xem ứng viên",
+  "reviewApplicant":"Kiểm tra ứng viên",
+  "viewReviewApplicant":"Xem thông tin ứng viên",
   "username":"Tên đăng nhập: ",
   "usernameRequire":"Vui lòng điền tên tài khoản",
   "usernameLong":"Số lượng kí tự phải trên 4",
   "usernameMail":"Vui lòng sử dụng tên tài khoản có định dạng @",
   "password":"Mật khẩu",
   "passRequire":"Vui lòng nhập mật khẩu",
-  "passLong":"Số lượng kí tự phải trên 4",
+  
 
   "submit": "Đăng nhập",
   "oldPass": "Mật khẩu cũ",

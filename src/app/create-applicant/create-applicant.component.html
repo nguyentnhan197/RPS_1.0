@@ -18,8 +18,20 @@
         <label>{{'vacacyNumber' | translate}}</label>
         <input type="number" class="form-control" formControlName="vacacyNumber" placeholder="Enter vacacy number">
 
+    <fieldset formGroupName="position">
+      <div class="form-group">
         <label>{{'position' | translate}}</label>
-        <input type="text" class="form-control" formControlName="position" placeholder="Enter position">
+        <select class="form-control" formControlName="idPosition" required
+                (change)="selectPosition($event.target.value)">
+          <option *ngFor="let position of positionList"
+                  [value]="position.idPosition">{{position.positionName}}</option>
+        </select>
+        <div class=" form-control-feedback control-label"
+             *ngIf="idPosition.errors && (idPosition.dirty || idPosition.touched)">
+          <p class="error" *ngIf="idPosition.errors.required">Title is required</p>
+        </div>
+      </div>
+    </fieldset>
 </td>
         <td>
         <label>{{'dateOfApplicant' | translate}}</label>

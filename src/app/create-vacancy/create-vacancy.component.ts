@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Inject, Input, OnInit} from '@angular/core';
 import {CarrerService} from '../service/carrer.service';
 import {Position} from '../model/position.model';
 import {PositionService} from '../service/position.service';
@@ -47,7 +47,7 @@ export class CreateVacancyComponent implements OnInit {
               protected httpClient: HttpClient,
               private router: Router,
               private authenticationService: AuthenticationService,
-              private fBuider: FormBuilder
+
   ) {
   }
 

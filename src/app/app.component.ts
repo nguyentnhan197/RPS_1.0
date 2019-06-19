@@ -12,8 +12,10 @@ export class AppComponent {
   }
   title = 'RecruitmentProcessSystemUI';
   setLang(lang: string) {
+    console.log(lang);
     this.translate.use(lang);
   }
 }
-export const apiRoot = 'http://localhost:8080/RecruitmentProcessSystem';
+
+export const apiRoot = 'http://localhost:8080';
 

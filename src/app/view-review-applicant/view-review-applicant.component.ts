@@ -4,6 +4,7 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {HttpClient} from '@angular/common/http';
 import {Position} from '../model/position.model';
 import {PositionService} from '../service/position.service';
+import {CreateVacancyComponent} from "../create-vacancy/create-vacancy.component";
 
 @Component({
   selector: 'app-view-review-applicant',
@@ -86,6 +87,9 @@ export class ViewReviewApplicantComponent implements OnInit {
     this.positionService.getAllPosition().subscribe((data: Position[]) => {
       this.positionList = data;
     });
+  }
+  openDiaLog(){
+
   }
 }
 

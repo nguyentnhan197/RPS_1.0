@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {HttpClient} from '@angular/common/http';
+import {Position} from "../model/position.model";
+import {PositionService} from "../service/position.service";
+import {apiRoot} from "../app.component";
 
 @Component({
   selector: 'app-create-applicant',
@@ -9,13 +12,13 @@ import {HttpClient} from '@angular/common/http';
 })
 export class CreateApplicantComponent implements OnInit {
   myForm: FormGroup;
-  apiURL = '';
   id: FormControl;
   name: FormControl;
   email: FormControl;
   phone: FormControl;
   vacacyNumber: FormControl;
-  position: FormControl;
+  idPosition :FormControl;
+  positionName: FormControl;
   dateOfApplicant: FormControl;
   status: FormControl;
   experience: FormControl;
@@ -23,19 +26,26 @@ export class CreateApplicantComponent implements OnInit {
   dateScheduled: FormControl;
   start: FormControl;
   end: FormControl;
-
-  constructor(protected httpClient: HttpClient) {
+  positionList: Position[]=[];
+  constructor(protected httpClient: HttpClient , private positionService: PositionService) {
   }
 
   ngOnInit() {
     this.createFormControls();
     this.createForm();
+    this.getPositionList();
+  }
+  getPositionList() {
+    this.positionService.getAllPosition().subscribe((data: Position[]) => {
+      this.positionList = data;
+    });
   }
 
   onsubmit() {
+    console.log(this.myForm.value);
+    this.httpClient.post(`${apiRoot}/hr/applicantVacancy/${this.myForm.value.vacancyNumber}/addApplicantVacancy`, this.myForm.value);
     if (this.myForm.valid) {
       console.log(this.myForm.value);
-      this.httpClient.post(`${this.apiURL}/v00.acacyavhbjnk/`, this.myForm.value);
       this.myForm.reset();
     }
 
@@ -48,7 +58,7 @@ export class CreateApplicantComponent implements OnInit {
     this.email = new FormControl('', Validators.required);
     this.phone = new FormControl('', Validators.required);
     this.vacacyNumber = new FormControl('', Validators.required);
-    this.position = new FormControl('', Validators.required);
+    this.idPosition = new FormControl('', Validators.required);
     this.dateOfApplicant = new FormControl('', Validators.required);
     this.status = new FormControl('', Validators.required);
     this.experience = new FormControl('', Validators.required);
@@ -56,6 +66,7 @@ export class CreateApplicantComponent implements OnInit {
     this.dateScheduled = new FormControl('', Validators.required);
     this.start = new FormControl('', Validators.required);
     this.end = new FormControl('', Validators.required);
+    this.positionName = new FormControl('');
   }
 
   createForm() {
@@ -65,7 +76,10 @@ export class CreateApplicantComponent implements OnInit {
       email: this.email,
       phone: this.phone,
       vacacyNumber: this.vacacyNumber,
-      position: this.position,
+      position: new FormGroup({
+        positionName: this.positionName,
+        idPosition: this.idPosition
+      }),
       dateOfApplicant: this.dateOfApplicant,
       status: this.status,
       experience: this.experience,
@@ -75,6 +89,14 @@ export class CreateApplicantComponent implements OnInit {
       end: this.end,
     });
 
+  }
+  selectPosition($event): FormControl {
+    this.getPositionList();
+    const id = $event;
+    const positionName = this.positionList.find(po => po.idPosition = id).positionName;
+    this.positionName.setValue(positionName);
+    this.idPosition.setValue( Number.parseInt(id));
+    return this.positionName;
   }
 
 }

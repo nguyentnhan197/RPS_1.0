@@ -2,8 +2,11 @@ import {Component, OnInit} from '@angular/core';
 import {CarrerService} from '../service/carrer.service';
 import {VacancyNhan} from '../model/vacancyNhan';
 import {AuthenticationService} from '../service/authentication.service';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {HttpClient} from '@angular/common/http';
+import {PositionService} from "../service/position.service";
+import {DepartmentService} from "../service/department.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-view-vacancy',
@@ -11,6 +14,7 @@ import {HttpClient} from '@angular/common/http';
   styleUrls: ['./view-vacancy.component.scss']
 })
 export class ViewVacancyComponent implements OnInit {
+
 // vacancys: VacancyNhan[];
   myForm: FormGroup;
   apiURL = '';
@@ -22,8 +26,15 @@ export class ViewVacancyComponent implements OnInit {
   dateClose: FormControl;
   typeOfStaff: FormControl;
 
-
-  constructor( private carrerService: CarrerService, private authenService: AuthenticationService, protected httpClient: HttpClient) { }
+  constructor(private carrerService: CarrerService,
+              private positionService: PositionService,
+              private departmentService: DepartmentService,
+              protected httpClient: HttpClient,
+              private router: Router,
+              private authenticationService: AuthenticationService,
+              private fBuider: FormBuilder
+  ) {
+  }
 
   ngOnInit() {
     // this.carrerService.getAllVacancy().subscribe((data: VacancyNhan[] ) => this.vacancys = data );
