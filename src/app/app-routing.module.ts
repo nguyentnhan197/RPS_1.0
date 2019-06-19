@@ -28,14 +28,7 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     data: {roles: ['ROLE_INTERVIEWER']}
   },
-  {
-    path: 'view-applicant',
-    component: ViewApplicantComponent
-  },
-  {
-    path: 'view-vacancy',
-    component: ViewVacancyComponent
-  },
+  {path: 'view-vacancy', component: ViewVacancyComponent, canActivate: [AuthGuard], data: {roles: ['ROLE_HR']}},
   {path: 'hr/create-applicant', component: CreateApplicantComponent},
   {path: 'hr/create-vacancy', component: CreateVacancyComponent},
   {path: 'interviewer/review-applicant', component: ReviewApplicantComponent},

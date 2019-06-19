@@ -6,7 +6,7 @@ export class User {
   public userNumber: string;
   public fullName: string;
   public email: string;
-  public username: string;
+  public name: string;
   public password: string;
   public  position: Position;
   public  department: Department;
@@ -15,8 +15,8 @@ export class User {
   public  gender: boolean ;
   public  phone: string;
   public  address: string;
-  public roles:[string];
-  public constructor(init?: Partial<User >) {
-    Object.assign(this, init);
-  }
+  authorities: string[];
+  authenticated : boolean;
+  // public roles:string[];
+
 }
