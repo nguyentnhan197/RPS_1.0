@@ -4,9 +4,9 @@ import {VacancyNhan} from '../model/vacancyNhan';
 import {AuthenticationService} from '../service/authentication.service';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {HttpClient} from '@angular/common/http';
-import {PositionService} from "../service/position.service";
-import {DepartmentService} from "../service/department.service";
-import {Router} from "@angular/router";
+import {PositionService} from '../service/position.service';
+import {DepartmentService} from '../service/department.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-view-vacancy',
@@ -15,7 +15,7 @@ import {Router} from "@angular/router";
 })
 export class ViewVacancyComponent implements OnInit {
 
-// vacancys: VacancyNhan[];
+vacancys: VacancyNhan[];
   myForm: FormGroup;
   apiURL = '';
   submitted = false;
@@ -37,7 +37,7 @@ export class ViewVacancyComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.carrerService.getAllVacancy().subscribe((data: VacancyNhan[] ) => this.vacancys = data );
+    this.carrerService.getAllVacancy().subscribe((data: VacancyNhan[] ) => this.vacancys = data );
     this.createFormControls();
     this.createForm();
   }
@@ -61,12 +61,13 @@ export class ViewVacancyComponent implements OnInit {
     });
   }
 
-  onsubmit() {
-    if (this.myForm.valid) {
-      console.log(this.myForm.value);
-      this.httpClient.post(`${this.apiURL}/v00.acacyavhbjnk/`, this.myForm.value);
-      this.myForm.reset();
-    }
+  deleteVacancy(vacancy: VacancyNhan) {
+    this.carrerService.deleteVacancy(vacancy.idVacancy).subscribe(data => {
+        this.vacancys.splice(this.vacancys.indexOf(vacancy), 1);
+      },
+      error => {
+      });
+
   }
 }
 

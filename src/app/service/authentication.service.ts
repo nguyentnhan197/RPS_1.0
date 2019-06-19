@@ -3,25 +3,27 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {User} from '../model/user.model';
 import {map} from 'rxjs/operators';
 import {BehaviorSubject, Observable} from 'rxjs';
-import {apiRoot} from "../app.component";
+import {apiRoot} from '../app.component';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthenticationService {
   authenticated = false;
-  private currentUserSubject: BehaviorSubject<User>;
-  public currentUser: Observable<User>;
+  currentUserSubject: BehaviorSubject<User>;
+  currentUser: Observable<User>;
 
   constructor(
     private httpClient: HttpClient
   ) {
+
+  }
+
+
+  public getCurrentUserValue(): User {
     this.currentUserSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('currentUser')));
     this.currentUser = this.currentUserSubject.asObservable();
-  }
-  RecruitmentProcessSystem
-  public getCurrentUserValue(): User {
-    // console.log('parse json in USER'+JSON.stringify(this.currentUserSubject.value));
+    console.log(this.currentUserSubject.value);
     return this.currentUserSubject.value;
   }
 
