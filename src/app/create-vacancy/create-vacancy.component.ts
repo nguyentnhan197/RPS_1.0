@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Inject, Input, OnInit} from '@angular/core';
 import {CarrerService} from '../service/carrer.service';
 import {Position} from '../model/position.model';
 import {PositionService} from '../service/position.service';
@@ -12,7 +12,7 @@ import {map} from 'rxjs/operators';
 import {AuthenticationService} from '../service/authentication.service';
 import {VacancyNhan} from '../model/vacancyNhan';
 import {of} from 'rxjs';
-import {apiRoot} from "../app.component";
+import {apiRoot} from '../app.component';
 
 
 @Component({
@@ -36,18 +36,18 @@ export class CreateVacancyComponent implements OnInit {
   experience: FormControl;
   gender: FormControl;
   typeOfStaff: FormControl;
-  descriptiondetails: FormControl;
   departmentName: FormControl;
   idDepartment: FormControl;
   idPosition: FormControl;
   positionName: FormControl;
+
   constructor(private carrerService: CarrerService,
               private positionService: PositionService,
               private departmentService: DepartmentService,
               protected httpClient: HttpClient,
               private router: Router,
               private authenticationService: AuthenticationService,
-              private fBuider: FormBuilder
+
   ) {
   }
 
@@ -71,12 +71,12 @@ export class CreateVacancyComponent implements OnInit {
     this.gender = new FormControl('', Validators.required);
     this.typeOfStaff = new FormControl('', Validators.required);
     this.offer = new FormControl('', Validators.required);
-    this.descriptiondetails = new FormControl('');
     this.position = new FormControl('');
     this.departmentName = new FormControl('');
     this.idPosition = new FormControl('');
     this.positionName = new FormControl('');
   }
+
 
   createForm() {
     this.myForm = new FormGroup({
@@ -91,7 +91,6 @@ export class CreateVacancyComponent implements OnInit {
         departmentName: this.departmentName,
         idDepartment: this.idDepartment
       }),
-      descriptiondetails: this.descriptiondetails,
       gender: this.gender,
       typeOfStaff: this.typeOfStaff,
       position: new FormGroup({
@@ -100,20 +99,25 @@ export class CreateVacancyComponent implements OnInit {
       })
     });
   }
+
   selectPosition($event): FormControl {
     this.getPositionList();
     const id = $event;
-    const positionName = this.positionList.find(po => po.idPosition == id).positionName;
+    // tslint:disable-next-line:triple-equals
+    const positionName = this.positionList.find(po => po.idPosition = id).positionName;
     this.positionName.setValue(positionName);
-    this.idPosition.setValue(Number.parseInt(id));
+    // tslint:disable-next-line:radix
+    this.idPosition.setValue( Number.parseInt(id));
     return this.positionName;
   }
-  select( $event): FormControl {
+
+  select($event): FormControl {
     this.getDepartmentList();
     const id = $event;
     let name = '';
-    name = this.departmentList.find(de => de.idDepartment == id).departmentName;
+    name = this.departmentList.find(de => de.idDepartment = id).departmentName;
     this.departmentName.setValue(name);
+    // tslint:disable-next-line:radix
     this.idDepartment.setValue(Number.parseInt(id));
     return this.departmentName;
   }

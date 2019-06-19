@@ -1,45 +1,50 @@
 <div class="mrManager">
 
-  <div class="mrManagerTop">
-    <h2>Manpower request list by manager</h2>
-    <table class="tableMrManagerTop">
-      <tr>
-        <td><label for="id_request">ID requiet</label>
-          <input type="text" id="id_request" name="id_request">
+  <!--  <nav>-->
+  <!--    <button routerLink="/recruitment/applicant-approval" routerLinkActive="active">View Vacancy</button>-->
+  <!--  </nav>-->
 
-          <label for="vacancyName">Vacancy name</label>
-          <input type="text" id="vacancyName" name="vacancyName">
+  <div class="container">
+    <h2>{{'manpowerRequestListByManager' | translate}}</h2>
+    <form [formGroup]="myForm">
+      <table class="tableMrManagerTop">
+        <tr>
+          <td>
+            <label>{{'idRequiet' | translate}}</label>
+            <input type="number" class="form-control" formControlName="idRequiet">
+            <br>
+            <label>{{'position' | translate}}</label>
+            <input type="text" class="form-control" formControlName="position">
 
-        </td>
+          </td>
 
-        <td>
-          <label for="requester">Requester</label>
-          <input type="text" id="requester" name="requester">
+          <td>
+            <label>{{'numberOpening' | translate}}</label>
+            <input type="number" class="form-control" formControlName="quatity">
+            <br>
+            <label>{{'experience' | translate}}</label>
+            <input type="number" class="form-control" formControlName="experince">
+            <br>
+            <label>{{'requester' | translate}}</label>
+            <input type="text" class="form-control" formControlName="requieter">
+          </td>
+          <td>
+            <label>{{'fromDate' | translate}}</label>
+            <input type="date" class="form-control" formControlName="fromDate">
+            <br>
+            <label>{{'toDate' | translate}}</label>
+            <input type="date" class="form-control" formControlName="toDate">
 
-          <label for="quatity">Quatity</label>
-          <input type="text" id="quatity" name="quatity">
 
-          <label>Experience</label> <select id="experience:" name="experience:">
-          <option value="fresher">Fresher</option>
-          <option value="internship">Internship</option>
-          <option value="senior">Senior</option>
-        </select>
-        </td>
-        <td>
-          <label for="fromDate">From date</label>
-          <input type="date" id="fromDate" name="fromDate">
+          </td>
 
-          <label for="toDate">To date</label>
-          <input type="date" id="toDate" name="toDate">
-
-        </td>
-
-      </tr>
-    </table>
+        </tr>
+      </table>
+    </form>
     <div class="btnAll">
-      <button class="btnSearch"><i class="fa fa-search"></i> Search</button>
-      <button class="btnAdd"><i class="fa fa-plus"></i> Add new</button>
-      <button class="btnExport">Date export</button>
+      <button class="btnSearch" (click)="onsubmit()"><i class="fa fa-search"></i> {{'btnSearch' | translate}}</button>
+      <button class="btnAdd"><i class="fa fa-plus"></i> {{'btnAdd' | translate}}</button>
+      <button class="btnExport">{{'btnExport' | translate}}</button>
     </div>
 
     <!--    <input type="btnSearch" value="Search">-->
@@ -51,13 +56,13 @@
   <div class="mrManagerBot">
     <table class="tableMrManagerBot">
       <tr>
-        <th>Id Requiet</th>
-        <th>Position</th>
-        <th>Requieter</th>
-        <th>Quatity</th>
-        <th>Experince</th>
-        <th>From Date</th>
-        <th>To Date</th>
+        <th>{{'idRequiet' | translate}}</th>
+        <th>{{'position' | translate}}</th>
+        <th>{{'requester' | translate}}</th>
+        <th>{{'numberOpening' | translate}}</th>
+        <th>{{'experience' | translate}}</th>
+        <th>{{'fromDate' | translate}}</th>
+        <th>{{'toDate' | translate}}</th>
         <th></th>
       </tr>
 

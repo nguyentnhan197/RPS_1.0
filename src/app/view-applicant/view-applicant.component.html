@@ -1,31 +1,42 @@
 <div class="viewApplicant">
-  <div class="viewApplicantTop">
-    <table class="tableViewApplicantTop align-middle" align="center">
-      <tr>
-        <td><label for="id_applicant">ID applicant</label>
-          <input type="text" id="id_applicant" name="id_applicant" placeholder="Enter id applicant">
-          <br>
-          <label for="title">Title</label>
-          <input type="text" id="title" name="title" placeholder="Enter title"></td>
+  <div class="container">
+    <form [formGroup]="myForm">
+      <table class="tableViewApplicantTop align-middle" align="center">
+        <tr>
+          <td><label>{{'id' | translate}}</label>
+            <input type="text" class="form-control" formControlName="id" placeholder="Enter id applicant">
 
-        <td><label for="vacancy_number">Vacancy Number</label>
-          <input type="text" id="vacancy_number" name="vacancy_number" placeholder="Enter vancancy number">
-          <br>
-          <label for="dateapplicant">Date of applicant</label>
-          <input type="date" id="dateapplicant" name="dayApp" placeholder="Enter date applicant"></td>
+            <label>{{'position' | translate}}</label>
+            <input type="text" class="form-control" formControlName="position" placeholder="Enter position">
+          </td>
 
-        <td><label for="nameInterviewer"> Name of the Interviewer</label>
-          <input id="nameInterviewer" type="text" placeholder="Enter name of the Interviewer " name="nameInterviewer">
+          <td><label> {{'vacacyNumber' | translate}}</label>
+            <input type="number" class="form-control" formControlName="vacacyNumber"
+                   placeholder="Enter vancancy number">
 
-          <label for="scheduled">The date of the scheduled interview</label>
-          <input type="date" id="scheduled" name="scheduled"></td>
-      </tr>
+            <label>{{'dateOfApplicant' | translate}}</label>
+            <input type="date" class="form-control" formControlName="dateOfApplicant" placeholder="Enter date applicant">
+          </td>
 
-    </table>
+          <td><label> {{'nameOfTheInterviewer' | translate}}</label>
+            <input type="text" class="form-control" formControlName="nameOfTheInterviewer"
+                   placeholder="Enter name of the Interviewer ">
+
+            <label>{{'dateScheduled' | translate}}</label>
+            <input type="date" class="form-control" formControlName="dateScheduled"
+                   placeholder="Enter name of the scheduled ">
+          </td>
+        </tr>
+
+      </table>
+    </form>
+
+
     <div class="btnAll">
-      <button class="btnSearch"><i class="fa fa-search"></i> Search</button>
-      <button class="btnCreateApp"><i class="fa fa-plus"></i> Create Applicant</button>
-      <button class="btnExport">Export file</button>
+      <button class="btnSearch" (click)="onsubmit()"><i class="fa fa-search"></i> {{'btnSearch' | translate}}</button>
+      <button class="btnCreateApp" routerLink="/hr/create-applicant" routerLinkActive="active"><i class="fa fa-plus"></i> {{'btnCreateApp' | translate}}</button>
+      <button class="btnReviewApplicant" routerLink="/interviewer/view-review-applicant" routerLinkActive="active"> {{'btnReviewApplicant' | translate}}</button>
+      <button class="btnExport">{{'btnExport' | translate}}</button>
 
     </div>
 
@@ -34,19 +45,19 @@
   <div class="viewApplicantBot">
     <table class="table table-striped">
       <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Email</th>
-        <th>Phone</th>
-        <th>Vacancy Number</th>
-        <th>Title</th>
-        <th>Date of applicant</th>
-        <th>Status</th>
-        <th>Experience</th>
-        <th>Name of the Interviewer</th>
-        <th>Date Scheduled</th>
-        <th>Start</th>
-        <th>End</th>
+        <th>{{'id' | translate}}</th>
+        <th>{{'name' | translate}}</th>
+        <th>{{'email' | translate}}</th>
+        <th>{{'phone' | translate}}</th>
+        <th>{{'vacacyNumber' | translate}}</th>
+        <th>{{'position' | translate}}</th>
+        <th>{{'dateOfApplicant' | translate}}</th>
+        <th>{{'status' | translate}}</th>
+        <th>{{'experience' | translate}}</th>
+        <th>{{'nameOfTheInterviewer' | translate}}</th>
+        <th>{{'dateScheduled' | translate}}</th>
+        <th>{{'start' | translate}}</th>
+        <th>{{'end' | translate}}</th>
 
         <th>
 
@@ -59,7 +70,7 @@
           <td>{{c.email}}</td>
           <td>{{c.phone}}</td>
           <td>{{c.vacacyNumber}}</td>
-          <td>{{c.title}}</td>
+          <td>{{c.position}}</td>
           <td>{{c.dateOfApplicant}}</td>
           <td>{{c.status}}</td>
           <td>{{c.experience}}</td>

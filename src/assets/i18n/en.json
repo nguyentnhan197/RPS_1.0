@@ -6,14 +6,93 @@
   "hrActive": "Hr Active",
   "system": "System",
   "recruitment": "Recruitment",
-  "username":" Username: ",
-  "usernameRequire":"Username is require",
-  "usernameLong":"Name must be at least 4 characters long.",
-  "usernameMail":"Please using email",
-  "password":"Password",
-  "passRequire":"Password is require",
-  "passLong":"Password must be at least 4 characters long.",
+ 
   "ownedBy":"Owned By",
-  "":""
+  "reviewApplicant":"Review applicant",
+  "viewReviewApplicant":"View review applicant",
+  "submit": "Submit",
+  "oldPass": "Old password",
+  "newPass": "New password",
+  "confirmPass": "Confirm new password",
+  "save": "Save",
+  "cancel": "Cancel",
+
+  "id": "ID Applicant",
+  "name": "Applicant name",
+  "position": "Position",
+  "vacacyNumber": "Vacancy Number",
+  "dateOfApplicant": "Date of applicant",
+  "nameOfTheInterviewer": "Name of the Interviewer",
+  "dateScheduled": "The date of the scheduled interview",
+  "email": "Email",
+  "phone": "Phone",
+  "status": "Status",
+  "experience": "Experience",
+  "start": "Start",
+  "end": "End",
+
+  "idVacancy": "ID vacancy",
+  "ownedBy": "Owned By",
+  "dateClose": "Date Close",
+  "typeOfStaff": "Type Of Staff",
+  "dateCreated": "Date Created",
+  "description": "Description",
+  "numberOpening": "Number Opening",
+  "department": "Department",
+  "requirement": "Requirement",
+  "offer": "Offer",
+  "language": "Language",
+  "gender": "Gender",
+  "degree": "Degree/Certificate",
+
+
+
+
+  "applicantNumber": "Applicant Number",
+  "positionRecommend": "Position Recommend",
+  "technicalReview": "Technical Review",
+  "behaviorReview": "Behavior Review",
+  "languageReview": "Language Review",
+  "result": "Result",
+  "note": "Note",
+  "reviewApplicant": "Review applicant",
+
+  "personalInformation": "Personal Information",
+  "userNumber": "User Number",
+  "fullName": "Full Name",
+  "userName": "User Name",
+  "birthday": "Birthday",
+  "address": "Address",
+
+
+  "idRequiet": "Id requiet",
+  "requester": "Requester",
+  "fromDate": "From date",
+  "toDate": "To date",
+
+  "manpowerRequestListByManager": "Manpower Request List By Manager",
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  "btnSearch": "Search",
+  "btnCreateApp": "Create Applicant",
+  "btnCreateVacancy": "Create Vacancy",
+  "btnAdd": "Add new",
+  "btnExport": "Export file",
+  "btnApprove": "Approve",
+  "btnReject": "Reject",
+  "btnReviewApplicant": "Review Applicant"
+
 
 }

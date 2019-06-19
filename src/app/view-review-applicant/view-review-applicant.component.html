@@ -1,59 +1,58 @@
 <div class="viewReviewApplicant">
-  <div class="viewReviewApplicantTop">
-    <table class="tableViewReviewApplicantTop align-middle" align="center">
-      <tr>
-        <td>
-          <label class="applicantNumber">Applicant number</label>
-          <input type="text" id="applicantNumber" name="applicantNumber">
-        </td>
-        <td>
-          <label for="titleVacancy">Title Vacancy</label>
-          <input type="text" id="titleVacancy" name="titleVacancy">
-        </td>
-        <td>
-          <label for="result">Result</label> <select id="result" name="result">
-          <option value="pass">Pass</option>
-          <option value="fail">Fail</option>
-          <option value="consider">Consider</option>
-        </select>
-        </td>
-      </tr>
+  <div class="container">
+    <form [formGroup]="myForm">
+      <table class="tableViewReviewApplicantTop align-middle" align="center">
+        <tr>
+          <td>
+            <label>{{'applicantNumber' | translate}}</label>
+            <input type="text" class="form-control" formControlName="applicantNumber">
+          </td>
+          <td>
+            <label>{{'position' | translate}}</label>
+            <input type="text" class="form-control" formControlName="position">
+          </td>
+          <td>
+            <label>{{'result' | translate}}</label> <select class="form-control" formControlName="result" required>
+            <option *ngFor="let result of results" [value]="result">{{result}}</option>
+          </select>
+          </td>
+        </tr>
 
-    </table>
+      </table>
+    </form>
     <div class="btnAll">
-      <button class="btnSearch"><i class="fa fa-search"></i> Search</button>
-      <button class="btnAdd"><i class="fa fa-plus"></i> Add new</button>
-      <button class="btnExport">Date export</button>
+      <button class="btnSearch" (click)="onsubmit()"><i class="fa fa-search"></i> {{'btnSearch' | translate}}</button>
+      <button class="btnAdd" routerLink="/interviewer/review-applicant" routerLinkActive="active"><i class="fa fa-plus"></i>{{'btnAdd' | translate}}</button>
+      <button class="btnExport">{{'btnExport' | translate}}</button>
     </div>
+
   </div>
   <div class="viewReviewApplicantBot">
     <table class="table table-striped">
       <tr>
-        <th>applicantNumber</th>
-        <th>titleVacancy</th>
-        <th>suitableLocation</th>
-        <th>danhGiaChuyenNganh</th>
-        <th>danhGiaUngXu</th>
-        <th>experince</th>
-        <th>trinhDoNgonNgu</th>
-        <th>result</th>
-        <th>ghiChu</th>
+        <th>{{'applicantNumber' | translate}}</th>
+        <th>{{'position' | translate}}</th>
+        <th>{{'positionRecommend' | translate}}</th>
+        <th>{{'technicalReview' | translate}}</th>
+        <th>{{'behaviorReview' | translate}}</th>
+        <th>{{'languageReview' | translate}}</th>
+        <th>{{'result' | translate}}</th>
+        <th>{{'note' | translate}}</th>
         <th></th>
       </tr>
 
       <ng-container *ngFor="let r of viewReviewApplicant">
         <tr>
           <td>{{r.applicantNumber}}</td>
-          <td>{{r.titleVacancy}}</td>
+          <td>{{r.position}}</td>
           <td>{{r.positionRecommend}}</td>
           <td>{{r.technicalReview}}</td>
           <td>{{r.behaviorReview}}</td>
-          <td>{{r.experience}}</td>
           <td>{{r.languageReview}}</td>
           <td>{{r.result}}</td>
           <td>{{r.note}}</td>
           <td>
-            <button class="btn btn-info btn-sm"><i class="fa fa-edit small"></i></button>
+            <button class="btn btn-info btn-sm" (click)="openDiaLog()"><i class="fa fa-edit small"></i></button>
             <button class="btn btn-danger btn-sm"><i class="fa fa-close small"></i></button>
           </td>
         </tr>
@@ -62,7 +61,6 @@
     </table>
 
   </div>
-
 
 
 </div>

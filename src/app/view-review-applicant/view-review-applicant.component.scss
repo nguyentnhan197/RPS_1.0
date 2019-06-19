@@ -1,6 +1,6 @@
 .viewReviewApplicant {
 
-  .viewReviewApplicantTop {
+  .container {
     border-collapse: collapse;
     border-spacing: 50px;
     border-radius: 10px;
@@ -8,7 +8,7 @@
     border: 2px solid gray;
     //margin-top: 10px;
     //margin-bottom: 15px;
-    margin: 10px 150px 10px 150px;
+    //margin: 10px 150px 10px 150px;
 
 
     .tableViewReviewApplicantTop {
@@ -28,25 +28,25 @@
         background-color: #f2f2f2
       }
 
-      input[type=text], select {
-        width: 100%;
-        padding: 12px 20px;
-        margin: 8px 0;
-        display: block;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        box-sizing: border-box;
-      }
-
-      input[type=date], [type=time], select {
-        width: 100%;
-        padding: 12px 20px;
-        margin: 8px 0;
-        display: block;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        box-sizing: border-box;
-      }
+      //input[type=text], select {
+      //  width: 100%;
+      //  padding: 12px 20px;
+      //  margin: 8px 0;
+      //  display: block;
+      //  border: 1px solid #ccc;
+      //  border-radius: 4px;
+      //  box-sizing: border-box;
+      //}
+      //
+      //input[type=date], [type=time], select {
+      //  width: 100%;
+      //  padding: 12px 20px;
+      //  margin: 8px 0;
+      //  display: block;
+      //  border: 1px solid #ccc;
+      //  border-radius: 4px;
+      //  box-sizing: border-box;
+      //}
     }
 
     .btnAll {
@@ -61,6 +61,7 @@
         background-color: #4CAF50;
         border-radius: 12px;
         margin: 10px 10px 10px 10px;
+
       }
       .btnAdd:hover, .btnSearch:hover, .btnExport:hover {
         background-color: #45a049;

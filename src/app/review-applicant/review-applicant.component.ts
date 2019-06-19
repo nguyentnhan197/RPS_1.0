@@ -11,14 +11,13 @@ export class ReviewApplicantComponent implements OnInit {
 
   myForm: FormGroup;
   apiURL = '';
-  exps: string[] = ['Fresher', 'Internship', 'Senior'];
+  // exps: string[] = ['Fresher', 'Internship', 'Senior'];
   results: string[] = ['Pass', 'Fail', 'Consider'];
   applicantNumber: FormControl;
-   titleVacancy: FormControl;
+  position: FormControl;
    positionRecommend: FormControl;
    technicalReview: FormControl;
    behaviorReview: FormControl;
-   experience: FormControl;
    languageReview: FormControl;
    result: FormControl;
    note: FormControl;
@@ -40,11 +39,10 @@ export class ReviewApplicantComponent implements OnInit {
 
   createFormControls() {
     this.applicantNumber = new FormControl('', Validators.required);
-    this.titleVacancy = new FormControl('', Validators.required);
+    this.position = new FormControl('', Validators.required);
     this.positionRecommend = new FormControl('', Validators.required);
     this.technicalReview = new FormControl('', Validators.required);
     this.behaviorReview = new FormControl('', Validators.required);
-    this.experience = new FormControl('', Validators.required);
     this.languageReview = new FormControl('', Validators.required);
     this.result = new FormControl('', Validators.required);
     this.note = new FormControl('', Validators.required);
@@ -55,11 +53,10 @@ export class ReviewApplicantComponent implements OnInit {
   createForm() {
     this.myForm = new FormGroup({
       applicantNumber: this.applicantNumber,
-      titleVacancy: this.titleVacancy,
+      position: this.position,
       positionRecommend: this.positionRecommend,
       technicalReview: this.technicalReview,
       behaviorReview: this.behaviorReview,
-      experience: this.experience,
       languageReview: this.languageReview,
       result: this.result,
       note: this.note

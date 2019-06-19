@@ -27,7 +27,6 @@ const routes: Routes = [
   {path: 'hr/create-applicant', component: CreateApplicantComponent},
   {path: 'hr/create-vacancy', component: CreateVacancyComponent},
   {path: 'interviewer/review-applicant', component: ReviewApplicantComponent},
-  {path: 'interviewer/review-applicant', component: ReviewApplicantComponent},
   {path: 'interviewer/view-review-applicant', component: ViewReviewApplicantComponent},
   {path: 'system/profile', component: ProfileComponent},
   {path: 'system/changed-password', component: ChangedPasswordComponent},

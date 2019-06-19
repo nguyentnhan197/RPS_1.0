@@ -4,7 +4,7 @@ import {Position} from './position.model';
 import {Timestamp} from 'rxjs';
 
 export class VacancyNhan {
-  public slOpening: number;
+  public numberOpening: number;
   public idVacancy: number;
   public offer: string;
   public vacancyNumber: string;

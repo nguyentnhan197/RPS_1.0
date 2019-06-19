@@ -1,17 +1,17 @@
-import {ScheduleInterviewDetails} from "./schedule-interview-details.model";
-import {VacancyNhan} from "./vacancyNhan";
+import {VacancyNhan} from './vacancyNhan';
+import {ScheduleInterviewDetails} from './schedule-interview-details.model';
 
-export class Candidate{
+export class Candidate {
   idApplicantVacancy: number;
-  applicantVacancy:string;
+
+  applicantNumber: string;
   applicantVacancyName: string;
-  emailApplicant:string;
+
   vacancy: VacancyNhan;
   dateOnApplicantVacancy: string;
   state: string;
   cv: string;
   scheduleInterviewDetails: ScheduleInterviewDetails;
-
 
 
   // id: string;

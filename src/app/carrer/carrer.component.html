@@ -1,33 +1,36 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <div class="carrer">
-  <div class="search">
-    <table class="tableSearch align-middle" align="center">
-      <!--    <input type="search" name="search" placeholder="Search..">-->
-      <tr>
-        <td>
-          <label for="titleSearch">Title</label>
-          <input type="text" id="titleSearch" name="titleSearch" placeholder="Enter title">
-        </td>
-        <td>
-          <label for="dateCloseSearch">Date Close </label>
-          <input type="date" id="dateCloseSearch" name="dateCloseSearch">
-        </td>
-        <td>
-          <label for="numberOpening">Number Opening</label>
-          <input type="text" id="numberOpening" name="numberOpening" placeholder="Enter number person">
-        </td>
-      </tr>
-    </table>
-    <div class="btnAll">
-    <button class="btnSearch"><i class="fa fa-search"></i> Search</button>
-    </div>
+
+  <div class="container">
+    <form [formGroup]="myForm">
+      <table class="tableSearch align-middle" align="center">
+        <tr>
+          <td>
+            <label>Position</label>
+            <input type="text" class="form-control" formControlName="position">
+          </td>
+          <td>
+            <label>Date Close </label>
+            <input type="date" class="form-control" formControlName="dateClose">
+          </td>
+          <td>
+            <label>Number Opening</label>
+            <input type="number" class="form-control" formControlName="slOpening">
+          </td>
+        </tr>
+      </table>
+      <div class="btnAll">
+        <button class="btnSearch" (click)="onsubmit()"><i class="fa fa-search"></i> Search</button>
+      </div>
+    </form>
   </div>
 
-  <div class="job" *ngFor="let j of jobs">
-    <h3 class="title" routerLink="/carrer/{{j.idVacancy}}">{{j.position}} </h3>
 
-    <p class="des"><i class="fa fa-user"></i>{{j.numberOpening}} persons</p>
-  </div>
+<!--    <div class="job" *ngFor="let j of vacancies">-->
+<!--      <h3 class="title" routerLink="/carrer/{{j.idVacancy}}">{{j.position}} </h3>-->
+
+<!--      <p class="des"><i class="fa fa-user"></i>{{j.slOpening}} persons</p>-->
+<!--    </div>-->
 
 </div>

@@ -2,8 +2,11 @@ import {Component, OnInit} from '@angular/core';
 import {CarrerService} from '../service/carrer.service';
 import {VacancyNhan} from '../model/vacancyNhan';
 import {AuthenticationService} from '../service/authentication.service';
-import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {HttpClient,  HttpHeaders} from "@angular/common/http";
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import {HttpClient} from '@angular/common/http';
+import {PositionService} from "../service/position.service";
+import {DepartmentService} from "../service/department.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-view-vacancy',
@@ -11,47 +14,57 @@ import {HttpClient,  HttpHeaders} from "@angular/common/http";
   styleUrls: ['./view-vacancy.component.scss']
 })
 export class ViewVacancyComponent implements OnInit {
-vacancys: VacancyNhan[]
+
+// vacancys: VacancyNhan[];
   myForm: FormGroup;
-  apiURL: string = '';
-  id_vacancy: FormControl;
+  apiURL = '';
+  submitted = false;
+  idVacancy: FormControl;
   ownedBy: FormControl;
-  statusVacancy: FormControl;
+  status: FormControl;
   position: FormControl;
-  dateGetsClosed: FormControl;
+  dateClose: FormControl;
   typeOfStaff: FormControl;
 
-
-  constructor( private carrerService: CarrerService, private authenService: AuthenticationService, protected httpClient : HttpClient) { }
+  constructor(private carrerService: CarrerService,
+              private positionService: PositionService,
+              private departmentService: DepartmentService,
+              protected httpClient: HttpClient,
+              private router: Router,
+              private authenticationService: AuthenticationService,
+              private fBuider: FormBuilder
+  ) {
+  }
 
   ngOnInit() {
-
-    this.carrerService.getAllVacancy().subscribe((data:VacancyNhan[])=>{this.vacancys=data});
+    // this.carrerService.getAllVacancy().subscribe((data: VacancyNhan[] ) => this.vacancys = data );
     this.createFormControls();
     this.createForm();
   }
   createFormControls() {
-    this.id_vacancy = new FormControl('', Validators.required);
+    this.idVacancy = new FormControl('', Validators.required);
     this.ownedBy = new FormControl('', Validators.required);
-    this.statusVacancy = new FormControl('', Validators.required);
+    this.status = new FormControl('', Validators.required);
     this.position = new FormControl('', Validators.required);
-    this.dateGetsClosed = new FormControl('', Validators.required);
+    this.dateClose = new FormControl('', Validators.required);
     this.typeOfStaff = new FormControl('', Validators.required);
   }
+
   createForm() {
     this.myForm = new FormGroup({
-      id_vacancy: this.id_vacancy,
+      idVacancy: this.idVacancy,
       ownedBy: this.ownedBy,
-      statusVacancy: this.statusVacancy,
+      status: this.status,
       position: this.position,
-      dateGetsClosed: this.dateGetsClosed,
+      dateClose: this.dateClose,
       typeOfStaff: this.typeOfStaff,
-    })
+    });
   }
-  onsubmit(){
-    if(this.myForm.valid){
+
+  onsubmit() {
+    if (this.myForm.valid) {
       console.log(this.myForm.value);
-      this.httpClient.post(`${this.apiURL}/v00.acacyavhbjnk/`,this.myForm.value);
+      this.httpClient.post(`${this.apiURL}/v00.acacyavhbjnk/`, this.myForm.value);
       this.myForm.reset();
     }
   }
