@@ -45,11 +45,14 @@
         <option value="banned">Banned</option>
       </select>
 
-        <label>{{'experience' | translate}}</label> <select class="form-control" formControlName="experience">
-        <option value="fresher">Fresher</option>
-        <option value="internship">Internship</option>
-        <option value="senior">Senior</option>
-      </select>
+        <label>{{'experience' | translate}}</label>
+          <input type="number" class="form-control" formControlName="experience"
+                 placeholder="Enter experience">
+<!--          <select class="form-control" formControlName="experience">-->
+<!--        <option value="fresher">Fresher</option>-->
+<!--        <option value="internship">Internship</option>-->
+<!--        <option value="senior">Senior</option>-->
+<!--      </select>-->
 
         <label>{{'nameOfTheInterviewer' | translate}} </label>
         <input type="text" class="form-control" formControlName="nameOfTheInterviewer"

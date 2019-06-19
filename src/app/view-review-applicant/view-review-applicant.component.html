@@ -22,7 +22,8 @@
     </form>
     <div class="btnAll">
       <button class="btnSearch" (click)="onsubmit()"><i class="fa fa-search"></i> {{'btnSearch' | translate}}</button>
-      <button class="btnAdd" routerLink="/interviewer/review-applicant" routerLinkActive="active"><i class="fa fa-plus"></i>{{'btnAdd' | translate}}</button>
+      <button class="btnAdd" routerLink="/interviewer/review-applicant" routerLinkActive="active"><i
+        class="fa fa-plus"></i>{{'btnAdd' | translate}}</button>
       <button class="btnExport">{{'btnExport' | translate}}</button>
     </div>
 
@@ -52,15 +53,78 @@
           <td>{{r.result}}</td>
           <td>{{r.note}}</td>
           <td>
-            <button class="btn btn-info btn-sm" (click)="openDiaLog()"><i class="fa fa-edit small"></i></button>
+            <!---->
+            <button class="btn btn-info btn-sm" onclick="document.getElementById('id01').style.display='block'"
+                    style="width:auto;"><i class="fa fa-edit small"></i></button>
+
+            <div id="id01" class="modal">
+
+              <form [formGroup]="myForm" class="modal-content animate" action="/action_page.php">
+                <div class="imgcontainer">
+          <span onclick="document.getElementById('id01').style.display='none'" class="close"
+                title="Close Modal">&times;</span>
+                </div>
+
+                <div class="containerIS">
+                  <label>{{'applicantNumber' | translate}}</label>
+                  <input type="number" class="form-control" formControlName="applicantNumber" required>
+
+                  <label>{{'position' | translate}}</label>
+                  <select class="form-control" formControlName="idPosition" required
+                          (change)="selectPosition($event.target.value)">
+                    <option *ngFor="let position of positionList"
+                            [value]="position.idPosition">{{position.positionName}}</option>
+                  </select>
+
+                  <label>{{'positionRecommend' | translate}}</label>
+                  <input type="text" class="form-control" formControlName="positionRecommend" required>
+
+                  <label>{{'technicalReview' | translate}}</label>
+                  <input type="text" class="form-control" formControlName="technicalReview" required>
+
+                  <label>{{'behaviorReview' | translate}}</label>
+                  <input type="text" class="form-control" formControlName="behaviorReview" required>
+
+                  <label>{{'languageReview' | translate}}</label>
+                  <input type="text" class="form-control" formControlName="languageReview" required>
+
+                  <label>{{'result' | translate}}</label> <select class="form-control" formControlName="result"
+                                                                  required>
+                  <option *ngFor="let result of results" [value]="result">{{result}}</option>
+                </select>
+
+                  <label>{{'note' | translate}}</label>
+                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                            formControlName="note" required></textarea>
+
+
+                  <button class="btnSave" (click)="onsubmit()"><i class="fa fa-search"></i> {{'Save' | translate}}
+                  </button>
+
+                </div>
+
+
+              </form>
+            </div>
+
+                          <script>
+                            // Get the modal
+                            var modal = document.getElementById('id01');
+
+                            // When the user clicks anywhere outside of the modal, close it
+                            window.onclick = function (event) {
+                              if (event.target == modal) {
+                                modal.style.display = "none";
+                              }
+                            }
+                          </script>
+
+            <!---->
             <button class="btn btn-danger btn-sm"><i class="fa fa-close small"></i></button>
           </td>
         </tr>
       </ng-container>
 
     </table>
-
   </div>
-
-
 </div>
