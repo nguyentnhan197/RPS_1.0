@@ -22,8 +22,13 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'carrer', component: CarrerComponent},
   // {path: 'carrer/:id', component: DetailCarerComponent},
-  {path: 'view-applicant', component: ViewApplicantComponent,canActivate:[AuthGuard],data:{roles:['ROLE_INTERVIEWER']}},
-  {path: 'view-vacancy', component: ViewVacancyComponent},
+  {
+    path: 'view-applicant',
+    component: ViewApplicantComponent,
+    canActivate: [AuthGuard],
+    data: {roles: ['ROLE_INTERVIEWER']}
+  },
+  {path: 'view-vacancy', component: ViewVacancyComponent, canActivate: [AuthGuard], data: {roles: ['ROLE_HR']}},
   {path: 'hr/create-applicant', component: CreateApplicantComponent},
   {path: 'hr/create-vacancy', component: CreateVacancyComponent},
   {path: 'interviewer/review-applicant', component: ReviewApplicantComponent},

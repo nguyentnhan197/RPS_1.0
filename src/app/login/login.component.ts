@@ -3,6 +3,7 @@ import {Router} from '@angular/router';
 import {AuthenticationService} from '../service/authentication.service';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {TranslateService} from '../service/translate.service';
+import {User} from "../model/user.model";
 
 @Component({
   selector: 'app-login',
@@ -45,7 +46,7 @@ export class LoginComponent implements OnInit {
 
   checkLogin() {
     (this.loginservice.authenticate(this.username.value, this.password.value).subscribe(
-        data => {
+        (data) => {
           if (data['name']) {
             this.router.navigate(['/view-vacancy']);
             this.invalidLogin = false;
