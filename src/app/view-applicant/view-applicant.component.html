@@ -1,6 +1,6 @@
-<div class="viewApplicant">
+<div class="viewApplicant ">
   <div class="container">
-    <form [formGroup]="myForm">
+    <form [formGroup]="myForm1">
       <table class="tableViewApplicantTop align-middle" align="center">
         <tr>
           <td><label>{{'id' | translate}}</label>
@@ -34,7 +34,7 @@
 
 
     <div class="btnAll">
-      <button class="btnSearch" (click)="onsubmit()"><i class="fa fa-search"></i> {{'btnSearch' | translate}}</button>
+      <button class="btnSearch" (click)="onsubmit1()"><i class="fa fa-search"></i> {{'btnSearch' | translate}}</button>
       <button class="btnCreateApp" routerLink="/hr/create-applicant" routerLinkActive="active"><i
         class="fa fa-plus"></i> {{'btnCreateApp' | translate}}</button>
       <button class="btnReviewApplicant" routerLink="/interviewer/view-review-applicant"
@@ -46,7 +46,7 @@
   </div>
 
   <div class="viewApplicantBot">
-    <table class="table table-striped">
+    <table class="table table-striped container1">
       <tr>
         <th>{{'id' | translate}}</th>
         <th>{{'name' | translate}}</th>

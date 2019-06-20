@@ -1,6 +1,6 @@
 <div class="viewReviewApplicant">
   <div class="container">
-    <form [formGroup]="myForm">
+    <form [formGroup]="myForm1">
       <table class="tableViewReviewApplicantTop align-middle" align="center">
         <tr>
           <td>
@@ -21,7 +21,7 @@
       </table>
     </form>
     <div class="btnAll">
-      <button class="btnSearch" (click)="onsubmit()"><i class="fa fa-search"></i> {{'btnSearch' | translate}}</button>
+      <button class="btnSearch" (click)="onsubmit1()"><i class="fa fa-search"></i> {{'btnSearch' | translate}}</button>
       <button class="btnAdd" routerLink="/interviewer/review-applicant" routerLinkActive="active"><i
         class="fa fa-plus"></i> {{'btnAdd' | translate}}</button>
       <button class="btnExport">{{'btnExport' | translate}}</button>
@@ -97,7 +97,7 @@
                   <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
                             formControlName="note" required></textarea>
 
-
+`
                   <button class="btnSave" (click)="onsubmit()"><i class="fa fa-search"></i> {{'Save' | translate}}
                   </button>
 

@@ -87,12 +87,12 @@ export class CreateVacancyComponent implements OnInit {
       experience: this.experience,
       state: this.state,
       offer: this.offer,
+      gender: this.gender,
+      typeOfStaff: this.typeOfStaff,
       department: new FormGroup({
         departmentName: this.departmentName,
         idDepartment: this.idDepartment
       }),
-      gender: this.gender,
-      typeOfStaff: this.typeOfStaff,
       position: new FormGroup({
         positionName: this.positionName,
         idPosition: this.idPosition

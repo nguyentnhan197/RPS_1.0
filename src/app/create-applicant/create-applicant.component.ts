@@ -26,9 +26,9 @@ export class CreateApplicantComponent implements OnInit {
   dateScheduled: FormControl;
   start: FormControl;
   end: FormControl;
-  positionList: Position[] = [];
-
-  constructor(protected httpClient: HttpClient, private positionService: PositionService) {
+  positionList: Position[]=[];
+  cv : FormControl;
+  constructor(protected httpClient: HttpClient , private positionService: PositionService) {
   }
 
   ngOnInit() {
@@ -69,6 +69,7 @@ export class CreateApplicantComponent implements OnInit {
     this.start = new FormControl('', Validators.required);
     this.end = new FormControl('', Validators.required);
     this.positionName = new FormControl('');
+    this.cv = new FormControl('');
   }
 
   createForm() {
@@ -89,6 +90,7 @@ export class CreateApplicantComponent implements OnInit {
       dateScheduled: this.dateScheduled,
       start: this.start,
       end: this.end,
+      cv: this.cv
     });
 
   }
@@ -101,5 +103,5 @@ export class CreateApplicantComponent implements OnInit {
     this.idPosition.setValue(Number.parseInt(id));
     return this.positionName;
   }
-
 }
+

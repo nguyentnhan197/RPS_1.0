@@ -1,46 +1,47 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {User} from '../model/user.model';
-import {map} from 'rxjs/operators';
-import {BehaviorSubject, Observable} from 'rxjs';
-import {apiRoot} from "../app.component";
+import {BehaviorSubject, Observable, of, Subscribable} from 'rxjs';
+import {apiRoot} from '../app.component';
+import {map} from "rxjs/operators";
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthenticationService {
-  authenticated = false;
-  private currentUserSubject: BehaviorSubject<User>;
-  public currentUser: Observable<User>;
+  public authenticated = false;
+  currentUserSubject: BehaviorSubject<User>;
+  currentUser: Observable<User>;
+  user: User;
 
   constructor(
     private httpClient: HttpClient
   ) {
+
+  }
+
+
+  public getCurrentUserValue(): User {
     this.currentUserSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('currentUser')));
     this.currentUser = this.currentUserSubject.asObservable();
-  }
-  RecruitmentProcessSystem
-  public getCurrentUserValue(): User {
-    // console.log('parse json in USER'+JSON.stringify(this.currentUserSubject.value));
     return this.currentUserSubject.value;
   }
 
   authenticate(username, password) {
     const headers = new HttpHeaders({Authorization: 'Basic ' + btoa(username + ':' + password)});
-    return this.httpClient.get(`${apiRoot}/user`, {headers}).pipe(
+   return this.httpClient.get(`${apiRoot}/user`, {headers}).pipe(
       map(
-        userData => {
-
+        (userData: User) => {
+          console.log('aaaaaaaaaaaaaaaaa')
+          console.log(userData);
           sessionStorage.setItem('token',
             btoa(username + ':' + password));
           sessionStorage.setItem('username', username);
           localStorage.setItem('currentUser', JSON.stringify(userData));
-          console.log('userdata' + JSON.stringify(userData));
-          return userData;
-        }
-      )
-    );
+          return userData
+        }));
   }
+
 
   getToken() {
     return sessionStorage.getItem('token');

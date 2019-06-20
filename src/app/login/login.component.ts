@@ -3,6 +3,7 @@ import {Router} from '@angular/router';
 import {AuthenticationService} from '../service/authentication.service';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {TranslateService} from '../service/translate.service';
+import {User} from '../model/user.model';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,7 @@ import {TranslateService} from '../service/translate.service';
 export class LoginComponent implements OnInit {
   // user = new user();
   credentials = {username: '', password: ''};
-  error = ''
+  error = '';
   invalidLogin = false;
   loginForm: FormGroup;
   username: FormControl;
@@ -44,25 +45,22 @@ export class LoginComponent implements OnInit {
   }
 
   checkLogin() {
-    (this.loginservice.authenticate(this.username.value, this.password.value).subscribe(
-        data => {
-          if (data['name']) {
-            this.router.navigate(['/view-vacancy']);
-            this.invalidLogin = false;
-          } else {
-            this.error = 'Username or password invalid';
-          }
-        },
-        error => {
-          this.invalidLogin = true,
-            this.error = error;
-
+    this.loginservice.authenticate(this.username.value, this.password.value).subscribe(
+      (data) => {
+        if (data['name']) {
+          this.router.navigate(['/view-vacancy']);
+          this.invalidLogin = false;
+        } else {
+          this.error = 'Username or password invalid';
         }
-      )
-    );
-
+      },
+      error => {
+        this.invalidLogin = true,
+          this.error = error;
+      }
+    )
+    ;
   }
-
 }
 
 // export class user{

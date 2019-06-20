@@ -9,8 +9,7 @@
     border: 1px solid gray;
     //margin-top: 10px;
     //margin-bottom: 15px;
-    margin: 10px 150px 10px 150px;
-
+    margin: 50px 150px 10px 15px;
 
     .tableViewApplicantTop {
       border-collapse: collapse;
@@ -32,6 +31,7 @@
 
     }
 
+
     .btnAll {
       text-align: center;
 
@@ -52,6 +52,15 @@
     }
   }
 
+  .container1 {
+    border-collapse: collapse;
+    border-spacing: 50px;
+    border-radius: 10px;
+    font-size: 14px;
+    //margin-top: 10px;
+    //margin-bottom: 15px;
+    margin: 50px 150px 10px 0px;
+  }
   .tableViewApplicantBot {
     border-collapse: collapse;
     border-spacing: 0;
@@ -94,7 +103,10 @@
   .phan-trang a:hover:not(.active) {
     background-color: #ddd;
   }
-
+  .btn-sm{
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
 
   .btnEdit {
     background-color: DodgerBlue;
@@ -188,7 +200,7 @@ div.container {
 
 
 .containerIS {
-  padding: 16px;
+  padding: 16px 60px;
 }
 
 span.psw {
@@ -211,12 +223,13 @@ span.psw {
   padding-top: 60px;
 }
 
+
 /* Modal Content/Box */
 .modal-content {
   background-color: #fefefe;
-  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  margin: -2% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
   border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
+  width: 50%; /* Could be more or less, depending on screen size */
 }
 
 /* The Close Button (x) */
