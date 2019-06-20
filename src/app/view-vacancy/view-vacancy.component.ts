@@ -4,9 +4,9 @@ import {VacancyNhan} from '../model/vacancyNhan';
 import {AuthenticationService} from '../service/authentication.service';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {HttpClient} from '@angular/common/http';
-import {PositionService} from "../service/position.service";
-import {DepartmentService} from "../service/department.service";
-import {Router} from "@angular/router";
+import {PositionService} from '../service/position.service';
+import {DepartmentService} from '../service/department.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-view-vacancy',
@@ -41,6 +41,7 @@ export class ViewVacancyComponent implements OnInit {
     this.createFormControls();
     this.createForm();
   }
+
   createFormControls() {
     this.idVacancy = new FormControl('', Validators.required);
     this.ownedBy = new FormControl('', Validators.required);

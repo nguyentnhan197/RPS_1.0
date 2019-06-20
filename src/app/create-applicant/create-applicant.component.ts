@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {HttpClient} from '@angular/common/http';
-import {Position} from "../model/position.model";
-import {PositionService} from "../service/position.service";
-import {apiRoot} from "../app.component";
+import {Position} from '../model/position.model';
+import {PositionService} from '../service/position.service';
+import {apiRoot} from '../app.component';
 
 @Component({
   selector: 'app-create-applicant',
@@ -17,7 +17,7 @@ export class CreateApplicantComponent implements OnInit {
   email: FormControl;
   phone: FormControl;
   vacacyNumber: FormControl;
-  idPosition :FormControl;
+  idPosition: FormControl;
   positionName: FormControl;
   dateOfApplicant: FormControl;
   status: FormControl;
@@ -26,8 +26,9 @@ export class CreateApplicantComponent implements OnInit {
   dateScheduled: FormControl;
   start: FormControl;
   end: FormControl;
-  positionList: Position[]=[];
-  constructor(protected httpClient: HttpClient , private positionService: PositionService) {
+  positionList: Position[] = [];
+
+  constructor(protected httpClient: HttpClient, private positionService: PositionService) {
   }
 
   ngOnInit() {
@@ -35,6 +36,7 @@ export class CreateApplicantComponent implements OnInit {
     this.createForm();
     this.getPositionList();
   }
+
   getPositionList() {
     this.positionService.getAllPosition().subscribe((data: Position[]) => {
       this.positionList = data;
@@ -90,12 +92,13 @@ export class CreateApplicantComponent implements OnInit {
     });
 
   }
+
   selectPosition($event): FormControl {
     this.getPositionList();
     const id = $event;
     const positionName = this.positionList.find(po => po.idPosition = id).positionName;
     this.positionName.setValue(positionName);
-    this.idPosition.setValue( Number.parseInt(id));
+    this.idPosition.setValue(Number.parseInt(id));
     return this.positionName;
   }
 

@@ -12,18 +12,18 @@ export class ViewApplicantComponent implements OnInit {
   myForm: FormGroup;
   apiURL = '';
   id: FormControl;
-  // name: FormControl;
-  // email: FormControl;
-  // phone: FormControl;
+   name: FormControl;
+   email: FormControl;
+   phone: FormControl;
   vacacyNumber: FormControl;
   position: FormControl;
   dateOfApplicant: FormControl;
-  // status: FormControl;
-  // experience: FormControl;
+   status: FormControl;
+   experience: FormControl;
   nameOfTheInterviewer: FormControl;
   dateScheduled: FormControl;
-  // start: FormControl;
-  // end: FormControl;
+   start: FormControl;
+   end: FormControl;
 
   constructor(protected httpClient: HttpClient) {
   }
@@ -44,22 +44,38 @@ export class ViewApplicantComponent implements OnInit {
 
 
   createFormControls() {
-     this.id = new FormControl('', Validators.required);
-     this.vacacyNumber = new FormControl('', Validators.required);
-     this.position = new FormControl('', Validators.required);
-     this.dateOfApplicant = new FormControl('', Validators.required);
-     this.nameOfTheInterviewer = new FormControl('', Validators.required);
-     this.dateScheduled = new FormControl('', Validators.required);
+    this.id = new FormControl('', Validators.required);
+    this.name = new FormControl('', Validators.required);
+    this.email = new FormControl('', Validators.required);
+    this.phone = new FormControl('', Validators.required);
+    this.vacacyNumber = new FormControl('', Validators.required);
+    this.position = new FormControl('', Validators.required);
+    // this.idPosition = new FormControl('', Validators.required);
+    this.dateOfApplicant = new FormControl('', Validators.required);
+    this.status = new FormControl('', Validators.required);
+    this.experience = new FormControl('', Validators.required);
+    this.nameOfTheInterviewer = new FormControl('', Validators.required);
+    this.dateScheduled = new FormControl('', Validators.required);
+    this.start = new FormControl('', Validators.required);
+    this.end = new FormControl('', Validators.required);
+    // this.positionName = new FormControl('');
   }
 
   createForm() {
     this.myForm = new FormGroup({
       id: this.id,
+       name: this.name,
+       email: this.email,
+       phone: this.phone,
       vacacyNumber: this.vacacyNumber,
       position: this.position,
       dateOfApplicant: this.dateOfApplicant,
+      status: this.status,
+      experience: this.experience,
       nameOfTheInterviewer: this.nameOfTheInterviewer,
       dateScheduled: this.dateScheduled,
+      start: this.start,
+      end: this.end,
     });
 
   }
@@ -114,4 +130,4 @@ export const listOfCandidates = [
     start: '11:00 AM',
     end: '11:30 AM'
   }
-]
+];
