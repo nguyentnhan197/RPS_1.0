@@ -2,66 +2,48 @@
   <form [formGroup]="myForm">
     <table class="tableCreateApplicant">
       <tr>
-<td>
-        <label>{{'id' | translate}}</label>
-        <input type="number" class="form-control" formControlName="id" placeholder="Enter id applicant">
-
-        <label>{{'name' | translate}}</label>
-        <input type="text" class="form-control" formControlName="name" placeholder="Enter name applicant">
-
-        <label>{{'email' | translate}}</label>
-        <input type="text" class="form-control" formControlName="email" placeholder="Enter email for you">
-
-        <label>{{'phone' | translate}}</label>
-        <input type="number" class="form-control" formControlName="phone" placeholder="Enter phone for you">
-
-        <label>{{'vacacyNumber' | translate}}</label>
-        <input type="number" class="form-control" formControlName="vacacyNumber" placeholder="Enter vacacy number">
-
-    <fieldset formGroupName="position">
-      <div class="form-group">
-        <label>{{'position' | translate}}</label>
-        <select class="form-control" formControlName="idPosition" required
-                (change)="selectPosition($event.target.value)">
-          <option *ngFor="let position of positionList"
-                  [value]="position.idPosition">{{position.positionName}}</option>
-        </select>
-        <div class=" form-control-feedback control-label"
-             *ngIf="idPosition.errors && (idPosition.dirty || idPosition.touched)">
-          <p class="error" *ngIf="idPosition.errors.required">Title is required</p>
-        </div>
-      </div>
-    </fieldset>
-</td>
         <td>
-        <label>{{'dateOfApplicant' | translate}}</label>
-        <input type="date" class="form-control" formControlName="dateOfApplicant" placeholder="Enter date of applicant">
+
+          <label>{{'name' | translate}}</label>
+          <input type="text" class="form-control" formControlName="applicantVacancyName" placeholder="Enter name applicant">
+
+          <label>{{'emailApplicant' | translate}}</label>
+          <input type="text" class="form-control" formControlName="emailApplicant" placeholder="Enter email for you">
+
+          <label>{{'phone' | translate}}</label>
+          <input type="number" class="form-control" formControlName="phone" placeholder="Enter phone for you">
+
+        </td>
+        <td>
+          <label>{{'dateOnApplicantVacancy' | translate}}</label>
+          <input type="date" class="form-control" formControlName="dateOnApplicantVacancy"
+                 placeholder="Enter date of applicant">
 
 
-        <label>{{'status' | translate}}</label> <select class="form-control" formControlName="status">
-        <option value="notinProcess">Notin process</option>
-        <option value="inprocess">Inprocess</option>
-        <option value="hired">Hired</option>
-        <option value="banned">Banned</option>
-      </select>
+          <label>{{'status' | translate}}</label> <select class="form-control" formControlName="state">
+          <option value="notinProcess">Notin process</option>
+          <option value="inprocess">Inprocess</option>
+          <option value="hired">Hired</option>
+          <option value="banned">Banned</option>
+        </select>
 
-        <label>{{'experience' | translate}}</label>
+          <label>{{'experience' | translate}}</label>
           <input type="number" class="form-control" formControlName="experience"
                  placeholder="Enter experience">
 
-        <label>{{'nameOfTheInterviewer' | translate}} </label>
-        <input type="text" class="form-control" formControlName="nameOfTheInterviewer"
-               placeholder="Enter name interviewer">
+          <label>{{'listIdUser' | translate}} </label>
+          <select  class="form-control" formControlName="listIdUser">
+            <option   *ngFor="let interviewer of interviewerList" value="{{interviewer.idUser}}"> {{interviewer.fullName}}</option>
+          </select>
 
+          <label>{{'dateOfTheScheduleInterview' | translate}}</label>
+          <input type="date" class="form-control" formControlName="dateOfTheScheduleInterview" placeholder="Enter date scheduled">
 
-        <label>{{'dateScheduled' | translate}}</label>
-        <input type="date" class="form-control" formControlName="dateScheduled" placeholder="Enter date scheduled">
+          <label>{{'start' | translate}}</label>
+          <input type="time" class="form-control" formControlName="startTime" placeholder="Enter time start">
 
-        <label>{{'start' | translate}}</label>
-        <input type="time" class="form-control" formControlName="start" placeholder="Enter time start">
-
-        <label>{{'end' | translate}}</label>
-        <input type="time" class="form-control" formControlName="end" placeholder="Enter time end">
+          <label>{{'end' | translate}}</label>
+          <input type="time" class="form-control" formControlName="endTime" placeholder="Enter time end">
 
         </td>
       </tr>
