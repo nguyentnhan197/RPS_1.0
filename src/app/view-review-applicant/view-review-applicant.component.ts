@@ -135,7 +135,7 @@ export class ViewReviewApplicantComponent implements OnInit {
 export const viewReviewApplicant = [
   {
     applicantNumber: 15130125,
-    position: 'Tuyển Dev font-end',
+    position: 'Tuyển Dev font-endTime',
     positionRecommend: 'Font-End',
     technicalReview: '7/10',
     behaviorReview: '7/10',
@@ -145,7 +145,7 @@ export const viewReviewApplicant = [
   },
   {
     applicantNumber: 15130147,
-    position: 'Tuyển Dev back-end',
+    position: 'Tuyển Dev back-endTime',
     positionRecommend: 'Back-End',
     technicalReview: '4/10',
     behaviorReview: '7/10',

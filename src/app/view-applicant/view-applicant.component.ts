@@ -13,9 +13,9 @@ export class ViewApplicantComponent implements OnInit {
   myForm1: FormGroup;
   apiURL = '';
   id: FormControl;
-  name: FormControl;
-  email: FormControl;
-  phone: FormControl;
+  // name: FormControl;
+  // emailApplicant: FormControl;
+  // phone: FormControl;
   vacacyNumber: FormControl;
   position: FormControl;
   dateOfApplicant: FormControl;
@@ -23,8 +23,8 @@ export class ViewApplicantComponent implements OnInit {
   experience: FormControl;
   nameOfTheInterviewer: FormControl;
   dateScheduled: FormControl;
-  start: FormControl;
-  end: FormControl;
+  // startTime: FormControl;
+  // endTime: FormControl;
 
   constructor(protected httpClient: HttpClient) {
   }

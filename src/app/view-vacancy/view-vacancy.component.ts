@@ -140,6 +140,11 @@ export class ViewVacancyComponent implements OnInit {
       });
 
   }
+  addVacancy(v:VacancyNhan){
+    this.router.navigate(['hr/create-applicant', v.vacancyNumber]);
+    // routerLink="hr/create-vacancy/{{v.vacancyNumber}}"
+    console.log(v);
+  }
 }
 
 
