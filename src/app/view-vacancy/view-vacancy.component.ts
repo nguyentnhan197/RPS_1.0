@@ -25,7 +25,7 @@ export class ViewVacancyComponent implements OnInit {
   submitted = false;
   idVacancy: FormControl;
   ownedBy: FormControl;
-  status: FormControl;
+  state: FormControl;
   position: FormControl;
   dateClose: FormControl;
   typeOfStaff: FormControl;
@@ -75,7 +75,7 @@ export class ViewVacancyComponent implements OnInit {
   createFormControls1() {
     this.idVacancy = new FormControl('', Validators.required);
     this.ownedBy = new FormControl('', Validators.required);
-    this.status = new FormControl('', Validators.required);
+    this.state = new FormControl('', Validators.required);
     this.position = new FormControl('', Validators.required);
     this.dateClose = new FormControl('', Validators.required);
     this.typeOfStaff = new FormControl('', Validators.required);
@@ -85,7 +85,7 @@ export class ViewVacancyComponent implements OnInit {
     this.myForm1 = new FormGroup({
       idVacancy: this.idVacancy,
       ownedBy: this.ownedBy,
-      status: this.status,
+      status: this.state,
       position: this.position,
       dateClose: this.dateClose,
       typeOfStaff: this.typeOfStaff,
@@ -94,7 +94,7 @@ export class ViewVacancyComponent implements OnInit {
   createFormControls() {
     this.idVacancy = new FormControl('', Validators.required);
     this.ownedBy = new FormControl('', Validators.required);
-    this.status = new FormControl('', Validators.required);
+    this.state = new FormControl('', Validators.required);
     this.position = new FormControl('', Validators.required);
     this.dateClose = new FormControl('', Validators.required);
     this.typeOfStaff = new FormControl('', Validators.required);
@@ -112,23 +112,23 @@ export class ViewVacancyComponent implements OnInit {
   }
   createForm() {
     this.myForm = new FormGroup({
-      idVacancy: this.idVacancy,
-      ownedBy: this.ownedBy,
-      status: this.status,
-      position: this.position,
-      dateClose: this.dateClose,
-      typeOfStaff: this.typeOfStaff,
-      numberOpening: this.numberOpening,
-      offer: this.offer,
       vacancyNumber: this.vacancyNumber,
-      dateCreated: this.dateCreated,
-      description: this.description,
+      position: this.position,
       department: this.department,
       requirement: this.requirement,
-      experience: this.experience,
-      language: this.language,
-      gender: this.gender,
-      degree: this.degree,
+      description: this.description,
+      typeOfStaff: this.typeOfStaff,
+      // idVacancy: this.idVacancy,
+      ownedBy: this.ownedBy,
+      numberOpening: this.numberOpening,
+      // offer: this.offer,
+      dateCreated: this.dateCreated,
+      dateClose: this.dateClose,
+      state: this.state,
+      // experience: this.experience,
+      // language: this.language,
+      // gender: this.gender,
+      // degree: this.degree,
     });
   }
 

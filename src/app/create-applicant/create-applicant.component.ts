@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Position} from '../model/position.model';
 import {PositionService} from '../service/position.service';
 import {apiRoot} from '../app.component';
@@ -8,12 +8,16 @@ import {AuthenticationService} from "../service/authentication.service";
 import {ActivatedRoute} from "@angular/router";
 import {User} from "../model/user.model";
 
+export class ApplicantVacancy {
+}
+
 @Component({
   selector: 'app-create-applicant',
   templateUrl: './create-applicant.component.html',
   styleUrls: ['./create-applicant.component.scss']
 })
 export class CreateApplicantComponent implements OnInit {
+  positionList: Position[];
   myForm: FormGroup;
   id: FormControl;
   applicantVacancyName: FormControl;
@@ -30,7 +34,7 @@ export class CreateApplicantComponent implements OnInit {
   startTime: FormControl;
   endTime: FormControl;
   cv: FormControl;
-    httpOptions = {
+  httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': `Basic ${this.authenticationService.getToken()}`,
@@ -59,8 +63,11 @@ export class CreateApplicantComponent implements OnInit {
     this.positionService.getAllPosition().subscribe((data: Position[]) => {
       this.positionList = data;
     });
+  }
 
-  getVacancyNumber(): string {
+  getVacancyNumber()
+    :
+    string {
     return this.route.snapshot.paramMap.get('vacancyNumber');
   }
 
@@ -72,8 +79,8 @@ export class CreateApplicantComponent implements OnInit {
   onsubmit() {
     console.log(this.myForm.value);
     const body = Object.assign({}, this.myForm.value);
-    this.httpClient.post(`${apiRoot}/hr/applicantVacancy/${this.getVacancyNumber()}/addApplicantVacancy`, body, this.httpOptions).subscribe(data=>{
-      console.log(data);
+    this.httpClient.post(`${apiRoot}/hr/applicantVacancy/${this.getVacancyNumber()}/addApplicantVacancy`, body, this.httpOptions).subscribe(data => {
+        console.log(data);
       }
     );
     // if (this.myForm.valid) {
@@ -119,25 +126,21 @@ export class CreateApplicantComponent implements OnInit {
 
   }
 
-  selectPosition($event): FormControl {
+  selectPosition($event)
+    :
+    FormControl {
     this.getPositionList();
     const id = $event;
     const positionName = this.positionList.find(po => po.idPosition = id).positionName;
     this.positionName.setValue(positionName);
     this.idPosition.setValue(Number.parseInt(id));
     return this.positionName;
+  }
 
   getListOfInterviewer() {
     return this.httpClient.get(`${apiRoot}/hr/get-list`).subscribe((data: User[]) => {
       this.interviewerList = data;
-    })
+    });
   }
-
-
 }
-
-export class ApplicantVacancy {
-
-}
-
 
