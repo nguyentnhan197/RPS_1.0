@@ -77,6 +77,7 @@
   "toDate": "To date",
 
   "manpowerRequestListByManager": "Manpower Request List By Manager",
+  "applicantApproval": "Applicant Approval",
 
 
   "emailApplicant": "Email",
@@ -85,6 +86,8 @@
   "dateOfTheScheduleInterview": "The date of the scheduled interview",
   "listIdUser": "Name of the Interviewer",
   "dateOnApplicantVacancy": "Date of applicant",
+  "applicantVacancyName": "Applicant Vacancy Name",
+
 
 
 

@@ -27,7 +27,7 @@ export class CreateApplicantComponent implements OnInit {
   idPosition: FormControl;
   positionName: FormControl;
   dateOnApplicantVacancy: FormControl;
-  state: FormControl;
+  status: FormControl;
   experience: FormControl;
   listIdUser: FormControl;
   dateOfTheScheduleInterview: FormControl;
@@ -90,7 +90,7 @@ export class CreateApplicantComponent implements OnInit {
     this.phone = new FormControl('', Validators.required);
     this.vacacyNumber = new FormControl('', Validators.required);
     this.dateOnApplicantVacancy = new FormControl('', Validators.required);
-    this.state = new FormControl('', Validators.required);
+    this.status = new FormControl('', Validators.required);
     this.experience = new FormControl('', Validators.required);
     this.listIdUser = new FormControl('', Validators.required);
     this.dateOfTheScheduleInterview = new FormControl('', Validators.required);
@@ -107,7 +107,7 @@ export class CreateApplicantComponent implements OnInit {
       phone: this.phone,
       vacacyNumber: this.vacacyNumber,
       dateOnApplicantVacancy: this.dateOnApplicantVacancy,
-      state: this.state,
+      status: this.status,
       experience: this.experience,
       listIdUser: this.listIdUser,
       dateOfTheScheduleInterview: this.dateOfTheScheduleInterview,
