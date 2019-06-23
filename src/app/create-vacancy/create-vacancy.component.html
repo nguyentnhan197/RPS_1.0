@@ -6,18 +6,18 @@
     <table class="tableCreateAllicant">
       <tr>
         <td>
-          <div class="form-group">
-            <label>{{'status' | translate}}</label>
-            <select class="form-control" formControlName="state" required>
-              <option value="open">Open</option>
-              <option value="close">Close</option>
-              <option value="suspended">Suspended</option>
-            </select>
-            <div class=" form-control-feedback control-label"
-                 *ngIf="state.errors && (state.dirty || state.touched)">
-              <p class="error" *ngIf="state.errors.required">Status is required</p>
-            </div>
-          </div>
+<!--          <div class="form-group">-->
+<!--            <label>{{'status' | translate}}</label>-->
+<!--            <select class="form-control" formControlName="state" required>-->
+<!--              <option value="open">Open</option>-->
+<!--              <option value="close">Close</option>-->
+<!--              <option value="suspended">Suspended</option>-->
+<!--            </select>-->
+<!--            <div class=" form-control-feedback control-label"-->
+<!--                 *ngIf="state.errors && (state.dirty || state.touched)">-->
+<!--              <p class="error" *ngIf="state.errors.required">Status is required</p>-->
+<!--            </div>-->
+<!--          </div>-->
 
           <fieldset formGroupName="position">
             <div class="form-group">
@@ -54,6 +54,19 @@
               <p class="error" *ngIf="numberOpening.errors.required">Number opening is required</p>
             </div>
           </div>
+
+          <div class="form-group"
+               [ngClass]="offer.invalid && (offer.dirty || offer.touched) ? 'has-danger' : 'has-success' ">
+            <label>{{'offer' | translate}}</label>
+            <input class="form-control" type="text" placeholder="Enter offer"
+                   formControlName="offer" required>
+            <div class=" form-control-feedback control-label"
+                 *ngIf="offer.errors && (offer.dirty || offer.touched)">
+              <p class="error" *ngIf="offer.errors.required">Offer is required</p>
+            </div>
+          </div>
+
+
         </td>
         <td>
 
@@ -85,14 +98,14 @@
             </div>
           </div>
 
-          <div class="form-group">
-            <label>{{'gender' | translate}}</label> <br>
-            <select class="form-control" formControlName="gender">
-              <option>Male</option>
-              <option>Female</option>
-              <option>All</option>
-            </select>
-          </div>
+<!--          <div class="form-group">-->
+<!--            <label>{{'gender' | translate}}</label> <br>-->
+<!--            <select class="form-control" formControlName="gender">-->
+<!--              <option>Male</option>-->
+<!--              <option>Female</option>-->
+<!--              <option>All</option>-->
+<!--            </select>-->
+<!--          </div>-->
 
 
 
@@ -117,13 +130,13 @@
       <tr>
         <td>
           <div class="form-group"
-               [ngClass]="offer.invalid && (offer.dirty || offer.touched) ? 'has-danger' : 'has-success' ">
-            <label>{{'offer' | translate}}</label>
+               [ngClass]="requirement.invalid && (requirement.dirty || requirement.touched) ? 'has-danger' : 'has-success' ">
+            <label>{{'requirement' | translate}}</label>
             <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
-                      formControlName="offer" required></textarea>
+                      formControlName="requirement" required></textarea>
             <div class=" form-control-feedback control-label"
                  *ngIf="offer.errors && (offer.dirty || offer.touched)">
-              <p class="error" *ngIf="offer.errors.required">Offer is required</p>
+              <p class="error" *ngIf="requirement.errors.required">Requirement is required</p>
             </div>
           </div>
         </td>

@@ -40,6 +40,7 @@ export class CreateVacancyComponent implements OnInit {
   idDepartment: FormControl;
   idPosition: FormControl;
   positionName: FormControl;
+  requirement:FormControl;
 
   constructor(private carrerService: CarrerService,
               private positionService: PositionService,
@@ -68,26 +69,28 @@ export class CreateVacancyComponent implements OnInit {
     this.state = new FormControl('', Validators.required);
     this.experience = new FormControl('', Validators.required);
     this.idDepartment = new FormControl(Number, Validators.required);
-    this.gender = new FormControl('', Validators.required);
+    // this.gender = new FormControl('', Validators.required);
     this.typeOfStaff = new FormControl('', Validators.required);
     this.offer = new FormControl('', Validators.required);
     this.position = new FormControl('');
     this.departmentName = new FormControl('');
     this.idPosition = new FormControl('');
     this.positionName = new FormControl('');
+    this.requirement= new FormControl('');
   }
 
 
   createForm() {
     this.myForm = new FormGroup({
+      requirement: this.requirement,
       numberOpening: this.numberOpening,
       dateClose: this.dateClose,
       description: this.description,
-      degree: this.degree,
+      // degree: this.degree,
       experience: this.experience,
       state: this.state,
       offer: this.offer,
-      gender: this.gender,
+      // gender: this.gender,
       typeOfStaff: this.typeOfStaff,
       department: new FormGroup({
         departmentName: this.departmentName,
@@ -136,7 +139,8 @@ export class CreateVacancyComponent implements OnInit {
   }
 
   onsubmit() {
-    this.httpClient.get(`${apiRoot}/addVacancy/${this.myForm.value}`);
+   this.carrerService.createVacancy(this.myForm.value).subscribe();
     console.log(this.myForm.value);
+    this.myForm.reset();
   }
 }

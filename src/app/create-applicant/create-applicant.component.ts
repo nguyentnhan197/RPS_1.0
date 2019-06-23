@@ -8,12 +8,16 @@ import {AuthenticationService} from '../service/authentication.service';
 import {ActivatedRoute} from '@angular/router';
 import {User} from '../model/user.model';
 
+export class ApplicantVacancy {
+}
+
 @Component({
   selector: 'app-create-applicant',
   templateUrl: './create-applicant.component.html',
   styleUrls: ['./create-applicant.component.scss']
 })
 export class CreateApplicantComponent implements OnInit {
+  positionList: Position[];
   myForm: FormGroup;
   id: FormControl;
   positionList: Position[];
@@ -65,10 +69,15 @@ export class CreateApplicantComponent implements OnInit {
     });
   }
 
+  getVacancyNumber()
+    :
+    string {
+    return this.route.snapshot.paramMap.get('vacancyNumber');
+  }
+
   onsubmit() {
     console.log(this.myForm.value);
     const body = Object.assign({}, this.myForm.value);
-    // tslint:disable-next-line:max-line-length
     this.httpClient.post(`${apiRoot}/hr/applicantVacancy/${this.getVacancyNumber()}/addApplicantVacancy`, body, this.httpOptions).subscribe(data => {
         console.log(data);
       }
@@ -116,7 +125,9 @@ export class CreateApplicantComponent implements OnInit {
 
   }
 
-  selectPosition($event): FormControl {
+  selectPosition($event)
+    :
+    FormControl {
     this.getPositionList();
     const id = $event;
     const positionName = this.positionList.find(po => po.idPosition = id).positionName;
@@ -130,11 +141,5 @@ export class CreateApplicantComponent implements OnInit {
       this.interviewerList = data;
     });
   }
-
-
 }
-
-
-
-
 

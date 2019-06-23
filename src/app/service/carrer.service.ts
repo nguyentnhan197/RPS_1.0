@@ -4,6 +4,7 @@ import {VacancyNhan} from '../model/vacancyNhan';
 import {apiRoot} from '../app.component';
 import {AuthenticationService} from './authentication.service';
 import {Observable} from 'rxjs';
+import {map} from "rxjs/operators";
 
 
 @Injectable()
@@ -12,6 +13,7 @@ export class CarrerService {
     'Content-Type': 'application/json',
     Authorization: `Basic ${this.authenticationService.getToken()}`
   });
+
   constructor(
     private httpClient: HttpClient,
     private authenticationService: AuthenticationService
@@ -19,26 +21,22 @@ export class CarrerService {
   }
 
 
-
   getAllVacancy() {
-    // const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa('user:secret123') });
-    //
     return this.httpClient.get(`${apiRoot}/vacancys`, {headers: this.headers});
   }
+
   deleteVacancy(idVacancy: number): Observable<any> {
     console.log(idVacancy);
     return this.httpClient.delete(`${apiRoot}/vacancys/${idVacancy}`, {headers: this.headers});
 
   }
 
-  // createVacancy(vacancy: Vacancy) {
-  //   let body = JSON.parse(JSON.stringify(vacancy))
-  //   if (vacancy.idVacancy) {
-  //     return this.httpClient.put('http://localhost:8080/RecruitmentProcessSystem/create-vacancy' + vacancy.idVacancy, body)
-  //   } else {
-  //     return this.httpClient.get('http://localhost:8080/RecruitmentProcessSystem/create-vacancy', body)
-  //   }
-  // }
+  createVacancy(vacancy: VacancyNhan) {
+    // let body = JSON.parse(JSON.stringify(vacancy));
+
+    return this.httpClient.post(`${apiRoot}/vacancys`, vacancy, {headers: this.headers});
+
+  }
 
   // getAllVacancy(){
   //   return this.httpClient.get('http://localhost:8080/RecruitmennpmtProcessSystem/')
@@ -51,12 +49,12 @@ export class CarrerService {
   //    let httpHeaders= new HttpHeaders().set('Accept','application/json');
   //
   // return this.httpClient.get<Vacancy>(this.apiRoot+'?idVacancy='+idVacancy,{headers:httpHeaders,responseType:'json'});
-// getVacancyById(idVacancy:number| string){
-//     return this.getAllVacancy().pipe(
-//       map((vacancys:Vacancy[])=>vacancys.find(vacancy=>vacancy.idVacancy===+idVacancy))
-//     );
+  getVacancyById(idVacancy: number | string) {
+    return this.getAllVacancy().pipe(
+      map((vacancys: VacancyNhan[]) => vacancys.find(vacancy => vacancy.idVacancy === +idVacancy))
+    );
 
-  // }
+  }
 
 
 }

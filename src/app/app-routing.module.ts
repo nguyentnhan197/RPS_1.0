@@ -6,7 +6,7 @@ import {ViewApplicantComponent} from './view-applicant/view-applicant.component'
 import {CreateApplicantComponent} from './create-applicant/create-applicant.component';
 import {CreateVacancyComponent} from './create-vacancy/create-vacancy.component';
 import {ReviewApplicantComponent} from './review-applicant/review-applicant.component';
-// import {DetailCarerComponent} from './carrer/detail-carrer/detail-carer.component';
+import {DetailCarerComponent} from './view-vacancy/detail-carrer/detail-carer.component';
 import {ChangedPasswordComponent} from './system/changed-password/changed-password.component';
 import {ProfileComponent} from './system/profile/profile.component';
 import {ManpowerRequestComponent} from './recruitment/manpower-request/manpower-request.component';
@@ -35,7 +35,8 @@ const routes: Routes = [
   {path: 'recruitment/manpower-request', component: ManpowerRequestComponent},
   {path: 'recruitment/manpower-request-manager', component: ManpowerRequestManagerComponent},
   {path: 'recruitment/applicant-approval', component: ApplicantApprovalComponent},
-  {path: 'view-vacancy', component: ViewVacancyComponent}
+  {path: 'view-vacancy', component: ViewVacancyComponent},
+  {path: 'view-vacancy/:id', component: DetailCarerComponent},
 ];
 
 @NgModule({
