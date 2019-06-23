@@ -13,9 +13,9 @@ export class ViewApplicantComponent implements OnInit {
   myForm1: FormGroup;
   apiURL = '';
   id: FormControl;
-  // name: FormControl;
-  // emailApplicant: FormControl;
-  // phone: FormControl;
+  name: FormControl;
+  emailApplicant: FormControl;
+  phone: FormControl;
   vacacyNumber: FormControl;
   position: FormControl;
   dateOfApplicant: FormControl;
@@ -23,8 +23,8 @@ export class ViewApplicantComponent implements OnInit {
   experience: FormControl;
   nameOfTheInterviewer: FormControl;
   dateScheduled: FormControl;
-  // startTime: FormControl;
-  // endTime: FormControl;
+  startTime: FormControl;
+  endTime: FormControl;
 
   constructor(protected httpClient: HttpClient) {
   }
@@ -80,7 +80,7 @@ export class ViewApplicantComponent implements OnInit {
   createFormControls() {
     this.id = new FormControl('', Validators.required);
     this.name = new FormControl('', Validators.required);
-    this.email = new FormControl('', Validators.required);
+    this.emailApplicant = new FormControl('', Validators.required);
     this.phone = new FormControl('', Validators.required);
     this.vacacyNumber = new FormControl('', Validators.required);
     this.position = new FormControl('', Validators.required);
@@ -90,8 +90,8 @@ export class ViewApplicantComponent implements OnInit {
     this.experience = new FormControl('', Validators.required);
     this.nameOfTheInterviewer = new FormControl('', Validators.required);
     this.dateScheduled = new FormControl('', Validators.required);
-    this.start = new FormControl('', Validators.required);
-    this.end = new FormControl('', Validators.required);
+    this.startTime = new FormControl('', Validators.required);
+    this.endTime = new FormControl('', Validators.required);
     // this.positionName = new FormControl('');
   }
 
@@ -99,7 +99,7 @@ export class ViewApplicantComponent implements OnInit {
     this.myForm = new FormGroup({
       id: this.id,
       name: this.name,
-      email: this.email,
+      emailApplicant: this.emailApplicant,
       phone: this.phone,
       vacacyNumber: this.vacacyNumber,
       position: this.position,
@@ -108,8 +108,8 @@ export class ViewApplicantComponent implements OnInit {
       experience: this.experience,
       nameOfTheInterviewer: this.nameOfTheInterviewer,
       dateScheduled: this.dateScheduled,
-      start: this.start,
-      end: this.end,
+      startTime: this.startTime,
+      endTime: this.endTime,
     });
 
   }

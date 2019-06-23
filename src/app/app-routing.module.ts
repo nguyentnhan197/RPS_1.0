@@ -21,14 +21,11 @@ const routes: Routes = [
   {path: '', component: LoginComponent},
   {path: 'login', component: LoginComponent},
   {path: 'carrer', component: CarrerComponent},
-  // {path: 'carrer/:id', component: DetailCarerComponent},
   {
     path: 'view-applicant',
-    component: ViewApplicantComponent,
-    canActivate: [AuthGuard],
-    data: {roles: ['ROLE_HR']}
+    component: ViewApplicantComponent
   },
-  {path: 'view-vacancy', component: ViewVacancyComponent, canActivate: [AuthGuard], data: {roles: ['ROLE_HR']}},
+  {path: 'view-vacancy', component: ViewVacancyComponent},
   {path: 'hr/create-applicant/:vacancyNumber', component: CreateApplicantComponent},
   {path: 'hr/create-vacancy', component: CreateVacancyComponent},
   {path: 'interviewer/review-applicant', component: ReviewApplicantComponent},
