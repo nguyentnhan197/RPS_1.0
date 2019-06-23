@@ -59,8 +59,8 @@
         <th>{{'experience' | translate}}</th>
         <th>{{'listIdUser' | translate}}</th>
         <th>{{'dateOfTheScheduleInterview' | translate}}</th>
-        <th>{{'start' | translate}}</th>
-        <th>{{'end' | translate}}</th>
+        <th>{{'startTime' | translate}}</th>
+        <th>{{'endTime' | translate}}</th>
 
         <th>
 
@@ -70,7 +70,7 @@
         <tr>
           <td>{{c.id}}</td>
           <td>{{c.name}}</td>
-          <td>{{c.email}}</td>
+          <td>{{c.emailApplicant}}</td>
           <td>{{c.phone}}</td>
           <td>{{c.vacacyNumber}}</td>
           <td>{{c.position}}</td>
@@ -79,8 +79,8 @@
           <td>{{c.experience}}</td>
           <td>{{c.nameOfTheInterviewer}}</td>
           <td>{{c.dateScheduled}}</td>
-          <td>{{c.start}}</td>
-          <td>{{c.end}}</td>
+          <td>{{c.startTime}}</td>
+          <td>{{c.endTime}}</td>
           <td>
             <div class="">
               <!--              -->
@@ -103,8 +103,8 @@
                     <label>{{'name' | translate}}</label>
                     <input type="text" class="form-control" formControlName="name" placeholder="Enter name applicant">
 
-                    <label>{{'email' | translate}}</label>
-                    <input type="text" class="form-control" formControlName="email" placeholder="Enter email for you">
+                    <label>{{'emailApplicant' | translate}}</label>
+                    <input type="text" class="form-control" formControlName="emailApplicant" placeholder="Enter email for you">
 
                     <label>{{'phone' | translate}}</label>
                     <input type="number" class="form-control" formControlName="phone" placeholder="Enter phone for you">
@@ -151,11 +151,11 @@
                     <input type="date" class="form-control" formControlName="dateScheduled"
                            placeholder="Enter date scheduled">
 
-                    <label>{{'start' | translate}}</label>
-                    <input type="time" class="form-control" formControlName="start" placeholder="Enter time start">
+                    <label>{{'startTime' | translate}}</label>
+                    <input type="time" class="form-control" formControlName="startTime" placeholder="Enter time start">
 
-                    <label>{{'end' | translate}}</label>
-                    <input type="time" class="form-control" formControlName="end" placeholder="Enter time end">
+                    <label>{{'endTime' | translate}}</label>
+                    <input type="time" class="form-control" formControlName="endTime" placeholder="Enter time end">
 
 
                     <button class="btnSave" (click)="onsubmit()"><i class="fa fa-search"></i> {{'Save' | translate}}

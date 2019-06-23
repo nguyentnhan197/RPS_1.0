@@ -79,6 +79,14 @@
   "manpowerRequestListByManager": "Manpower Request List By Manager",
 
 
+  "emailApplicant": "Email",
+  "startTime": "Start time",
+  "endTime": "End time",
+  "dateOfTheScheduleInterview": "The date of the scheduled interview",
+  "listIdUser": "Name of the Interviewer",
+  "dateOnApplicantVacancy": "Date of applicant",
+
+
 
 
 

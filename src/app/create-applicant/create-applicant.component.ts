@@ -20,7 +20,6 @@ export class CreateApplicantComponent implements OnInit {
   positionList: Position[];
   myForm: FormGroup;
   id: FormControl;
-  positionList: Position[];
   applicantVacancyName: FormControl;
   emailApplicant: FormControl;
   phone: FormControl;
@@ -68,16 +67,10 @@ export class CreateApplicantComponent implements OnInit {
       this.positionList = data;
     });
   }
-
-  getVacancyNumber()
-    :
-    string {
-    return this.route.snapshot.paramMap.get('vacancyNumber');
-  }
-
   onsubmit() {
     console.log(this.myForm.value);
     const body = Object.assign({}, this.myForm.value);
+    // tslint:disable-next-line:max-line-length
     this.httpClient.post(`${apiRoot}/hr/applicantVacancy/${this.getVacancyNumber()}/addApplicantVacancy`, body, this.httpOptions).subscribe(data => {
         console.log(data);
       }
@@ -125,9 +118,7 @@ export class CreateApplicantComponent implements OnInit {
 
   }
 
-  selectPosition($event)
-    :
-    FormControl {
+  selectPosition($event): FormControl {
     this.getPositionList();
     const id = $event;
     const positionName = this.positionList.find(po => po.idPosition = id).positionName;

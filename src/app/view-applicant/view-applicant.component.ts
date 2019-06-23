@@ -119,7 +119,7 @@ export class ViewApplicantComponent implements OnInit {
 export class Candicate {
   id: string;
   name: string;
-  email: string;
+  emailApplicant: string;
   phone: string;
   vacacyNumber: string;
   position: string;
@@ -128,8 +128,8 @@ export class Candicate {
   experience: string;
   nameOfTheInterviewer: string;
   dateScheduled: any;
-  start: any;
-  end: any;
+  startTime: any;
+  endTime: any;
 
 }
 
@@ -138,7 +138,7 @@ export const listOfCandidates = [
   {
     id: '15130147',
     name: 'Phuong',
-    email: '...@gmail.com',
+    emailApplicant: '...@gmail.com',
     phone: '093205304',
     vacacyNumber: 'V001',
     position: 'AI',
@@ -147,13 +147,13 @@ export const listOfCandidates = [
     experience: 'Junior',
     nameOfTheInterviewer: 'Ho Chi Minh',
     dateScheduled: '18-7-2019',
-    start: '11:00 AM',
-    end: '11:30 AM'
+    startTime: '11:00 AM',
+    endTime: '11:30 AM'
   },
   {
     id: '15130125',
     name: 'Nhan',
-    email: '...@gmail.com',
+    emailApplicant: '...@gmail.com',
     phone: '093205304',
     vacacyNumber: 'V001',
     position: 'AI',
@@ -162,7 +162,7 @@ export const listOfCandidates = [
     experience: 'Junior',
     nameOfTheInterviewer: 'Ho Chi Minh',
     dateScheduled: '18-7-2019',
-    start: '11:00 AM',
-    end: '11:30 AM'
+    startTime: '11:00 AM',
+    endTime: '11:30 AM'
   }
 ];

@@ -75,6 +75,13 @@
 
   "manpowerRequestListByManager": "Yêu cầu nhân lực từ quản lí",
 
+  "emailApplicant": "Email",
+  "startTime": "Thời gian bắt đầu",
+  "endTime": "Thời gian kết thúc",
+  "dateOfTheScheduleInterview": "Ngày phỏng vấn",
+  "listIdUser": "Tên người phỏng vấn",
+  "dateOnApplicantVacancy": "Ngày nộp đơn",
+
 
 
   "btnSearch": "Tìm kiếm",
