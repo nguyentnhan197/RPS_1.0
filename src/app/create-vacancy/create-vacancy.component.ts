@@ -140,7 +140,7 @@ export class CreateVacancyComponent implements OnInit {
 
   onsubmit() {
    this.carrerService.createVacancy(this.myForm.value).subscribe();
-    console.log(this.myForm.value);
-    this.myForm.reset();
+   console.log(this.myForm.value);
+   this.myForm.reset();
   }
 }

@@ -1,6 +1,16 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {HttpClient} from '@angular/common/http';
+import {CarrerService} from '../service/carrer.service';
+import {Candidate} from '../model/candidate.model';
+import {Observable} from 'rxjs';
+import {ActivatedRoute, Router} from '@angular/router';
+import {User} from '../model/user.model';
+// import {InterviewerScheduleI} from '../model/interviewer-scheduleI';
+import {PositionService} from '../service/position.service';
+import {CandidateService} from '../service/candidate.service';
+
+// import {CandidateService} from '../service/candidate.service';
 
 @Component({
   selector: 'app-view-applicant',
@@ -8,7 +18,8 @@ import {HttpClient} from '@angular/common/http';
   styleUrls: ['./view-applicant.component.scss']
 })
 export class ViewApplicantComponent implements OnInit {
-  candicates: Candicate[] = listOfCandidates;
+  map = new Map<string[], Candidate>();
+  candicates: Candidate[];
   myForm: FormGroup;
   myForm1: FormGroup;
   apiURL = '';
@@ -25,8 +36,19 @@ export class ViewApplicantComponent implements OnInit {
   dateScheduled: FormControl;
   startTime: FormControl;
   endTime: FormControl;
+  positionList = this.positionService.getAllPosition();
 
-  constructor(protected httpClient: HttpClient) {
+  idVacancy: number;
+
+  constructor(protected httpClient: HttpClient,
+              protected candidateService: CandidateService,
+              protected route: ActivatedRoute,
+              protected  positionService: PositionService,
+  ) {
+    // this.map.forEach((value: InterviewerScheduleI[], key: Candidate) => {
+    //   console.log(key, value);
+    // });
+
   }
 
   ngOnInit() {
@@ -34,6 +56,16 @@ export class ViewApplicantComponent implements OnInit {
     this.createFormControls1();
     this.createForm();
     this.createForm1();
+    this.idVacancy = JSON.parse(this.route.snapshot.paramMap.get('id'));
+
+    // if (this.id) {
+    //   // console.log("id nek  " + this.idVacancy);
+    this.getApplicantsByIdVacancy();
+
+    // } else {
+    //
+    //   this.getAllApplicant();
+    // }
   }
 
   onsubmit() {
@@ -114,55 +146,27 @@ export class ViewApplicantComponent implements OnInit {
 
   }
 
-}
-
-export class Candicate {
-  id: string;
-  name: string;
-  emailApplicant: string;
-  phone: string;
-  vacacyNumber: string;
-  position: string;
-  dateOfApplicant: any;
-  status: string;
-  experience: string;
-  nameOfTheInterviewer: string;
-  dateScheduled: any;
-  startTime: any;
-  endTime: any;
-
-}
-
-
-export const listOfCandidates = [
-  {
-    id: '15130147',
-    name: 'Phuong',
-    emailApplicant: '...@gmail.com',
-    phone: '093205304',
-    vacacyNumber: 'V001',
-    position: 'AI',
-    dateOfApplicant: '8-7-2019',
-    status: 'Processing',
-    experience: 'Junior',
-    nameOfTheInterviewer: 'Ho Chi Minh',
-    dateScheduled: '18-7-2019',
-    startTime: '11:00 AM',
-    endTime: '11:30 AM'
-  },
-  {
-    id: '15130125',
-    name: 'Nhan',
-    emailApplicant: '...@gmail.com',
-    phone: '093205304',
-    vacacyNumber: 'V001',
-    position: 'AI',
-    dateOfApplicant: '8-7-2019',
-    status: 'Processing',
-    experience: 'Junior',
-    nameOfTheInterviewer: 'Ho Chi Minh',
-    dateScheduled: '18-7-2019',
-    startTime: '11:00 AM',
-    endTime: '11:30 AM'
+  getApplicantsByIdVacancy() {
+    const id = this.route.snapshot.paramMap.get('id');
+    this.candidateService.getApplicantsByIdVacancy(id).subscribe(resList => {
+      this.map = resList[0],
+        this.candicates = resList[1];
+    });
   }
-];
+
+
+  getKeys() {
+    return Array.from(this.map.keys());
+  }
+
+  getValues(map) {
+    return Array.from(map.values());
+  }
+
+  // getAllApplicant() {
+  //   this.candidateService.getAllApplicants().subscribe(data => this.map = data);
+  // }
+}
+
+
+

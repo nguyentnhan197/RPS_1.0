@@ -26,8 +26,8 @@ const routes: Routes = [
     component: ViewApplicantComponent
   },
   {path: 'view-vacancy', component: ViewVacancyComponent},
-  {path: 'hr/create-applicant/:vacancyNumber', component: CreateApplicantComponent},
-  {path: 'hr/create-vacancy', component: CreateVacancyComponent},
+  {path: 'create-applicant/:vacancyNumber', component: CreateApplicantComponent},
+  {path: 'create-vacancy', component: CreateVacancyComponent},
   {path: 'interviewer/review-applicant', component: ReviewApplicantComponent},
   {path: 'interviewer/view-review-applicant', component: ViewReviewApplicantComponent},
   {path: 'system/profile', component: ProfileComponent},
@@ -37,6 +37,7 @@ const routes: Routes = [
   {path: 'recruitment/applicant-approval', component: ApplicantApprovalComponent},
   {path: 'view-vacancy', component: ViewVacancyComponent},
   {path: 'view-vacancy/:id', component: DetailCarerComponent},
+  {path: 'view-vacancy/:id/view-applicant', component: ViewApplicantComponent}
 ];
 
 @NgModule({

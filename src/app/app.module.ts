@@ -86,6 +86,8 @@ export function setupTranslateFactory(
     AuthenticationService,
     TranslateService,
     AuthGuard ,
+    // ReviewService,
+    // CandidateService,
 
     {
       provide: APP_INITIALIZER,

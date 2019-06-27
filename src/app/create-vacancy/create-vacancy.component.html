@@ -114,8 +114,8 @@
             <select class="form-control" formControlName="typeOfStaff" required>
               <option value="partTime">Part time</option>
               <option value="fullTime">Full Time</option>
-              <option value="partTime">Freelance</option>
-              <option value="partTime">Intership</option>
+              <option value="freelance">Freelance</option>
+              <option value="intership">Intership</option>
             </select>
             <div class="invalid-feedback"
                  *ngIf="typeOfStaff.errors && (typeOfStaff.dirty || typeOfStaff.touched)">

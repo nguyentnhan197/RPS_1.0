@@ -53,6 +53,8 @@
         <th>{{'dateCreated' | translate}}</th>
         <th>{{'dateClose' | translate}}</th>
         <th>{{'status' | translate}}</th>
+        <th>{{'viewVacancy' | translate}}</th>
+
         <!--        <th>{{'offer' | translate}}</th>-->
         <!--        <th>{{'experience' | translate}}</th>-->
         <!--        <th>{{'language' | translate}}</th>-->
@@ -73,6 +75,8 @@
 
           <td>{{v.dateClose}}</td>
           <td>{{v.state}}</td>
+          <td routerLink="/view-vacancy/{{v.idVacancy}}/view-applicant">View Applicant</td>
+
           <!--          <td>{{v.experience}}</td>-->
           <!--          <td>{{v.language}}</td>-->
           <td>
